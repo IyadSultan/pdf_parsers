@@ -1,0 +1,76 @@
+import sys
+import pathlib
+
+# Hypothetical library for interacting with Gemini Flash 2.0
+# Replace this with your actual implementation/API calls.
+import gemini_flash
+
+# --- Prompt definitions from the article ---
+
+# Prompt for chunking PDF pages into Markdown with semantic chunks.
+CHUNKING_PROMPT = """\
+OCR the following page into Markdown. Tables should be formatted as HTML. 
+Do not surround your output with triple backticks.
+
+Chunk the document into sections of roughly 250 - 1000 words. Our goal is 
+to identify parts of the page with same semantic theme. These chunks will 
+be embedded and used in a RAG pipeline. 
+
+Surround the chunks with <chunk> </chunk> html tags.
+"""
+
+# Prompt to retrieve strict bounding boxes for given text nodes.
+GET_NODE_BOUNDING_BOXES_PROMPT = """\
+Please provide me strict bounding boxes that encompasses the following text in the attached image? I'm trying to draw a rectangle around the text.
+- Use the top-left coordinate system
+- Values should be percentages of the image width and height (0 to 1)
+
+{nodes}
+"""
+
+# --- Processing functions ---
+
+def process_pdf(pdf_path: str, output_md: str = None):
+    """
+    Process a PDF using Gemini Flash 2.0 capabilities:
+      1. Extract Markdown text with semantic chunking.
+      2. Retrieve bounding boxes for extracted text nodes.
+    
+    Parameters:
+      - pdf_path: Path to the input PDF.
+      - output_md: (Optional) File path to save the extracted Markdown.
+    """
+    # Extract Markdown with chunking applied using the provided prompt.
+    markdown_text = gemini_flash.extract_markdown(pdf_path, prompt=CHUNKING_PROMPT)
+    
+    # Optionally extract text nodes and get their bounding boxes.
+    text_nodes = gemini_flash.extract_text_nodes(pdf_path)
+    bounding_boxes = gemini_flash.get_bounding_boxes(
+        text_nodes,
+        prompt=GET_NODE_BOUNDING_BOXES_PROMPT
+    )
+    
+    # Display the results.
+    print("=== Markdown Extraction with Chunking ===")
+    print(markdown_text)
+    
+    print("\n=== Extracted Bounding Boxes ===")
+    for node, bbox in bounding_boxes.items():
+        print(f"Text Node: {node}\nBounding Box: {bbox}\n")
+    
+    # Optionally, save the Markdown output to a file.
+    if output_md:
+        output_file = pathlib.Path(output_md)
+        output_file.write_text(markdown_text, encoding='utf-8')
+        print(f"\nMarkdown saved to {output_md}")
+
+# --- Main execution ---
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python process_pdf.py <input_pdf> [<output_md>]")
+        sys.exit(1)
+    
+    pdf_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) > 2 else None
+    process_pdf(pdf_file, output_file)

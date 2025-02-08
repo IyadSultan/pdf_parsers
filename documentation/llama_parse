@@ -1,0 +1,54 @@
+import os
+import re
+import nest_asyncio
+from dotenv import load_dotenv
+from llama_parse import LlamaParse
+
+# Load environment variables (e.g., LLAMA_CLOUD_API_KEY)
+load_dotenv()
+
+def clean_text(text: str) -> str:
+    """
+    Clean and normalize extracted text by:
+    - Removing excessive whitespace
+    - Stripping leading/trailing whitespace
+    """
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
+
+def parse_scientific_paper_pdf(file_path: str) -> str:
+    """
+    Extracts text from a scientific paper PDF using LlamaParse.
+    Returns the cleaned text.
+    """
+    # Apply nest_asyncio to allow async operations in environments like Jupyter
+    nest_asyncio.apply()
+
+    # Initialize LlamaParse with your API key
+    api_key = os.getenv("LLAMA_CLOUD_API_KEY")
+    parser = LlamaParse(
+        api_key=api_key,
+        result_type="text",
+        verbose=True,
+        language="en"
+    )
+    
+    # Load and extract text from the PDF file
+    documents = parser.load_data(file_path)
+    text = " ".join([doc.text for doc in documents])
+    
+    return clean_text(text)
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) != 2:
+        print("Usage: python parse_scientific_paper.py <path_to_pdf>")
+        sys.exit(1)
+
+    pdf_file = sys.argv[1]
+    extracted_text = parse_scientific_paper_pdf(pdf_file)
+
+    print("Extracted Text:")
+    print("---------------")
+    print(extracted_text)

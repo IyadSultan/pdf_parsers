@@ -1,0 +1,33 @@
+import sys
+import pathlib
+import pymupdf4llm
+
+def pdf_to_markdown(pdf_path: str, output_md: str = None):
+    """
+    Convert a PDF file to Markdown using pymupdf4llm.
+    
+    Parameters:
+      - pdf_path: Path to the input PDF file.
+      - output_md: Optional path to save the markdown output.
+    """
+    # Extract markdown text from the PDF
+    md_text = pymupdf4llm.to_markdown(pdf_path)
+    
+    # Print the markdown output
+    print("Extracted Markdown:\n")
+    print(md_text)
+    
+    # Optionally, save the markdown text to a file
+    if output_md:
+        output_file = pathlib.Path(output_md)
+        output_file.write_bytes(md_text.encode('utf-8'))
+        print(f"\nMarkdown output saved to {output_md}")
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python pdf_to_markdown.py <input_pdf> [<output_md>]")
+        sys.exit(1)
+    
+    input_pdf = sys.argv[1]
+    output_markdown = sys.argv[2] if len(sys.argv) > 2 else None
+    pdf_to_markdown(input_pdf, output_markdown)
