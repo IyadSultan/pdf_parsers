@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2025-02-08">
+    <creator>NetworkX 3.4.2</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="3" title="page" type="long" />
+      <attribute id="4" title="relation_type" type="string" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="type" type="string" />
+      <attribute id="1" title="entity_type" type="string" />
+      <attribute id="2" title="name" type="string" />
+    </attributes>
+    <nodes>
+      <node id="sample.pdf" label="sample.pdf">
+        <attvalues>
+          <attvalue for="0" value="document" />
+        </attvalues>
+      </node>
+      <node id="Wilms Tumour_condition" label="Wilms Tumour_condition">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="condition" />
+          <attvalue for="2" value="Wilms Tumour" />
+        </attvalues>
+      </node>
+      <node id="UMBRELLA SIOP-RTSG 2016 Protocol_treatment_protocol" label="UMBRELLA SIOP-RTSG 2016 Protocol_treatment_protocol">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_protocol" />
+          <attvalue for="2" value="UMBRELLA SIOP-RTSG 2016 Protocol" />
+        </attvalues>
+      </node>
+      <node id="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)_organization" label="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)_organization">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)" />
+        </attvalues>
+      </node>
+      <node id="SIOP-2001 protocol_treatment_protocol" label="SIOP-2001 protocol_treatment_protocol">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_protocol" />
+          <attvalue for="2" value="SIOP-2001 protocol" />
+        </attvalues>
+      </node>
+      <node id="Childhood renal tumours_condition" label="Childhood renal tumours_condition">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="condition" />
+          <attvalue for="2" value="Childhood renal tumours" />
+        </attvalues>
+      </node>
+      <node id="Childhood cancer survival_measure" label="Childhood cancer survival_measure">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="measure" />
+          <attvalue for="2" value="Childhood cancer survival" />
+        </attvalues>
+      </node>
+      <node id="Genomic changes_medical_term" label="Genomic changes_medical_term">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="medical_term" />
+          <attvalue for="2" value="Genomic changes" />
+        </attvalues>
+      </node>
+      <node id="Biomarker and imaging research_research_area" label="Biomarker and imaging research_research_area">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="research_area" />
+          <attvalue for="2" value="Biomarker and imaging research" />
+        </attvalues>
+      </node>
+      <node id="Treatment recommendations_medical_term" label="Treatment recommendations_medical_term">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="medical_term" />
+          <attvalue for="2" value="Treatment recommendations" />
+        </attvalues>
+      </node>
+      <node id="SIOP-RTSG website_resource" label="SIOP-RTSG website_resource">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="resource" />
+          <attvalue for="2" value="SIOP-RTSG website" />
+        </attvalues>
+      </node>
+      <node id="Children's Oncology Group (COG)_organization" label="Children's Oncology Group (COG)_organization">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="Children's Oncology Group (COG)" />
+        </attvalues>
+      </node>
+      <node id="SIOP-2001 randomized trial_clinical_trial" label="SIOP-2001 randomized trial_clinical_trial">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="clinical_trial" />
+          <attvalue for="2" value="SIOP-2001 randomized trial" />
+        </attvalues>
+      </node>
+      <node id="Preoperative chemotherapy_treatment_method" label="Preoperative chemotherapy_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Preoperative chemotherapy" />
+        </attvalues>
+      </node>
+      <node id="Nephrectomy_treatment_method" label="Nephrectomy_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Nephrectomy" />
+        </attvalues>
+      </node>
+      <node id="Chemotherapy_treatment_method" label="Chemotherapy_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Chemotherapy" />
+        </attvalues>
+      </node>
+      <node id="Radiotherapy_treatment_method" label="Radiotherapy_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Radiotherapy" />
+        </attvalues>
+      </node>
+      <node id="Surgery_treatment_method" label="Surgery_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Surgery" />
+        </attvalues>
+      </node>
+      <node id="Multidisciplinary panel_group" label="Multidisciplinary panel_group">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="group" />
+          <attvalue for="2" value="Multidisciplinary panel" />
+        </attvalues>
+      </node>
+      <node id="Blastemal component_medical_term" label="Blastemal component_medical_term">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="medical_term" />
+          <attvalue for="2" value="Blastemal component" />
+        </attvalues>
+      </node>
+      <node id="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_network" label="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_network">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="network" />
+          <attvalue for="2" value="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)" />
+        </attvalues>
+      </node>
+      <node id="Nephron-sparing surgery (NSS)_treatment_method" label="Nephron-sparing surgery (NSS)_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Nephron-sparing surgery (NSS)" />
+        </attvalues>
+      </node>
+      <node id="Lymph node sampling_treatment_method" label="Lymph node sampling_treatment_method">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="treatment_method" />
+          <attvalue for="2" value="Lymph node sampling" />
+        </attvalues>
+      </node>
+      <node id="Genomic heterogeneity_medical_term" label="Genomic heterogeneity_medical_term">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="medical_term" />
+          <attvalue for="2" value="Genomic heterogeneity" />
+        </attvalues>
+      </node>
+      <node id="International collaboration_activity" label="International collaboration_activity">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="activity" />
+          <attvalue for="2" value="International collaboration" />
+        </attvalues>
+      </node>
+      <node id="Phase I/II trials_clinical_trial" label="Phase I/II trials_clinical_trial">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="clinical_trial" />
+          <attvalue for="2" value="Phase I/II trials" />
+        </attvalues>
+      </node>
+      <node id="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)_entity" label="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)_entity" />
+      <node id="UMBRELLA SIOP-RTSG 2016 Protocol_entity" label="UMBRELLA SIOP-RTSG 2016 Protocol_entity" />
+      <node id="SIOP-2001 protocol_entity" label="SIOP-2001 protocol_entity" />
+      <node id="Treatment recommendations_entity" label="Treatment recommendations_entity" />
+      <node id="SIOP-RTSG website_entity" label="SIOP-RTSG website_entity" />
+      <node id="Children's Oncology Group (COG)_entity" label="Children's Oncology Group (COG)_entity" />
+      <node id="SIOP-2001 randomized trial_entity" label="SIOP-2001 randomized trial_entity" />
+      <node id="Preoperative chemotherapy_entity" label="Preoperative chemotherapy_entity" />
+      <node id="Nephrectomy_entity" label="Nephrectomy_entity" />
+      <node id="Chemotherapy_entity" label="Chemotherapy_entity" />
+      <node id="Radiotherapy_entity" label="Radiotherapy_entity" />
+      <node id="Surgery_entity" label="Surgery_entity" />
+      <node id="Multidisciplinary panel_entity" label="Multidisciplinary panel_entity" />
+      <node id="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_entity" label="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_entity" />
+      <node id="International collaboration_entity" label="International collaboration_entity" />
+      <node id="Nephron-sparing surgery (NSS)_entity" label="Nephron-sparing surgery (NSS)_entity" />
+      <node id="Wilms Tumour_entity" label="Wilms Tumour_entity" />
+      <node id="Lymph node sampling_entity" label="Lymph node sampling_entity" />
+      <node id="Biomarker and imaging research_entity" label="Biomarker and imaging research_entity" />
+      <node id="Genomic changes_entity" label="Genomic changes_entity" />
+      <node id="Genomic heterogeneity_entity" label="Genomic heterogeneity_entity" />
+      <node id="Phase I/II trials_entity" label="Phase I/II trials_entity" />
+    </nodes>
+    <edges>
+      <edge source="sample.pdf" target="Wilms Tumour_condition" id="0" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="UMBRELLA SIOP-RTSG 2016 Protocol_treatment_protocol" id="1" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)_organization" id="2" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="SIOP-2001 protocol_treatment_protocol" id="3" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Childhood renal tumours_condition" id="4" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Childhood cancer survival_measure" id="5" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Genomic changes_medical_term" id="6" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Biomarker and imaging research_research_area" id="7" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Treatment recommendations_medical_term" id="8" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="SIOP-RTSG website_resource" id="9" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Children's Oncology Group (COG)_organization" id="10" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="SIOP-2001 randomized trial_clinical_trial" id="11" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Preoperative chemotherapy_treatment_method" id="12" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Nephrectomy_treatment_method" id="13" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Chemotherapy_treatment_method" id="14" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Radiotherapy_treatment_method" id="15" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Surgery_treatment_method" id="16" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Multidisciplinary panel_group" id="17" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Blastemal component_medical_term" id="18" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_network" id="19" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Nephron-sparing surgery (NSS)_treatment_method" id="20" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Lymph node sampling_treatment_method" id="21" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Genomic heterogeneity_medical_term" id="22" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="International collaboration_activity" id="23" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="sample.pdf" target="Phase I/II trials_clinical_trial" id="24" type="contains">
+        <attvalues>
+          <attvalue for="3" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP-RTSG)_entity" target="UMBRELLA SIOP-RTSG 2016 Protocol_entity" id="25" type="relation">
+        <attvalues>
+          <attvalue for="4" value="developed" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="SIOP-2001 protocol_entity" id="26" type="relation">
+        <attvalues>
+          <attvalue for="4" value="succeeds" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="Treatment recommendations_entity" id="27" type="relation">
+        <attvalues>
+          <attvalue for="4" value="includes" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="Preoperative chemotherapy_entity" id="28" type="relation">
+        <attvalues>
+          <attvalue for="4" value="supports_use_of" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="Nephrectomy_entity" id="29" type="relation">
+        <attvalues>
+          <attvalue for="4" value="supports_use_of" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="Chemotherapy_entity" id="30" type="relation">
+        <attvalues>
+          <attvalue for="4" value="recommends" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="Radiotherapy_entity" id="31" type="relation">
+        <attvalues>
+          <attvalue for="4" value="recommends" />
+        </attvalues>
+      </edge>
+      <edge source="UMBRELLA SIOP-RTSG 2016 Protocol_entity" target="Surgery_entity" id="32" type="relation">
+        <attvalues>
+          <attvalue for="4" value="recommends" />
+        </attvalues>
+      </edge>
+      <edge source="SIOP-RTSG website_entity" target="UMBRELLA SIOP-RTSG 2016 Protocol_entity" id="33" type="relation">
+        <attvalues>
+          <attvalue for="4" value="hosts" />
+        </attvalues>
+      </edge>
+      <edge source="Children's Oncology Group (COG)_entity" target="SIOP-2001 randomized trial_entity" id="34" type="relation">
+        <attvalues>
+          <attvalue for="4" value="involved_in" />
+        </attvalues>
+      </edge>
+      <edge source="Multidisciplinary panel_entity" target="Treatment recommendations_entity" id="35" type="relation">
+        <attvalues>
+          <attvalue for="4" value="established" />
+        </attvalues>
+      </edge>
+      <edge source="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_entity" target="International collaboration_entity" id="36" type="relation">
+        <attvalues>
+          <attvalue for="4" value="aims_to_enhance" />
+        </attvalues>
+      </edge>
+      <edge source="International collaboration_entity" target="Phase I/II trials_entity" id="37" type="relation">
+        <attvalues>
+          <attvalue for="4" value="necessary_for" />
+        </attvalues>
+      </edge>
+      <edge source="Nephron-sparing surgery (NSS)_entity" target="Wilms Tumour_entity" id="38" type="relation">
+        <attvalues>
+          <attvalue for="4" value="treatment_for" />
+        </attvalues>
+      </edge>
+      <edge source="Lymph node sampling_entity" target="Wilms Tumour_entity" id="39" type="relation">
+        <attvalues>
+          <attvalue for="4" value="procedure_for" />
+        </attvalues>
+      </edge>
+      <edge source="Biomarker and imaging research_entity" target="Genomic changes_entity" id="40" type="relation">
+        <attvalues>
+          <attvalue for="4" value="focuses_on" />
+        </attvalues>
+      </edge>
+      <edge source="Biomarker and imaging research_entity" target="Genomic heterogeneity_entity" id="41" type="relation">
+        <attvalues>
+          <attvalue for="4" value="focuses_on" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

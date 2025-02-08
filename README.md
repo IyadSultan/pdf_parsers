@@ -1,24 +1,51 @@
 # PDF Knowledge Graph Builder
 
-A powerful Python-based pipeline for parsing PDFs, building knowledge graphs, and evaluating the results using LangGraph and deep_eval.
+A powerful Python toolkit that transforms PDF documents into queryable knowledge graphs using multiple parsing strategies and LLM-powered graph construction.
+
+## Overview
+
+This project provides a flexible pipeline for:
+1. Parsing PDFs using different strategies (PyMuPDF4LLM, Gemini Flash, Llama Parse)
+2. Constructing knowledge graphs from the parsed content
+3. Querying the graphs using natural language
+4. Evaluating and comparing different parsing approaches
 
 ## Features
 
-- Multiple PDF parser options:
-  - Gemini Flash: Google's advanced vision-language model
-  - Llama Parse: Robust PDF parsing with structure preservation
-  - PyMuPDF4LLM: Lightweight and fast PDF processing
-- Knowledge Graph Building:
-  - Entity and relationship extraction
-  - Semantic graph construction
-  - Support for both NetworkX and RDF formats
-- Natural Language Querying:
-  - Query the knowledge graph using plain English
-  - Get structured responses with source tracking
-- Evaluation Framework:
-  - Answer correctness assessment
-  - Faithfulness checking
-  - Contextual relevancy metrics
+### Multiple PDF Parsing Strategies
+
+- **PyMuPDF4LLM**
+  - Fast and lightweight
+  - Best for simple text-based PDFs
+  - No API key required
+  - Limited layout understanding
+
+- **Gemini Flash**
+  - Excellent for complex layouts
+  - Strong image and diagram handling
+  - Requires Google API key
+  - Higher accuracy for visual content
+
+- **Llama Parse**
+  - Strong structure preservation
+  - Excellent table extraction
+  - Requires Llama Cloud API key
+  - Best for technical documents
+
+### Knowledge Graph Construction
+
+- Entity extraction using GPT-4
+- Relationship identification
+- Automatic URI generation
+- RDF format support
+- NetworkX graph structure
+
+### Query & Analysis
+
+- Natural language querying
+- Multi-metric evaluation
+- Parser comparison tools
+- Performance analytics
 
 ## Installation
 
@@ -50,149 +77,72 @@ OPENAI_API_KEY=your_openai_api_key
 
 ## Usage
 
-### Basic Usage
+### Command Line Interface
 
-1. Create a pipeline instance:
+Run the main script to process PDFs with all available parsers:
+
+```bash
+# Process a single PDF
+python main.py path/to/your/document.pdf
+
+# Process all PDFs in a directory
+python main.py path/to/pdf/directory
+```
+
+The script will:
+1. Create necessary output directories
+2. Process the PDF(s) with each parser
+3. Generate knowledge graphs
+4. Run evaluations
+5. Save comparison results
+
+### Python API
+
 ```python
 from src.pipeline import create_pipeline
 
-# Create pipeline with default PyMuPDF parser
-pipeline = create_pipeline()
+# Initialize pipeline with specific parser
+pipeline = create_pipeline(parser_type='pymupdf4llm')
 
-# Or specify a different parser
-pipeline = create_pipeline(parser_type='gemini_flash')
+# Process a PDF
+results = pipeline.process_pdf('path/to/document.pdf')
+
+# Save the knowledge graph
+pipeline.save_knowledge_graph('output/graphs')
+
+# Query the graph
+answer = pipeline.query("What are the main topics discussed?")
 ```
 
-2. Process a single PDF:
-```python
-results = pipeline.process_pdf('path/to/your/document.pdf')
-```
-
-3. Process multiple PDFs in a directory:
-```python
-results = pipeline.process_directory('path/to/pdf/directory')
-```
-
-4. Query the knowledge graph:
-```python
-query = "What are the main topics discussed in the documents?"
-results = pipeline.query_knowledge_graph(query)
-```
-
-### Adding More PDFs to Existing Knowledge Graph
-
-1. Save the current knowledge graph:
-```python
-pipeline.save_knowledge_graph('path/to/graph/directory')
-```
-
-2. Later, load the saved graph and add more documents:
-```python
-pipeline = create_pipeline(graph_dir='path/to/graph/directory')
-pipeline.process_pdf('path/to/new/document.pdf')
-```
-
-### Evaluation
-
-1. Prepare test queries:
-```python
-test_queries = [
-    {
-        'question': 'What is the main conclusion of the research?',
-        'expected_answer': 'The research concludes that...'
-    },
-    # Add more test queries...
-]
-```
-
-2. Run evaluation:
-```python
-evaluation_results = pipeline.evaluate(
-    test_queries,
-    output_file='evaluation_results.json'
-)
-```
-
-## Building an Evaluation Pipeline
-
-1. Create a test dataset:
-```python
-# test_queries.json
-{
-    "queries": [
-        {
-            "question": "What are the key findings?",
-            "expected_answer": "The key findings include...",
-            "context": "Section 4.2 of the paper..."
-        }
-    ]
-}
-```
-
-2. Run comprehensive evaluation:
-```python
-import json
-from src.pipeline import create_pipeline
-
-# Load test queries
-with open('test_queries.json', 'r') as f:
-    test_data = json.load(f)
-
-# Create pipeline
-pipeline = create_pipeline('llama_parse')
-
-# Process evaluation documents
-pipeline.process_directory('evaluation_docs')
-
-# Run evaluation
-results = pipeline.evaluate(
-    test_data['queries'],
-    output_file='evaluation_results.json'
-)
-
-# Print summary
-print(f"Average correctness score: {results['metrics']['correctness']['average']}")
-print(f"Faithfulness score: {results['metrics']['faithfulness']['average']}")
-print(f"Contextual relevancy: {results['metrics']['contextual_relevancy']['average']}")
-```
-
-## Parser Comparison
-
-Each parser has its strengths:
-
-- **Gemini Flash**:
-  - Best for documents with complex layouts
-  - Excellent at handling images and diagrams
-  - Requires Google API key
-
-- **Llama Parse**:
-  - Strong structure preservation
-  - Good table extraction
-  - Requires Llama Cloud API key
-
-- **PyMuPDF4LLM**:
-  - Fast and lightweight
-  - No API key required
-  - Best for simple text-based PDFs
-
-## Project Structure
+## Output Structure
 
 ```
 pdf-knowledge-graph/
-├── src/
-│   ├── pdf_parsers.py      # PDF parsing implementations
-│   ├── knowledge_graph.py  # Knowledge graph builder
-│   └── pipeline.py         # Main pipeline
-├── tests/
-│   └── test_queries.json   # Evaluation test cases
 ├── data/
-│   └── pdfs/              # PDF documents
+│   ├── pdfs/              # Input PDFs
+│   └── evaluations/       # Evaluation queries
 ├── graphs/
-│   └── saved/             # Saved knowledge graphs
-├── requirements.txt
-├── .env
-└── README.md
+│   ├── pymupdf4llm/      # Knowledge graphs by parser
+│   ├── gemini_flash/
+│   └── llama_parse/
+├── output/
+│   ├── markdown/         # Parsed content in markdown
+│   └── comparison_results_{timestamp}.json
+└── evaluation/
+    ├── pymupdf4llm_eval_{timestamp}.json
+    ├── gemini_flash_eval_{timestamp}.json
+    ├── llama_parse_eval_{timestamp}.json
+    └── evaluation_comparison_{timestamp}.json
 ```
+
+## Evaluation Metrics
+
+The evaluation framework assesses:
+- Parsing accuracy
+- Entity extraction quality
+- Relationship identification
+- Query response accuracy
+- Processing speed
 
 ## Contributing
 
@@ -202,13 +152,32 @@ pdf-knowledge-graph/
 4. Push to the branch
 5. Create a Pull Request
 
+### Development Setup
+
+```bash
+# Install development dependencies
+pip install -r requirements-dev.txt
+
+# Run tests
+pytest tests/
+
+# Run linting
+flake8 src/ tests/
+```
+
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 - LangGraph team for the graph-based LLM framework
 - Anthropic for Claude API
 - Google for Gemini API
-- Llama Parse team for PDF parsing capabilities 
+- Llama Parse team for PDF parsing capabilities
+
+## Support
+
+For issues and feature requests, please use the GitHub issue tracker.
+
+For usage questions, join our [Discord community](https://discord.gg/yourinvitelink). 

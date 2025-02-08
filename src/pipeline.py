@@ -112,61 +112,76 @@ class Pipeline:
             List[Dict[str, Any]]: Query results
         """
         return self.graph_builder.query_graph(query)
-        
+
     def evaluate(self, test_queries: List[Dict[str, str]], output_file: Optional[str] = None) -> Dict[str, Any]:
         """
         Evaluate the pipeline using test queries.
-        
+
         Args:
-            test_queries (List[Dict[str, str]]): List of test queries with expected answers
-            output_file (Optional[str]): Path to save evaluation results
-            
+            test_queries (List[Dict[str, str]]): List of test queries. Each query should include:
+                - "question": the natural language query.
+                - "expected_answer": the ground truth answer.
+            output_file (Optional[str]): Path to a JSON file to save evaluation results.
+
         Returns:
-            Dict[str, Any]: Evaluation results
+            Dict[str, Any]: The evaluation results.
         """
-        # Define evaluation metrics
+        # Define evaluation metrics with explicit evaluation_steps.
         metrics = [
             GEval(
                 name="Answer Correctness",
                 model="gpt-4",
-                evaluation_params=["input", "expected_output", "actual_output"]
+                evaluation_params=["input", "expected_output", "actual_output"],
+                evaluation_steps=[
+                    "Compare the actual answer with the expected answer and determine if the factual content is correct."
+                ]
             ),
             FaithfulnessMetric(
                 threshold=0.7,
-                model="gpt-4"
+                model="gpt-4",
+                evaluation_steps=[
+                    "Evaluate whether the answer faithfully reflects the content of the retrieved context and source data."
+                ]
             ),
             ContextualRelevancyMetric(
                 threshold=0.7,
-                model="gpt-4"
+                model="gpt-4",
+                evaluation_steps=[
+                    "Assess whether the answer is contextually relevant to the question and the information contained in the knowledge graph."
+                ]
             )
         ]
         
-        # Create test cases
+        # Create test cases based on the provided queries.
         test_cases = []
         for query in test_queries:
+            # Retrieve results from the knowledge graph using the query.
             results = self.query_knowledge_graph(query['question'])
+            # Format the retrieved results into a single answer string.
             actual_answer = self._format_answer(results)
             
+            # Create a test case with input, expected output, and the actual output.
             test_case = LLMTestCase(
                 input=query['question'],
-                actual_output=actual_answer,
-                expected_output=query['expected_answer']
+                expected_output=query['expected_answer'],
+                actual_output=actual_answer
             )
             test_cases.append(test_case)
-            
-        # Run evaluation
+        
+        # Run the evaluation using the defined metrics.
         evaluation_results = evaluate(
             test_cases=test_cases,
             metrics=metrics
         )
         
-        # Save results if output file specified
+        # Save the evaluation results to a JSON file if an output file path is provided.
         if output_file:
-            with open(output_file, 'w') as f:
+            with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(evaluation_results, f, indent=2)
-                
-        return evaluation_results
         
+        return evaluation_results
+
+
     def _format_answer(self, query_results: List[Dict[str, Any]]) -> str:
         """Format query results into a readable answer."""
         # Implementation of answer formatting logic
