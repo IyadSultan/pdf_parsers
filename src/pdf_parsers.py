@@ -16,6 +16,7 @@ import io
 import re
 import json
 import base64
+import datetime  # <-- New import for date/time handling
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any
 from pathlib import Path
@@ -458,6 +459,43 @@ def parse_pdf(pdf_path: str, parser_type: str = 'pymupdf4llm') -> Dict[str, Any]
     return result
 
 # ---------------------------
+# New Helper Function: Save Parsed Content as Markdown
+# ---------------------------
+def save_parsed_pdf_as_markdown(parsed_result: Dict[str, Any], pdf_path: str, parser_type: str, output_dir: str = "output"):
+    """
+    Save the extracted text from the parsed PDF as a Markdown file under the specified output folder.
+    The file name includes the input file base name, the parser type, and the current date/time.
+    
+    Args:
+        parsed_result (Dict[str, Any]): The parsed PDF content
+        pdf_path (str): Original PDF file path
+        parser_type (str): Type of parser used
+        output_dir (str): Directory to save the markdown file (default: "output")
+    """
+    # Create the output directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Build the file name
+    base_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    date_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    file_name = f"{base_name}_{parser_type}_{date_str}.md"
+    file_path = os.path.join(output_dir, file_name)
+    
+    # Retrieve the text content. Depending on the parser, this might be a string or a list
+    content = parsed_result.get("content", "")
+    if isinstance(content, list):
+        # Join page content if it's a list
+        content = "\n\n".join(
+            page.get("content", "") if isinstance(page, dict) else str(page)
+            for page in content
+        )
+    
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    debug(f"Saved Markdown output to {file_path}")
+    print(f"Output saved to: {file_path}")
+
+# ---------------------------
 # Module Test Code (if run as script)
 # ---------------------------
 if __name__ == "__main__":
@@ -469,5 +507,8 @@ if __name__ == "__main__":
         result = parse_pdf(sample_pdf, parser_type=chosen_parser)
         print("Parsing result:")
         print(json.dumps(result, indent=2, default=str))
+        
+        # Save the parsed text as Markdown.
+        save_parsed_pdf_as_markdown(result, sample_pdf, chosen_parser)
     except Exception as e:
         print(f"Error during parsing: {e}")

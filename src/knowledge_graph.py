@@ -6,17 +6,47 @@ It processes parsed PDF content and builds a semantic knowledge graph.
 """
 
 import os
+import re
 from typing import Dict, List, Any, Optional
+import urllib.parse
 from dotenv import load_dotenv
 import networkx as nx
 from rdflib import Graph, Literal, RDF, URIRef
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_anthropic import ChatAnthropic
+from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolExecutor
 
 # Load environment variables
 load_dotenv()
+
+def clean_llm_output(llm_output: str) -> str:
+    """
+    Remove markdown code fences from the LLM output for valid JSON parsing.
+    """
+    llm_output = llm_output.strip()
+    # Remove markdown code fences if present
+    if llm_output.startswith("```"):
+        lines = llm_output.splitlines()
+        # Remove opening fence
+        if lines[0].startswith("```"):
+            lines = lines[1:]
+        # Remove closing fence
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        llm_output = "\n".join(lines).strip()
+    return llm_output
+
+def create_valid_uri(text: str, prefix: str = "http://example.org/") -> str:
+    """
+    Create a valid URI from text by encoding special characters.
+    """
+    # Remove special characters and spaces, replace with underscores
+    clean_text = re.sub(r'[^\w\s-]', '', text)
+    clean_text = re.sub(r'[-\s]+', '_', clean_text)
+    # URL encode the cleaned text
+    encoded_text = urllib.parse.quote(clean_text)
+    return f"{prefix}{encoded_text}"
 
 class KnowledgeGraphBuilder:
     """Builds and manages a knowledge graph from parsed PDF content."""
@@ -25,7 +55,7 @@ class KnowledgeGraphBuilder:
         """Initialize the knowledge graph builder."""
         self.graph = nx.DiGraph()
         self.rdf_graph = Graph()
-        self.llm = ChatAnthropic(model="claude-3-sonnet-20240229")
+        self.llm = ChatOpenAI(model="gpt-4-0125-preview")
         
     def _extract_entities_and_relations(self, content: str) -> Dict[str, Any]:
         """
@@ -39,7 +69,8 @@ class KnowledgeGraphBuilder:
         """
         system_prompt = """
         Extract key entities and their relationships from the given text.
-        Return the results in the following format:
+        Return only the JSON data without any markdown formatting or code blocks.
+        Format:
         {
             "entities": [{"name": "entity_name", "type": "entity_type"}],
             "relations": [{"source": "entity1", "target": "entity2", "relation": "relation_type"}]
@@ -52,7 +83,8 @@ class KnowledgeGraphBuilder:
         ]
         
         response = self.llm.invoke(messages)
-        return eval(response.content)  # Safe since we control the LLM prompt format
+        cleaned_response = clean_llm_output(response.content)
+        return eval(cleaned_response)  # Safe since we control the LLM prompt format
         
     def add_document(self, parsed_content: Dict[str, Any]) -> None:
         """
@@ -63,10 +95,10 @@ class KnowledgeGraphBuilder:
         """
         document_title = parsed_content['title']
         
-        # Add document node
+        # Add document node with valid URI
         self.graph.add_node(document_title, type='document')
-        doc_uri = URIRef(f"http://example.org/doc/{document_title}")
-        self.rdf_graph.add((doc_uri, RDF.type, URIRef("http://example.org/Document")))
+        doc_uri = create_valid_uri(document_title, "http://example.org/doc/")
+        self.rdf_graph.add((URIRef(doc_uri), RDF.type, URIRef("http://example.org/Document")))
         
         # Process each page's content
         for page in parsed_content['content']:
@@ -75,22 +107,31 @@ class KnowledgeGraphBuilder:
             
             # Add entities
             for entity in extracted_info['entities']:
-                entity_id = f"{entity['name']}_{entity['type']}"
+                entity_name = entity['name']
+                entity_type = entity['type']
+                entity_id = f"{entity_name}_{entity_type}"
+                
                 self.graph.add_node(entity_id, 
                                   type='entity',
-                                  entity_type=entity['type'],
-                                  name=entity['name'])
+                                  entity_type=entity_type,
+                                  name=entity_name)
                 
                 # Connect entity to document
                 self.graph.add_edge(document_title, entity_id, 
                                   type='contains',
                                   page=page['page'])
                 
-                # Add to RDF graph
-                entity_uri = URIRef(f"http://example.org/entity/{entity_id}")
-                self.rdf_graph.add((entity_uri, RDF.type, URIRef(f"http://example.org/{entity['type']}")))
-                self.rdf_graph.add((entity_uri, URIRef("http://example.org/name"), Literal(entity['name'])))
-                self.rdf_graph.add((doc_uri, URIRef("http://example.org/contains"), entity_uri))
+                # Add to RDF graph with valid URIs
+                entity_uri = create_valid_uri(entity_id, "http://example.org/entity/")
+                type_uri = create_valid_uri(entity_type, "http://example.org/")
+                
+                self.rdf_graph.add((URIRef(entity_uri), RDF.type, URIRef(type_uri)))
+                self.rdf_graph.add((URIRef(entity_uri), 
+                                  URIRef("http://example.org/name"), 
+                                  Literal(entity_name)))
+                self.rdf_graph.add((URIRef(doc_uri), 
+                                  URIRef("http://example.org/contains"), 
+                                  URIRef(entity_uri)))
             
             # Add relations
             for relation in extracted_info['relations']:
@@ -101,13 +142,15 @@ class KnowledgeGraphBuilder:
                                   type='relation',
                                   relation_type=relation['relation'])
                 
-                # Add to RDF graph
-                source_uri = URIRef(f"http://example.org/entity/{source_id}")
-                target_uri = URIRef(f"http://example.org/entity/{target_id}")
-                self.rdf_graph.add((source_uri, 
-                                  URIRef(f"http://example.org/relation/{relation['relation']}"),
-                                  target_uri))
+                # Add to RDF graph with valid URIs
+                source_uri = create_valid_uri(source_id, "http://example.org/entity/")
+                target_uri = create_valid_uri(target_id, "http://example.org/entity/")
+                relation_uri = create_valid_uri(relation['relation'], "http://example.org/relation/")
                 
+                self.rdf_graph.add((URIRef(source_uri), 
+                                  URIRef(relation_uri),
+                                  URIRef(target_uri)))
+
     def query_graph(self, query: str) -> List[Dict[str, Any]]:
         """
         Query the knowledge graph using natural language.
