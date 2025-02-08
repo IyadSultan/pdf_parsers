@@ -87,7 +87,7 @@ def process_with_parser(parser_type: str, input_path: str):
     for result in results:
         save_parsed_pdf_as_markdown(result, input_path, parser_type, f'output/markdown')
     
-    # Run evaluation
+    # Run evaluation with specified model
     print(f"\nRunning evaluation for {parser_type}...")
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     eval_output_file = f'evaluation/{parser_type}_eval_{timestamp}.json'
@@ -95,7 +95,8 @@ def process_with_parser(parser_type: str, input_path: str):
     test_queries = get_test_queries()
     evaluation_results = pipeline.evaluate(
         test_queries=test_queries,
-        output_file=eval_output_file
+        output_file=eval_output_file,
+        model="gpt-4o-mini"  # Specify the evaluation model
     )
     
     print(f"Evaluation results saved to: {eval_output_file}")

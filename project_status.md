@@ -38,6 +38,7 @@
    - [ ] Write unit tests for knowledge graph
    - [ ] Write integration tests
    - [ ] Create test dataset
+   - [x] Fixed evaluation model to use gpt-4o-mini
 
 2. Optimization
    - [ ] Optimize entity extraction

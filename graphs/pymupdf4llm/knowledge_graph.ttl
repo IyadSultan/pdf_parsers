@@ -2,392 +2,523 @@
 @prefix ns2: <http://example.org/relation/> .
 
 <http://example.org/doc/samplepdf> a ns1:Document ;
-    ns1:contains <http://example.org/entity/101038nrurol2017163_doi>,
-        <http://example.org/entity/500_ml_Volume_Category>,
-        <http://example.org/entity/60_month_EFS_Statistic>,
-        <http://example.org/entity/60_month_OS_Statistic>,
-        <http://example.org/entity/ASCR_Procedure>,
-        <http://example.org/entity/AVD150_Treatment>,
-        <http://example.org/entity/AVD250_Treatment>,
+    ns1:contains <http://example.org/entity/500_ml_group>,
+        <http://example.org/entity/60_month_time_frame>,
+        <http://example.org/entity/AREN0533_trial_study>,
+        <http://example.org/entity/AVD150_Treatment_Regimen>,
+        <http://example.org/entity/AVD250_Treatment_Regimen>,
         <http://example.org/entity/AVD_500_ml_Group>,
-        <http://example.org/entity/AVD_Treatment_regimen>,
         <http://example.org/entity/AV_2_500_ml_Group>,
-        <http://example.org/entity/AV_Treatment_regimen>,
-        <http://example.org/entity/Actinomycin_D_Medication>,
-        <http://example.org/entity/Adult_Wilms_Tumours_Condition>,
+        <http://example.org/entity/Academic_Medical_Center_Amsterdam_Institution>,
+        <http://example.org/entity/Actinomycin_D_treatment>,
+        <http://example.org/entity/Adult_Wilms_Tumors_condition>,
+        <http://example.org/entity/Adults_demographic>,
         <http://example.org/entity/Albania_Country>,
         <http://example.org/entity/Algeria_Country>,
         <http://example.org/entity/Andorra_Country>,
+        <http://example.org/entity/Anne_M_Smets_person>,
         <http://example.org/entity/Armand_Trousseau_Hospital_Institution>,
+        <http://example.org/entity/Arnauld_C_Verschuur_person>,
         <http://example.org/entity/Austria_Country>,
         <http://example.org/entity/Azienda_Ospedaliera_Institution>,
+        <http://example.org/entity/Beatriz_de_Camargo_person>,
         <http://example.org/entity/Belarus_Country>,
         <http://example.org/entity/Belgium_Country>,
-        <http://example.org/entity/Bilateral_Disease_Stage_V_Condition>,
+        <http://example.org/entity/Bellani_F_F_author>,
+        <http://example.org/entity/Bilateral_nephron_sparing_surgery_NSS_Treatment>,
+        <http://example.org/entity/Biocenter_of_the_University_of_Wuerzburg_Institution>,
+        <http://example.org/entity/Bone_Marrow_Transplant_publication_venue>,
         <http://example.org/entity/Bosnia_and_Herzegovina_Country>,
+        <http://example.org/entity/Breslow_N_E_author>,
         <http://example.org/entity/Bulgaria_Country>,
-        <http://example.org/entity/CCSK_Cancer_Type>,
-        <http://example.org/entity/CDCV_Treatment>,
-        <http://example.org/entity/CMN_Cancer_Type>,
-        <http://example.org/entity/COGNWTS_trials_Study>,
-        <http://example.org/entity/COG_AREN0533_Clinical_Trial>,
-        <http://example.org/entity/COG_National_Wilms_Tumor_Study_Group_NWTS_4_and_NWTS_5_Study>,
+        <http://example.org/entity/CCSK_condition>,
+        <http://example.org/entity/CDCV_Treatment_Regimen>,
+        <http://example.org/entity/COGNWTS_trials_study>,
+        <http://example.org/entity/COG_Acronym>,
+        <http://example.org/entity/COG_National_Wilms_Tumor_Study_Group_NWTS_organization>,
         <http://example.org/entity/COG_Organization>,
-        <http://example.org/entity/CT_Only_Nodules_Medical_Condition>,
-        <http://example.org/entity/Carboplatin_Medication>,
-        <http://example.org/entity/Childrens_Oncology_Group_AREN0321_Study_Study>,
-        <http://example.org/entity/Childrens_Oncology_Group_COG_Organization>,
+        <http://example.org/entity/CONSENSUS_STATEMENT_document>,
+        <http://example.org/entity/CT_Only_Nodules_clinical_finding>,
+        <http://example.org/entity/Carboplatin_treatment>,
+        <http://example.org/entity/Childrens_Oncology_Group_AREN0321_study_study>,
         <http://example.org/entity/Childrens_Oncology_Group_Organization>,
-        <http://example.org/entity/Childrens_Oncology_Group_study_AREN0533_Study>,
+        <http://example.org/entity/Childrens_Oncology_Group_study_AREN0533_study>,
+        <http://example.org/entity/Christian_R%C3%BCbe_person>,
+        <http://example.org/entity/Christophe_Bergeron_person>,
         <http://example.org/entity/Croatia_Country>,
-        <http://example.org/entity/Cyclophosphamide_Medication>,
+        <http://example.org/entity/Cyclophosphamide_treatment>,
         <http://example.org/entity/Czech_Republic_Country>,
-        <http://example.org/entity/Davila_Fajardo_Person>,
+        <http://example.org/entity/DAngio_G_J_author>,
+        <http://example.org/entity/Davila_Fajardo_author>,
+        <http://example.org/entity/Daw_N_C_author>,
         <http://example.org/entity/Denmark_Country>,
-        <http://example.org/entity/Department_of_Paediatric_Oncology_organization>,
-        <http://example.org/entity/Doxorubicin_Medication>,
-        <http://example.org/entity/EFS_Probability_Metric>,
+        <http://example.org/entity/Denys_Drash_Syndrome>,
+        <http://example.org/entity/Department_of_Paediatric_Oncology_Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_institution>,
+        <http://example.org/entity/Dix_D_B_author>,
+        <http://example.org/entity/Dome_J_S_author>,
+        <http://example.org/entity/Doxorubicin_treatment>,
         <http://example.org/entity/End_stage_renal_disease_ESRD_Condition>,
         <http://example.org/entity/Estonia_Country>,
-        <http://example.org/entity/Etoposide_Medication>,
-        <http://example.org/entity/Event_Free_Survival_EFS_Statistic_Topic>,
-        <http://example.org/entity/Event_Free_Survival_EFS_at_60_months_Metric>,
-        <http://example.org/entity/ExPOrNet_Project>,
+        <http://example.org/entity/Etoposide_treatment>,
+        <http://example.org/entity/Event_Free_Survival_EFS_metric>,
+        <http://example.org/entity/ExPOrNet_Network>,
         <http://example.org/entity/Faculty_of_Medicine_Gdansk_Institution>,
-        <http://example.org/entity/Figure_3_Data_Visualization>,
+        <http://example.org/entity/Figure_1_figure>,
+        <http://example.org/entity/Figure_2_figure>,
+        <http://example.org/entity/Filippo_Spreafico_person>,
         <http://example.org/entity/Finland_Country>,
         <http://example.org/entity/Fondazione_IRCCS_Istituto_Nazionale_dei_Tumori_Institution>,
+        <http://example.org/entity/Four_drug_regimen_Treatment_Regimen>,
         <http://example.org/entity/France_Country>,
-        <http://example.org/entity/GPOH_nephroblastoma_Study_Study>,
+        <http://example.org/entity/Furtwangler_R_author>,
+        <http://example.org/entity/Geert_O_Janssens_person>,
+        <http://example.org/entity/Gema_L_Ram%C3%ADrez_Villar_person>,
         <http://example.org/entity/Germany_Country>,
+        <http://example.org/entity/Gordan_M_Vujanic_person>,
+        <http://example.org/entity/Graf_N_author>,
         <http://example.org/entity/Great_Ormond_Street_Hospital_Institution>,
+        <http://example.org/entity/Great_Ormond_Street_Institute_of_Child_Health_Institution>,
         <http://example.org/entity/Greece_Country>,
-        <http://example.org/entity/Group_AA_Patient_Group>,
-        <http://example.org/entity/Group_BB_Patient_Group>,
-        <http://example.org/entity/Group_CC_Patient_Group>,
-        <http://example.org/entity/HR_1_Treatment_regimen>,
-        <http://example.org/entity/HR_Statistic>,
-        <http://example.org/entity/Hospital_Universitario_Virgen_del_Rocio_Institution>,
+        <http://example.org/entity/Green_D_M_author>,
+        <http://example.org/entity/Grundy_P_E_author>,
+        <http://example.org/entity/Guidelines_for_Standardized_Diagnostics_Integrated_Research_and_Standard_Therapy_document>,
+        <http://example.org/entity/HR_1_treatment>,
+        <http://example.org/entity/Ha_T_C_author>,
+        <http://example.org/entity/Harm_van_Tinteren_person>,
+        <http://example.org/entity/Hazard_Ratio_HR_statistic>,
+        <http://example.org/entity/Heidi_Segers_person>,
+        <http://example.org/entity/Hospital_Universitario_Virgen_del_Roc%C3%ADo_Institution>,
         <http://example.org/entity/Hospital_Vall_dHebron_Institution>,
         <http://example.org/entity/Hungary_Country>,
+        <http://example.org/entity/INCA_Acronym>,
         <http://example.org/entity/Iceland_Country>,
-        <http://example.org/entity/Infant_Wilms_Tumours_Condition>,
+        <http://example.org/entity/Infant_Wilms_Tumors_condition>,
         <http://example.org/entity/Innovative_Therapies_for_Children_with_Cancer_consortium_Organization>,
-        <http://example.org/entity/International_Society_of_Paediatric_Oncology_organization>,
+        <http://example.org/entity/Institut_dH%C3%A9matologie_et_dOncologie_P%C3%A9diatrique_Institution>,
+        <http://example.org/entity/Instituto_Nacional_de_Cancer_Institution>,
         <http://example.org/entity/Ireland_Country>,
         <http://example.org/entity/Italy_Country>,
+        <http://example.org/entity/Ivo_Leuschner_person>,
+        <http://example.org/entity/Jan_Godzinski_person>,
+        <http://example.org/entity/Janna_A_Hol_person>,
+        <http://example.org/entity/Jesper_Brok_person>,
+        <http://example.org/entity/Kaplan_Meier_curves_analysis_method>,
+        <http://example.org/entity/Kathy_Pritchard_Jones_person>,
+        <http://example.org/entity/Kremens_B_author>,
         <http://example.org/entity/LInstitut_dH%C3%A9matologie_et_dOncologie_P%C3%A9diatrique_de_Lyon_Institution>,
+        <http://example.org/entity/La_Timone_Childrens_Hospital_Institution>,
         <http://example.org/entity/Latvia_Country>,
         <http://example.org/entity/Liechtenstein_Country>,
         <http://example.org/entity/Lithuania_Country>,
-        <http://example.org/entity/LogRank_P_Statistic>,
+        <http://example.org/entity/LogRank_P_statistic>,
         <http://example.org/entity/Luxembourg_Country>,
-        <http://example.org/entity/MRTK_Cancer_Type>,
+        <http://example.org/entity/MMvdH_E_person>,
+        <http://example.org/entity/MRTK_condition>,
         <http://example.org/entity/Macedonia_Country>,
-        <http://example.org/entity/Macmillan_Publishers_Limited_Organization>,
-        <http://example.org/entity/Macmillan_Publishers_Limited_organization>,
+        <http://example.org/entity/Macmillan_Publishers_Limited_Publisher>,
+        <http://example.org/entity/Macmillan_Publishers_publisher>,
         <http://example.org/entity/Malta_Country>,
+        <http://example.org/entity/Manfred_Gessler_person>,
         <http://example.org/entity/Marciniak_Hospital_Institution>,
         <http://example.org/entity/Marry_M_van_den_Heuvel_Eibrink_person>,
-        <http://example.org/entity/Metastatic_Disease_Stage_IV_Section>,
+        <http://example.org/entity/Medical_University_Institution>,
+        <http://example.org/entity/Metastatic_Disease_Stage_IV_section>,
+        <http://example.org/entity/Mitchell_C_author>,
         <http://example.org/entity/Moldova_Country>,
         <http://example.org/entity/Monaco_Country>,
         <http://example.org/entity/Montenegro_Country>,
         <http://example.org/entity/Morocco_Country>,
-        <http://example.org/entity/NATURE_REVIEWS_UROLOGY_journal>,
-        <http://example.org/entity/National_Wilms_Tumor_Studies_Study>,
-        <http://example.org/entity/National_Wilms_Tumor_Study_Group_Organization>,
-        <http://example.org/entity/Nephron_sparing_surgery_NSS_Surgical_Procedure>,
-        <http://example.org/entity/Ninth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_Study>,
+        <http://example.org/entity/NWTS5_relapse_protocol_Protocol>,
+        <http://example.org/entity/National_Wilms_Tumor_Studies_study_series>,
+        <http://example.org/entity/National_Wilms_Tumor_Study_Group_research_group>,
+        <http://example.org/entity/Nephron_sparing_surgery_NSS_surgery>,
+        <http://example.org/entity/Netherlands_Cancer_Institute_Institution>,
+        <http://example.org/entity/Ninth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_study>,
+        <http://example.org/entity/Non_Wilms_Tumour_condition>,
+        <http://example.org/entity/Norbert_Graf_person>,
         <http://example.org/entity/Norway_Country>,
-        <http://example.org/entity/OS_Probability_Metric>,
         <http://example.org/entity/Ospedale_Pediatrico_Bambino_Ges%C3%B9_Institution>,
-        <http://example.org/entity/Overall_Survival_OS_Statistic_Topic>,
-        <http://example.org/entity/Overall_Survival_OS_at_60_months_Metric>,
+        <http://example.org/entity/Overall_Survival_OS_metric>,
+        <http://example.org/entity/Paola_Collini_person>,
         <http://example.org/entity/Poland_Country>,
         <http://example.org/entity/Portugal_Country>,
-        <http://example.org/entity/Preoperative_Treatment_for_Metastatic_Disease_Treatment_Method>,
-        <http://example.org/entity/Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_organization>,
+        <http://example.org/entity/Preoperative_Treatment_treatment_phase>,
+        <http://example.org/entity/Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_Institution>,
         <http://example.org/entity/Prinses_Maxima_Centrum_Institution>,
-        <http://example.org/entity/RCC_Cancer_Type>,
-        <http://example.org/entity/Relapse_Section>,
-        <http://example.org/entity/Relapsed_Wilms_Tumour_Disease>,
-        <http://example.org/entity/Renal_Tumour_Study_Group_organization>,
+        <http://example.org/entity/Pritchard_Jones_K_author>,
+        <http://example.org/entity/Relapse_section>,
+        <http://example.org/entity/Relapsed_Wilms_Tumor_Condition>,
+        <http://example.org/entity/Relapsed_group_CC_Patient_Group>,
+        <http://example.org/entity/Rhoikos_Furtw%C3%A4ngler_person>,
         <http://example.org/entity/Romania_Country>,
         <http://example.org/entity/Russia_Country>,
-        <http://example.org/entity/SIOP2001_Randomized_Controlled_Trial_Clinical_Trial>,
         <http://example.org/entity/SIOP2001_Study>,
-        <http://example.org/entity/SIOP2001_Study_Protocol>,
-        <http://example.org/entity/SIOP2001_Trial>,
         <http://example.org/entity/SIOP2001_protocol>,
-        <http://example.org/entity/SIOP2001_randomized_trial_Clinical_Trial>,
-        <http://example.org/entity/SIOP2001_study_Research_Study>,
-        <http://example.org/entity/SIOP9301_Trial>,
+        <http://example.org/entity/SIOP2001_protocol_protocol>,
+        <http://example.org/entity/SIOP2001_study>,
+        <http://example.org/entity/SIOP2001_study_Study>,
+        <http://example.org/entity/SIOP2001_study_protocol>,
+        <http://example.org/entity/SIOP9301_protocol>,
+        <http://example.org/entity/SIOPGPOH_studies_study_series>,
         <http://example.org/entity/SIOPRTSG_Organization>,
-        <http://example.org/entity/SIOPRTSG_Research_Group>,
-        <http://example.org/entity/SIOPRTSG_abbreviation>,
-        <http://example.org/entity/SIOPRTSG_panel_Organization>,
-        <http://example.org/entity/SIOP_2001GPOH_Study>,
-        <http://example.org/entity/SIOP_2001_Study_Study>,
-        <http://example.org/entity/SIOP_9301_Trial_Trial>,
-        <http://example.org/entity/SIOP_93_01_Study>,
-        <http://example.org/entity/SIOP_9GPOH_Study>,
-        <http://example.org/entity/SIOP_Database_Database>,
-        <http://example.org/entity/SIOP_RTSG_Organization>,
-        <http://example.org/entity/SIOP_Renal_Tumour_Study_Group_Organization>,
-        <http://example.org/entity/SIOP_Renal_Tumour_Study_Group_SIOP_RTSG_Organization>,
-        <http://example.org/entity/SIOP_Trial_and_Study_9301_Study>,
+        <http://example.org/entity/SIOPRTSG_organization>,
+        <http://example.org/entity/SIOPRTSG_panel_organization>,
+        <http://example.org/entity/SIOPRTSG_website_website>,
+        <http://example.org/entity/SIOP_2001_study>,
+        <http://example.org/entity/SIOP_9301_trial_trial_study>,
+        <http://example.org/entity/SIOP_93_01_experience>,
+        <http://example.org/entity/SIOP_9GPOH_trial_study>,
+        <http://example.org/entity/SIOP_Organization>,
+        <http://example.org/entity/SIOP_WT_2001_protocol_protocol>,
+        <http://example.org/entity/SIOP_trial_and_study_9301_trial_study>,
+        <http://example.org/entity/Saarland_University_Institution>,
         <http://example.org/entity/San_Marino_Country>,
-        <http://example.org/entity/Second_National_Wilms_Tumor_Study_Study>,
+        <http://example.org/entity/Second_National_Wilms_Tumor_Study_study>,
         <http://example.org/entity/Serbia_Country>,
-        <http://example.org/entity/Sixth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_Study>,
+        <http://example.org/entity/Sixth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_study>,
         <http://example.org/entity/Slovakia_Country>,
         <http://example.org/entity/Slovenia_Country>,
+        <http://example.org/entity/Smets_A_M_author>,
         <http://example.org/entity/Spain_Country>,
-        <http://example.org/entity/Springer_Nature_Organization>,
-        <http://example.org/entity/Springer_Nature_organization>,
+        <http://example.org/entity/Spreafico_F_author>,
+        <http://example.org/entity/Springer_Nature_Publisher>,
         <http://example.org/entity/St_Anna_KinderspitalCCRI_Institution>,
-        <http://example.org/entity/Stage_III_Stage>,
-        <http://example.org/entity/Stage_II_Stage>,
-        <http://example.org/entity/Stage_IV_Stage>,
-        <http://example.org/entity/Stage_I_Stage>,
-        <http://example.org/entity/Stage_V_Stage>,
+        <http://example.org/entity/Stage_IIII_category>,
+        <http://example.org/entity/Stage_IV_WT_Cancer_Stage>,
+        <http://example.org/entity/Stage_IV_category>,
+        <http://example.org/entity/Stage_V_category>,
         <http://example.org/entity/Sweden_Country>,
         <http://example.org/entity/Switzerland_Country>,
-        <http://example.org/entity/Synchronous_bilateral_Wilms_tumour_Disease>,
-        <http://example.org/entity/Table_3_Reference>,
-        <http://example.org/entity/Therapeutic_Recommendations_Section>,
-        <http://example.org/entity/Third_National_Wilms_Tumor_Study_Study>,
+        <http://example.org/entity/Synchronous_bilateral_Wilms_tumor_Condition>,
+        <http://example.org/entity/The_Renal_Tumour_Study_Group_of_the_International_Society_of_Paediatric_Oncology_SIOPRTSG_organization>,
+        <http://example.org/entity/Therapeutic_Recommendations_section>,
+        <http://example.org/entity/Third_National_Wilms_Tumor_Study_study>,
+        <http://example.org/entity/Tournade_M_F_author>,
         <http://example.org/entity/Tunisia_Country>,
         <http://example.org/entity/Turkey_Country>,
-        <http://example.org/entity/UKW3_Trial_Trial>,
-        <http://example.org/entity/UKW3_trial_Clinical_Trial>,
-        <http://example.org/entity/UK_Childrens_Cancer_Study_Group_Organization>,
-        <http://example.org/entity/UK_Childrens_Cancer_and_Leukaemia_Group_UKCCLG_Organization>,
-        <http://example.org/entity/UMBBRELLA_protocol_Treatment_Protocol>,
-        <http://example.org/entity/UMBRELLA_Protocol_Treatment_Protocol>,
+        <http://example.org/entity/UKCCLG_Acronym>,
+        <http://example.org/entity/UKW3_Trial>,
+        <http://example.org/entity/UKW3_trial>,
+        <http://example.org/entity/UKW3_trial_trial_study>,
+        <http://example.org/entity/UKWR_protocol_Protocol>,
+        <http://example.org/entity/UK_Childrens_Cancer_and_Leukaemia_Group_Organization>,
+        <http://example.org/entity/UMBRELLA_Protocol_Protocol>,
         <http://example.org/entity/UMBRELLA_SIOP_RTSG_2016_protocol>,
-        <http://example.org/entity/UMBRELLA_protocol_Guideline>,
-        <http://example.org/entity/UMBRELLA_protocol_Project>,
         <http://example.org/entity/UMBRELLA_protocol_Protocol>,
-        <http://example.org/entity/UMBRELLA_protocol_Treatment_Protocol>,
+        <http://example.org/entity/UMBRELLA_protocol_protocol>,
+        <http://example.org/entity/UMBRELLA_protocol_study_protocol>,
         <http://example.org/entity/Ukraine_Country>,
         <http://example.org/entity/United_Kingdom_Country>,
         <http://example.org/entity/University_Hospital_Homburg_Institution>,
+        <http://example.org/entity/University_Hospital_Leuven_Institution>,
+        <http://example.org/entity/University_Hospital_of_Kiel_Institution>,
         <http://example.org/entity/University_Hospital_of_Munich_Institution>,
-        <http://example.org/entity/University_Hospital_of_Tuebingen_Institution>,
-        <http://example.org/entity/Vincristine_Medication>,
-        <http://example.org/entity/Wilms_tumour_Condition>,
-        <http://example.org/entity/Wilms_tumour_Disease>,
-        <http://example.org/entity/Wilms_tumours_Condition>,
+        <http://example.org/entity/University_Hospital_of_T%C3%BCbingen_Institution>,
+        <http://example.org/entity/University_Hospital_of_Wales_Institution>,
+        <http://example.org/entity/University_Hospital_of_the_Saarland_Institution>,
+        <http://example.org/entity/University_Medical_Center_Utrecht_Institution>,
+        <http://example.org/entity/VP16_Chemotherapy_Agent>,
+        <http://example.org/entity/Verschuur_A_author>,
+        <http://example.org/entity/Vincristine_treatment>,
+        <http://example.org/entity/WT1_mutations_Genetic_Aberration>,
+        <http://example.org/entity/Warmann_S_W_author>,
+        <http://example.org/entity/Weirich_A_author>,
+        <http://example.org/entity/Wilms_Tumour_condition>,
+        <http://example.org/entity/Wilms_Tumours_Disease>,
+        <http://example.org/entity/Wilms_tumor_aniridia_genitourinary_anomalies_and_retardation_WAGR_Syndrome>,
+        <http://example.org/entity/Wilms_tumours_condition>,
         <http://example.org/entity/Wilms_tumours_medical_condition>,
+        <http://example.org/entity/actinomycin_D_Chemotherapy_Agent>,
         <http://example.org/entity/actinomycin_D_Drug>,
-        <http://example.org/entity/actinomycin_D_Medication>,
+        <http://example.org/entity/actinomycin_D_drug>,
+        <http://example.org/entity/adult_protocols_guideline>,
+        <http://example.org/entity/anaplasia_pathological_feature>,
+        <http://example.org/entity/and_autologous_stem_cell_rescue_ASCR_Treatment>,
         <http://example.org/entity/arnauldverschuurap_hmfr_Contact>,
-        <http://example.org/entity/blastemal_type_Wilms_tumour_Condition>,
-        <http://example.org/entity/blastemal_type_Wilms_tumours_Condition_Subtype>,
-        <http://example.org/entity/blastemal_type_tumors_Condition>,
-        <http://example.org/entity/camptothecins_Medication>,
+        <http://example.org/entity/bilateral_Wilms_tumors_condition>,
+        <http://example.org/entity/blastemal_type_Wilms_tumours_Disease_Subtype>,
+        <http://example.org/entity/camptothecins_Chemotherapy_Class>,
+        <http://example.org/entity/carboplatin_Chemotherapy_Agent>,
         <http://example.org/entity/carboplatin_Drug>,
-        <http://example.org/entity/carboplatin_Medication>,
-        <http://example.org/entity/chemotherapy_Treatment>,
-        <http://example.org/entity/chemotherapy_Treatment_Method>,
-        <http://example.org/entity/chest_CT_Diagnostic_Tool>,
+        <http://example.org/entity/carboplatin_drug>,
+        <http://example.org/entity/chemotherapy_treatment>,
         <http://example.org/entity/childhood_renal_tumours_medical_condition>,
+        <http://example.org/entity/clear_cell_sarcoma_of_the_kidney_medical_condition>,
+        <http://example.org/entity/complete_response_outcome>,
+        <http://example.org/entity/congenital_mesoblastic_nephroma_condition>,
+        <http://example.org/entity/congenital_mesoblastic_nephroma_medical_condition>,
+        <http://example.org/entity/cyclophosphamide_Chemotherapy_Agent>,
         <http://example.org/entity/cyclophosphamide_Drug>,
-        <http://example.org/entity/cyclophosphamide_Medication>,
-        <http://example.org/entity/diffuse_anaplasia_Condition>,
+        <http://example.org/entity/cyclophosphamide_drug>,
+        <http://example.org/entity/de_Kraker_J_author>,
+        <http://example.org/entity/doxorubicin_Chemotherapy_Agent>,
         <http://example.org/entity/doxorubicin_Drug>,
-        <http://example.org/entity/doxorubicin_Medication>,
+        <http://example.org/entity/doxorubicin_drug>,
+        <http://example.org/entity/enucleation_surgery>,
+        <http://example.org/entity/etoposide_Chemotherapy_Agent>,
         <http://example.org/entity/etoposide_Drug>,
-        <http://example.org/entity/etoposide_Medication>,
-        <http://example.org/entity/flank_radiotherapy_Treatment_method>,
+        <http://example.org/entity/etoposide_and_carboplatin_Chemotherapy>,
+        <http://example.org/entity/etoposide_drug>,
+        <http://example.org/entity/four_drug_regimen_treatment>,
+        <http://example.org/entity/group_AA_Group_Classification>,
+        <http://example.org/entity/group_BB_Group_Classification>,
+        <http://example.org/entity/group_BB_protocol_Protocol>,
+        <http://example.org/entity/group_CC_Group_Classification>,
         <http://example.org/entity/high_dose_chemotherapy_Treatment>,
-        <http://example.org/entity/ifosfamide_Medication>,
-        <http://example.org/entity/irinotecan_Medication>,
-        <http://example.org/entity/laparoscopic_surgery_Treatment>,
-        <http://example.org/entity/large_volume_tumours_Condition>,
-        <http://example.org/entity/locoregional_disease_Condition>,
-        <http://example.org/entity/metastatic_disease_Condition>,
-        <http://example.org/entity/minimally_invasive_surgery_Treatment>,
-        <http://example.org/entity/n_Sample_Size>,
-        <http://example.org/entity/nephrectomy_Surgical_Procedure>,
-        <http://example.org/entity/nephron_sparing_surgery_NSS_Treatment>,
-        <http://example.org/entity/nephrotoxicity_Condition>,
-        <http://example.org/entity/non_Wilms_tumours_medical_condition>,
-        <http://example.org/entity/proton_therapy_Treatment>,
-        <http://example.org/entity/pulmonary_metastases_Condition>,
-        <http://example.org/entity/pulmonary_radiotherapy_Treatment>,
-        <http://example.org/entity/radiotherapy_Treatment>,
+        <http://example.org/entity/high_dose_melphalan_Drug>,
+        <http://example.org/entity/high_risk_risk_category>,
+        <http://example.org/entity/histological_subtype_classification>,
+        <http://example.org/entity/ifosfamide_Chemotherapy_Agent>,
+        <http://example.org/entity/ifosfamide_Drug>,
+        <http://example.org/entity/induction_chemotherapy_treatment>,
+        <http://example.org/entity/intermediate_risk_risk_category>,
+        <http://example.org/entity/irinotecan_Chemotherapy_Agent>,
+        <http://example.org/entity/laparoscopic_surgery_treatment>,
+        <http://example.org/entity/locoregional_disease_treatment_category>,
+        <http://example.org/entity/low_risk_risk_category>,
+        <http://example.org/entity/malignant_rhabdoid_tumors_condition>,
+        <http://example.org/entity/malignant_rhabdoid_tumour_of_the_kidney_medical_condition>,
+        <http://example.org/entity/metastatic_disease_treatment_category>,
+        <http://example.org/entity/minimally_invasive_surgery_treatment>,
+        <http://example.org/entity/national_Wilms_tumor_studies_4_and_5_study_series>,
+        <http://example.org/entity/nephrectomy_surgery>,
+        <http://example.org/entity/nephron_sparing_surgery_NSS_treatment>,
+        <http://example.org/entity/paediatric_protocols_guideline>,
+        <http://example.org/entity/partial_nephrectomy_surgery>,
+        <http://example.org/entity/proton_therapy_treatment>,
+        <http://example.org/entity/pulmonary_metastases_condition>,
         <http://example.org/entity/radiotherapy_Treatment_Method>,
-        <http://example.org/entity/small_volume_tumours_Condition>,
-        <http://example.org/entity/surgery_Treatment>,
-        <http://example.org/entity/surgery_Treatment_Method>,
-        <http://example.org/entity/topotecan_Medication>,
+        <http://example.org/entity/radiotherapy_treatment>,
+        <http://example.org/entity/renal_cell_carcinoma_condition>,
+        <http://example.org/entity/renal_cell_carcinoma_medical_condition>,
+        <http://example.org/entity/risk_group_classification>,
+        <http://example.org/entity/surgery_treatment>,
+        <http://example.org/entity/surgical_excision_Treatment_Method>,
+        <http://example.org/entity/topotecan_Chemotherapy_Agent>,
+        <http://example.org/entity/treatment_efficacy_Outcome>,
+        <http://example.org/entity/tumor_volume_Medical_Measurement>,
+        <http://example.org/entity/van_den_Heuvel_Eibrink_M_M_author>,
+        <http://example.org/entity/vincristine_Chemotherapy_Agent>,
         <http://example.org/entity/vincristine_Drug>,
-        <http://example.org/entity/vincristine_Medication>,
-        <http://example.org/entity/vincristine_and_actinomycin_D_plus_five_doses_of_doxorubicin_Treatment_regimen>,
-        <http://example.org/entity/vincristine_and_actinomycin_D_without_doxorubicin_Treatment_regimen>,
-        <http://example.org/entity/whole_abdominal_radiotherapy_Treatment>,
-        <http://example.org/entity/whole_lung_irradiation_Treatment>,
+        <http://example.org/entity/vincristine_and_actinomycin_D_Chemotherapy>,
+        <http://example.org/entity/vincristine_and_actinomycin_D_plus_doxorubicin_treatment>,
+        <http://example.org/entity/vincristine_and_actinomycin_D_treatment>,
+        <http://example.org/entity/vincristine_drug>,
+        <http://example.org/entity/whole_lung_irradiation_treatment>,
         <http://example.org/entity/wwwsiop_rtsgeu_website> .
 
-<http://example.org/entity/60_month_EFS_entity> ns2:Associated_with <http://example.org/entity/500_ml_entity> .
+<http://example.org/entity/60_month_Event_Free_Survival_EFS_entity> ns2:has_group <http://example.org/entity/500_ml_entity> .
 
-<http://example.org/entity/60_month_OS_entity> ns2:Associated_with <http://example.org/entity/500_ml_entity> .
+<http://example.org/entity/60_month_Overall_Survival_OS_entity> ns2:has_group <http://example.org/entity/500_ml_entity> .
 
-<http://example.org/entity/AVD150_entity> ns2:treats <http://example.org/entity/Wilms_tumour_entity> .
+<http://example.org/entity/AREN0533_trial_entity> ns2:suggests_dose <http://example.org/entity/150_mgm%C2%B2_doxorubicin_entity> .
 
-<http://example.org/entity/AVD250_entity> ns2:treats <http://example.org/entity/Wilms_tumour_entity> .
+<http://example.org/entity/AVD150_entity> ns2:comprises <http://example.org/entity/actinomycin_D_vincristine_and_doxorubicin_entity> .
 
-<http://example.org/entity/AVD_500_ml_entity> ns2:belongs_to <http://example.org/entity/Event_Free_Survival_EFS_at_60_months_entity>,
-        <http://example.org/entity/Overall_Survival_OS_at_60_months_entity> .
+<http://example.org/entity/AVD250_entity> ns2:comprises <http://example.org/entity/actinomycin_D_vincristine_and_doxorubicin_entity> .
 
-<http://example.org/entity/AV_2_500_ml_entity> ns2:belongs_to <http://example.org/entity/Event_Free_Survival_EFS_at_60_months_entity>,
-        <http://example.org/entity/Overall_Survival_OS_at_60_months_entity> .
+<http://example.org/entity/Actinomycin_D_entity> ns2:treats <http://example.org/entity/Wilms_Tumour_entity> .
 
-<http://example.org/entity/CDCV_entity> ns2:treats <http://example.org/entity/Wilms_tumour_entity> .
+<http://example.org/entity/Adolescent_Wilms_Tumors_entity> ns2:postoperative_treatment <http://example.org/entity/actinomycin_D_entity> .
 
-<http://example.org/entity/COG_entity> ns2:to_collaborate_with <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/Adult_Wilms_Tumors_entity> ns2:diagnosed_after <http://example.org/entity/nephrectomy_entity> .
 
-<http://example.org/entity/CT_Only_Nodules_entity> ns2:Included_in <http://example.org/entity/UMBRELLA_Protocol_entity> .
+<http://example.org/entity/Armand_Trousseau_Hospital_entity> ns2:located_in <http://example.org/entity/France_entity> .
 
-<http://example.org/entity/Davila_Fajardo_entity> ns2:conducted <http://example.org/entity/SIOP2001_analysis_2017_entity> .
+<http://example.org/entity/Azienda_Ospedaliera_entity> ns2:located_in <http://example.org/entity/Italy_entity> .
 
-<http://example.org/entity/End_stage_renal_disease_ESRD_entity> ns2:related_condition <http://example.org/entity/Bilateral_Disease_Stage_V_entity> .
+<http://example.org/entity/Bilateral_nephron_sparing_surgery_NSS_entity> ns2:reduces_risk_of <http://example.org/entity/End_stage_renal_disease_ESRD_entity> .
 
-<http://example.org/entity/ExPOrNet_entity> ns2:operates_in <http://example.org/entity/Europe_entity> .
+<http://example.org/entity/Bone_Marrow_Transplant_entity> ns2:research_published_in <http://example.org/entity/Kremens_B_entity> .
 
-<http://example.org/entity/HR_1_entity> ns2:contains <http://example.org/entity/actinomycin_D_entity>,
-        <http://example.org/entity/carboplatin_entity>,
-        <http://example.org/entity/cyclophosphamide_entity>,
-        <http://example.org/entity/doxorubicin_entity>,
-        <http://example.org/entity/etoposide_entity> .
+<http://example.org/entity/CDCV_entity> ns2:comprises <http://example.org/entity/cyclophosphamide_doxorubicin_carboplatin_and_VP16_entity> .
+
+<http://example.org/entity/CONSENSUS_STATEMENT_entity> ns2:published_by <http://example.org/entity/Macmillan_Publishers_entity> .
+
+<http://example.org/entity/CT_Only_Nodules_entity> ns2:causes <http://example.org/entity/increased_relapse_risk_entity>,
+        <http://example.org/entity/reduced_survival_entity> ;
+    ns2:included_in <http://example.org/entity/UMBRELLA_protocol_entity> .
+
+<http://example.org/entity/Carboplatin_entity> ns2:component_of <http://example.org/entity/HR_1_entity> .
+
+<http://example.org/entity/Childrens_Oncology_Group_AREN0321_study_entity> ns2:study_performed_by <http://example.org/entity/Daw_N_C_entity> .
+
+<http://example.org/entity/Childrens_Oncology_Group_study_AREN0533_entity> ns2:report_contributed_by <http://example.org/entity/Dix_D_B_entity> .
+
+<http://example.org/entity/Cyclophosphamide_entity> ns2:component_of <http://example.org/entity/HR_1_entity> .
+
+<http://example.org/entity/Davila_Fajardo_entity> ns2:analysed <http://example.org/entity/SIOP2001_entity> .
+
+<http://example.org/entity/Denys_Drash_entity> ns2:increased_risk_of <http://example.org/entity/End_stage_renal_disease_ESRD_entity> .
+
+<http://example.org/entity/Doxorubicin_entity> ns2:component_of <http://example.org/entity/HR_1_entity> ;
+    ns2:optionally_treats <http://example.org/entity/Wilms_Tumour_entity> .
+
+<http://example.org/entity/Etoposide_entity> ns2:component_of <http://example.org/entity/HR_1_entity> .
+
+<http://example.org/entity/ExPOrNet_entity> ns2:aims_to_enhance_collaboration_in <http://example.org/entity/Europe_entity> .
+
+<http://example.org/entity/Faculty_of_Medicine_Gdansk_entity> ns2:located_in <http://example.org/entity/Poland_entity> .
+
+<http://example.org/entity/Figure_2_entity> ns2:utilizes <http://example.org/entity/Kaplan_Meier_curves_entity> .
+
+<http://example.org/entity/Fondazione_IRCCS_Istituto_Nazionale_dei_Tumori_entity> ns2:located_in <http://example.org/entity/Italy_entity> .
+
+<http://example.org/entity/Great_Ormond_Street_Hospital_entity> ns2:located_in <http://example.org/entity/United_Kingdom_entity> .
+
+<http://example.org/entity/Hospital_Universitario_Virgen_del_Roc%C3%ADo_entity> ns2:located_in <http://example.org/entity/Spain_entity> .
+
+<http://example.org/entity/Hospital_Vall_dHebron_entity> ns2:located_in <http://example.org/entity/Spain_entity> .
+
+<http://example.org/entity/Infant_Wilms_Tumors_entity> ns2:considered_for <http://example.org/entity/primary_surgery_entity> .
+
+<http://example.org/entity/LInstitut_dH%C3%A9matologie_et_dOncologie_P%C3%A9diatrique_de_Lyon_entity> ns2:located_in <http://example.org/entity/France_entity> .
+
+<http://example.org/entity/MMvdH_E_entity> ns2:correspondent_for <http://example.org/entity/UMBRELLA_SIOP_RTSG_2016_entity> .
 
 <http://example.org/entity/Macmillan_Publishers_Limited_entity> ns2:part_of <http://example.org/entity/Springer_Nature_entity> .
 
-<http://example.org/entity/Marry_M_van_den_Heuvel_Eibrink_entity> ns2:affiliated_with <http://example.org/entity/Department_of_Paediatric_Oncology_entity>,
-        <http://example.org/entity/Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_entity> .
+<http://example.org/entity/Marciniak_Hospital_entity> ns2:located_in <http://example.org/entity/Poland_entity> .
 
-<http://example.org/entity/Preoperative_Treatment_for_Metastatic_Disease_entity> ns2:Includes <http://example.org/entity/Actinomycin_D_entity>,
-        <http://example.org/entity/Doxorubicin_entity>,
-        <http://example.org/entity/Vincristine_entity> ;
-    ns2:Similar_to <http://example.org/entity/SIOP2001_entity> .
+<http://example.org/entity/Marry_M_van_den_Heuvel_Eibrink_entity> ns2:affiliated_with <http://example.org/entity/Department_of_Paediatric_Oncology_Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_entity> .
 
-<http://example.org/entity/Radiotherapy_Guidelines_in_UMBRELLA_entity> ns2:provides_for <http://example.org/entity/locoregional_disease_entity>,
-        <http://example.org/entity/metastatic_disease_entity> .
+<http://example.org/entity/National_Wilms_Tumor_Studies_entity> ns2:contribution_by <http://example.org/entity/Breslow_N_E_entity> .
 
-<http://example.org/entity/Renal_Tumour_Study_Group_entity> ns2:part_of <http://example.org/entity/International_Society_of_Paediatric_Oncology_entity> .
+<http://example.org/entity/Nephron_sparing_surgery_NSS_entity> ns2:acceptable_for <http://example.org/entity/unilateral_Wilms_tumors_entity> .
 
-<http://example.org/entity/SFOP2001_Randomized_Controlled_Trial_entity> ns2:Evaluates <http://example.org/entity/EFS_entity>,
-        <http://example.org/entity/OS_entity> .
+<http://example.org/entity/Ninth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_entity> ns2:researched_by <http://example.org/entity/Tournade_M_F_entity> .
 
-<http://example.org/entity/SIOP2001_randomized_trial_entity> ns2:investigates_omission_of <http://example.org/entity/doxorubicin_entity> .
+<http://example.org/entity/Ospedale_Pediatrico_Bambino_Ges%C3%B9_entity> ns2:located_in <http://example.org/entity/Italy_entity> .
 
-<http://example.org/entity/SIOP2001_study_entity> ns2:source_of_information_for <http://example.org/entity/Bilateral_Disease_Stage_V_entity> .
+<http://example.org/entity/Preoperative_Treatment_entity> ns2:includes <http://example.org/entity/vincristine_and_actinomycin_D_plus_doxorubicin_entity> ;
+    ns2:part_of <http://example.org/entity/UMBRELLA_protocol_entity> ;
+    ns2:similar_to <http://example.org/entity/SIOP2001_entity> .
 
-<http://example.org/entity/SIOPRTSG_entity> ns2:addresses_inequalities_in <http://example.org/entity/childhood_cancer_survival_entity> ;
-    ns2:designs <http://example.org/entity/UMBRELLA_protocol_entity> ;
-    ns2:endorses <http://example.org/entity/Innovative_Therapies_for_Children_with_Cancer_consortium_entity> ;
-    ns2:endorses_as_standard <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/Prinses_Maxima_Centrum_entity> ns2:located_in <http://example.org/entity/Netherlands_entity> .
 
-<http://example.org/entity/SIOPRTSG_panel_entity> ns2:consult_for <http://example.org/entity/previously_irradiated_sites_entity> .
+<http://example.org/entity/SIOPGPOH_studies_entity> ns2:update_shared_by <http://example.org/entity/Furtwangler_R_entity> .
 
-<http://example.org/entity/Stage_III_entity> ns2:treatment_with <http://example.org/entity/AVD_entity>,
-        <http://example.org/entity/flank_radiotherapy_entity> .
+<http://example.org/entity/SIOPRTSG_entity> ns2:collaborated_with <http://example.org/entity/Childrens_Oncology_Group_entity> .
 
-<http://example.org/entity/Stage_II_entity> ns2:treatment_with <http://example.org/entity/AV_entity> .
+<http://example.org/entity/SIOPRTSG_website_entity> ns2:hosts <http://example.org/entity/UMBRELLA_protocol_entity> .
 
-<http://example.org/entity/Synchronous_bilateral_Wilms_tumour_entity> ns2:instance_of <http://example.org/entity/Bilateral_Disease_Stage_V_entity> .
+<http://example.org/entity/SIOP_2001_entity> ns2:study_results_by <http://example.org/entity/Smets_A_M_entity> .
 
-<http://example.org/entity/Table_3_entity> ns2:describes <http://example.org/entity/Nephron_sparing_surgery_NSS_entity> .
+<http://example.org/entity/SIOP_9301_trial_entity> ns2:conducted_by <http://example.org/entity/de_Kraker_J_entity> .
 
-<http://example.org/entity/UKCCLG_entity> ns2:conducts <http://example.org/entity/UKW3_trial_entity> .
+<http://example.org/entity/SIOP_93_01_entity> ns2:experience_shared_by <http://example.org/entity/Verschuur_A_entity> .
 
-<http://example.org/entity/UMBBRELLA_protocol_entity> ns2:treatment_for <http://example.org/entity/Bilateral_Disease_Stage_V_entity>,
-        <http://example.org/entity/Relapsed_Wilms_Tumour_entity> .
+<http://example.org/entity/SIOP_9GPOH_entity> ns2:studied_by <http://example.org/entity/Weirich_A_entity> .
 
-<http://example.org/entity/UMBRELLA_SIOP_RTSG_2016_entity> ns2:succeeds <http://example.org/entity/SIOP2001_entity> .
+<http://example.org/entity/SIOP_WT_2001_protocol_entity> ns2:implemented_by <http://example.org/entity/van_den_Heuvel_Eibrink_M_M_entity> .
 
-<http://example.org/entity/blastemal_type_Wilms_tumours_entity> ns2:evaluated_in <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/SIOP_trial_and_study_9301_entity> ns2:described_by <http://example.org/entity/Graf_N_entity> .
 
-<http://example.org/entity/carboplatin_and_etoposide_entity> ns2:used_in <http://example.org/entity/ASCR_entity> .
+<http://example.org/entity/St_Anna_KinderspitalCCRI_entity> ns2:located_in <http://example.org/entity/Austria_entity> .
 
-<http://example.org/entity/cyclophosphamide_and_etoposide_entity> ns2:used_in <http://example.org/entity/ASCR_entity> .
+<http://example.org/entity/The_Renal_Tumour_Study_Group_of_the_International_Society_of_Paediatric_Oncology_SIOPRTSG_entity> ns2:developed <http://example.org/entity/UMBRELLA_SIOP_RTSG_2016_entity> .
 
-<http://example.org/entity/irinotecan_entity> ns2:is_a <http://example.org/entity/camptothecins_entity> .
+<http://example.org/entity/Third_National_Wilms_Tumor_Study_entity> ns2:results_published_by <http://example.org/entity/DAngio_G_J_entity> .
 
-<http://example.org/entity/laparoscopic_surgery_entity> ns2:addressed_in <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/UKW3_trial_entity> ns2:analyzed_by <http://example.org/entity/Pritchard_Jones_K_entity> .
 
-<http://example.org/entity/large_volume_tumours_entity> ns2:recommendation_for_inclusion_in_treatment <http://example.org/entity/doxorubicin_entity> .
+<http://example.org/entity/UK_Childrens_Cancer_and_Leukaemia_Group_entity> ns2:conducted <http://example.org/entity/UKW3_entity> .
 
-<http://example.org/entity/minimally_invasive_surgery_entity> ns2:addressed_in <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/University_Hospital_Homburg_entity> ns2:located_in <http://example.org/entity/Germany_entity> .
 
-<http://example.org/entity/proton_therapy_entity> ns2:for <http://example.org/entity/flank_irradiation_entity> ;
-    ns2:investigation_for <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/University_Hospital_of_Munich_entity> ns2:located_in <http://example.org/entity/Germany_entity> .
 
-<http://example.org/entity/pulmonary_radiotherapy_entity> ns2:indicated_in <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/University_Hospital_of_T%C3%BCbingen_entity> ns2:located_in <http://example.org/entity/Germany_entity> .
 
-<http://example.org/entity/radiotherapy_entity> ns2:included_in <http://example.org/entity/UMBRELLA_protocol_entity> ;
-    ns2:treats <http://example.org/entity/Wilms_tumours_entity> ;
-    ns2:used_in <http://example.org/entity/SIOP2001_entity> .
+<http://example.org/entity/Vincristine_entity> ns2:treats <http://example.org/entity/Wilms_Tumour_entity> .
 
-<http://example.org/entity/radiotherapy_guidelines_entity> ns2:based_on <http://example.org/entity/COGNWTS_trials_entity> ;
-    ns2:refined_for <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/WHOLE_LUNG_IRRADIATION_entity> ns2:used_for <http://example.org/entity/Wilms_tumours_entity> .
 
-<http://example.org/entity/surgery_entity> ns2:included_in <http://example.org/entity/UMBRELLA_protocol_entity> ;
-    ns2:treats <http://example.org/entity/Wilms_tumours_entity> .
+<http://example.org/entity/WT1_mutations_entity> ns2:associated_with <http://example.org/entity/End_stage_renal_disease_ESRD_entity> .
 
-<http://example.org/entity/topotecan_entity> ns2:is_a <http://example.org/entity/camptothecins_entity> .
+<http://example.org/entity/Wilms_tumor_aniridia_genitourinary_anomalies_and_retardation_WAGR_entity> ns2:increased_risk_of <http://example.org/entity/End_stage_renal_disease_ESRD_entity> .
 
-<http://example.org/entity/vincristine_entity> ns2:used_for <http://example.org/entity/Wilms_tumours_entity> ;
-    ns2:used_in <http://example.org/entity/Infant_Wilms_Tumours_entity> .
+<http://example.org/entity/adult_protocols_entity> ns2:indicates_radiotherapy_for <http://example.org/entity/stage_II_Wilms_tumours_entity> .
 
-<http://example.org/entity/whole_abdominal_radiotherapy_entity> ns2:indicated_in <http://example.org/entity/UMBRELLA_protocol_entity> .
+<http://example.org/entity/anaplasia_entity> ns2:considered_in_adults <http://example.org/entity/high_risk_entity> .
 
-<http://example.org/entity/whole_lung_irradiation_entity> ns2:treatment_for <http://example.org/entity/Wilms_tumours_entity> .
+<http://example.org/entity/anaplastic_tumors_entity> ns2:treated_with <http://example.org/entity/carboplatin_entity> .
 
-<http://example.org/entity/101038nrurol2017163_doi> a ns1:doi ;
-    ns1:name "10.1038/nrurol.2017.163" .
+<http://example.org/entity/arnauldverschuurap_hmfr_entity> ns2:contact_for <http://example.org/entity/Springer_Nature_entity> .
 
-<http://example.org/entity/500_ml_Volume_Category> a ns1:Volume_Category ;
+<http://example.org/entity/bilateral_Wilms_tumors_entity> ns2:discussion_recommended_with <http://example.org/entity/SIOPRTSG_surgical_panel_entity> .
+
+<http://example.org/entity/blastemal_type_Wilms_tumours_entity> ns2:is_subject_of_research_in <http://example.org/entity/UMBRELLA_Protocol_entity> .
+
+<http://example.org/entity/camptothecins_entity> ns2:recommended_for <http://example.org/entity/Relapsed_group_CC_entity> .
+
+<http://example.org/entity/chemotherapy_entity> ns2:follows <http://example.org/entity/surgery_entity> .
+
+<http://example.org/entity/complete_response_entity> ns2:achievable_with <http://example.org/entity/induction_chemotherapy_entity> .
+
+<http://example.org/entity/etoposide_and_carboplatin_entity> ns2:treatment_for <http://example.org/entity/tumor_nonresponsiveness_or_inoperability_entity> .
+
+<http://example.org/entity/group_AA_entity> ns2:treated_with <http://example.org/entity/four_drugs_regimen_entity> .
+
+<http://example.org/entity/group_BB_entity> ns2:treated_with <http://example.org/entity/intensive_reinduction_drug_regimen_entity> .
+
+<http://example.org/entity/ifosfamide_entity> ns2:included_in_alternation_with_cyclophosphamide <http://example.org/entity/group_BB_protocol_entity> .
+
+<http://example.org/entity/intermediate_risk_entity> ns2:requires_specific <http://example.org/entity/radiotherapy_entity> .
+
+<http://example.org/entity/locoregional_disease_entity> ns2:guidelines_for <http://example.org/entity/UMBRELLA_SIOPRTSG_2016_entity> .
+
+<http://example.org/entity/low_risk_entity> ns2:requires_no <http://example.org/entity/radiotherapy_entity> .
+
+<http://example.org/entity/malignant_rhabdoid_tumors_entity> ns2:needs <http://example.org/entity/alternative_chemotherapy_entity> .
+
+<http://example.org/entity/metastatic_disease_entity> ns2:guidelines_for <http://example.org/entity/UMBRELLA_SIOPRTSG_2016_entity> .
+
+<http://example.org/entity/minimally_invasive_surgery_entity> ns2:is_equivalent_to <http://example.org/entity/laparoscopic_surgery_entity> .
+
+<http://example.org/entity/national_Wilms_tumor_studies_4_and_5_entity> ns2:investigated_by <http://example.org/entity/Grundy_P_E_entity> .
+
+<http://example.org/entity/paediatric_protocols_entity> ns2:differs_in_treatment_from_adult_protocols <http://example.org/entity/stage_II_Wilms_tumours_entity> .
+
+<http://example.org/entity/proton_therapy_entity> ns2:potential_treatment_for <http://example.org/entity/flank_irradiation_entity> .
+
+<http://example.org/entity/vincristine_and_actinomycin_D_entity> ns2:used_in <http://example.org/entity/SIOP2001_study_entity> .
+
+<http://example.org/entity/500_ml_group> a ns1:group ;
     ns1:name "500+ ml",
         "<500 ml" .
 
-<http://example.org/entity/60_month_EFS_Statistic> a ns1:Statistic ;
-    ns1:name "60-month EFS" .
+<http://example.org/entity/60_month_time_frame> a ns1:time_frame ;
+    ns1:name "60-month" .
 
-<http://example.org/entity/60_month_OS_Statistic> a ns1:Statistic ;
-    ns1:name "60-month OS" .
+<http://example.org/entity/AREN0533_trial_study> a ns1:study ;
+    ns1:name "AREN0533 trial" .
 
-<http://example.org/entity/ASCR_Procedure> a ns1:Procedure ;
-    ns1:name "ASCR" .
-
-<http://example.org/entity/AVD150_Treatment> a ns1:Treatment ;
+<http://example.org/entity/AVD150_Treatment_Regimen> a ns1:Treatment_Regimen ;
     ns1:name "AVD150" .
 
-<http://example.org/entity/AVD250_Treatment> a ns1:Treatment ;
+<http://example.org/entity/AVD250_Treatment_Regimen> a ns1:Treatment_Regimen ;
     ns1:name "AVD250" .
 
 <http://example.org/entity/AVD_500_ml_Group> a ns1:Group ;
-    ns1:name "AVD. 500+ ml",
-        "AVD. <500 ml" .
-
-<http://example.org/entity/AVD_Treatment_regimen> a ns1:Treatment_regimen ;
-    ns1:name "AVD" .
+    ns1:name "AVD, 500+ ml",
+        "AVD, <500 ml" .
 
 <http://example.org/entity/AV_2_500_ml_Group> a ns1:Group ;
-    ns1:name "AV-2. 500+ ml",
-        "AV-2. <500 ml" .
+    ns1:name "AV-2, 500+ ml",
+        "AV-2, <500 ml" .
 
-<http://example.org/entity/AV_Treatment_regimen> a ns1:Treatment_regimen ;
-    ns1:name "AV" .
+<http://example.org/entity/Academic_Medical_Center_Amsterdam_Institution> a ns1:Institution ;
+    ns1:name "Academic Medical Center Amsterdam" .
 
-<http://example.org/entity/Actinomycin_D_Medication> a ns1:Medication ;
+<http://example.org/entity/Actinomycin_D_treatment> a ns1:treatment ;
     ns1:name "Actinomycin D" .
 
-<http://example.org/entity/Adult_Wilms_Tumours_Condition> a ns1:Condition ;
-    ns1:name "Adult Wilms Tumours" .
+<http://example.org/entity/Adult_Wilms_Tumors_condition> a ns1:condition ;
+    ns1:name "Adult Wilms Tumors" .
+
+<http://example.org/entity/Adults_demographic> a ns1:demographic ;
+    ns1:name "Adults" .
 
 <http://example.org/entity/Albania_Country> a ns1:Country ;
     ns1:name "Albania" .
@@ -398,8 +529,14 @@
 <http://example.org/entity/Andorra_Country> a ns1:Country ;
     ns1:name "Andorra" .
 
+<http://example.org/entity/Anne_M_Smets_person> a ns1:person ;
+    ns1:name "Anne M. Smets" .
+
 <http://example.org/entity/Armand_Trousseau_Hospital_Institution> a ns1:Institution ;
     ns1:name "Armand Trousseau Hospital" .
+
+<http://example.org/entity/Arnauld_C_Verschuur_person> a ns1:person ;
+    ns1:name "Arnauld C. Verschuur" .
 
 <http://example.org/entity/Austria_Country> a ns1:Country ;
     ns1:name "Austria" .
@@ -407,85 +544,113 @@
 <http://example.org/entity/Azienda_Ospedaliera_Institution> a ns1:Institution ;
     ns1:name "Azienda Ospedaliera" .
 
+<http://example.org/entity/Beatriz_de_Camargo_person> a ns1:person ;
+    ns1:name "Beatriz de Camargo" .
+
 <http://example.org/entity/Belarus_Country> a ns1:Country ;
     ns1:name "Belarus" .
 
 <http://example.org/entity/Belgium_Country> a ns1:Country ;
     ns1:name "Belgium" .
 
-<http://example.org/entity/Bilateral_Disease_Stage_V_Condition> a ns1:Condition ;
-    ns1:name "Bilateral Disease (Stage V)" .
+<http://example.org/entity/Bellani_F_F_author> a ns1:author ;
+    ns1:name "Bellani, F. F." .
+
+<http://example.org/entity/Bilateral_nephron_sparing_surgery_NSS_Treatment> a ns1:Treatment ;
+    ns1:name "Bilateral nephron-sparing surgery (NSS)" .
+
+<http://example.org/entity/Biocenter_of_the_University_of_Wuerzburg_Institution> a ns1:Institution ;
+    ns1:name "Biocenter of the University of Wuerzburg" .
+
+<http://example.org/entity/Bone_Marrow_Transplant_publication_venue> a ns1:publication_venue ;
+    ns1:name "Bone Marrow Transplant." .
 
 <http://example.org/entity/Bosnia_and_Herzegovina_Country> a ns1:Country ;
     ns1:name "Bosnia and Herzegovina" .
 
+<http://example.org/entity/Breslow_N_E_author> a ns1:author ;
+    ns1:name "Breslow, N. E." .
+
 <http://example.org/entity/Bulgaria_Country> a ns1:Country ;
     ns1:name "Bulgaria" .
 
-<http://example.org/entity/CCSK_Cancer_Type> a ns1:Cancer_Type ;
+<http://example.org/entity/CCSK_condition> a ns1:condition ;
     ns1:name "CCSK" .
 
-<http://example.org/entity/CDCV_Treatment> a ns1:Treatment ;
+<http://example.org/entity/CDCV_Treatment_Regimen> a ns1:Treatment_Regimen ;
     ns1:name "CDCV" .
 
-<http://example.org/entity/CMN_Cancer_Type> a ns1:Cancer_Type ;
-    ns1:name "CMN" .
-
-<http://example.org/entity/COGNWTS_trials_Study> a ns1:Study ;
+<http://example.org/entity/COGNWTS_trials_study> a ns1:study ;
     ns1:name "COG–NWTS trials" .
 
-<http://example.org/entity/COG_AREN0533_Clinical_Trial> a ns1:Clinical_Trial ;
-    ns1:name "COG AREN0533" .
+<http://example.org/entity/COG_Acronym> a ns1:Acronym ;
+    ns1:name "COG" .
 
-<http://example.org/entity/COG_National_Wilms_Tumor_Study_Group_NWTS_4_and_NWTS_5_Study> a ns1:Study ;
-    ns1:name "COG National Wilms Tumor Study Group (NWTS)-4 and NWTS-5" .
+<http://example.org/entity/COG_National_Wilms_Tumor_Study_Group_NWTS_organization> a ns1:organization ;
+    ns1:name "COG National Wilms Tumor Study Group (NWTS)" .
 
 <http://example.org/entity/COG_Organization> a ns1:Organization ;
     ns1:name "COG" .
 
-<http://example.org/entity/CT_Only_Nodules_Medical_Condition> a ns1:Medical_Condition ;
+<http://example.org/entity/CONSENSUS_STATEMENT_document> a ns1:document ;
+    ns1:name "CONSENSUS STATEMENT" .
+
+<http://example.org/entity/CT_Only_Nodules_clinical_finding> a ns1:clinical_finding ;
     ns1:name "CT-Only Nodules" .
 
-<http://example.org/entity/Carboplatin_Medication> a ns1:Medication ;
+<http://example.org/entity/Carboplatin_treatment> a ns1:treatment ;
     ns1:name "Carboplatin" .
 
-<http://example.org/entity/Childrens_Oncology_Group_AREN0321_Study_Study> a ns1:Study ;
-    ns1:name "Children’s Oncology Group AREN0321 Study" .
-
-<http://example.org/entity/Childrens_Oncology_Group_COG_Organization> a ns1:Organization ;
-    ns1:name "Children's Oncology Group (COG)" .
+<http://example.org/entity/Childrens_Oncology_Group_AREN0321_study_study> a ns1:study ;
+    ns1:name "Children’s Oncology Group AREN0321 study" .
 
 <http://example.org/entity/Childrens_Oncology_Group_Organization> a ns1:Organization ;
     ns1:name "Children’s Oncology Group" .
 
-<http://example.org/entity/Childrens_Oncology_Group_study_AREN0533_Study> a ns1:Study ;
+<http://example.org/entity/Childrens_Oncology_Group_study_AREN0533_study> a ns1:study ;
     ns1:name "Children’s Oncology Group study AREN0533" .
+
+<http://example.org/entity/Christian_R%C3%BCbe_person> a ns1:person ;
+    ns1:name "Christian Rübe" .
+
+<http://example.org/entity/Christophe_Bergeron_person> a ns1:person ;
+    ns1:name "Christophe Bergeron" .
 
 <http://example.org/entity/Croatia_Country> a ns1:Country ;
     ns1:name "Croatia" .
 
-<http://example.org/entity/Cyclophosphamide_Medication> a ns1:Medication ;
+<http://example.org/entity/Cyclophosphamide_treatment> a ns1:treatment ;
     ns1:name "Cyclophosphamide" .
 
 <http://example.org/entity/Czech_Republic_Country> a ns1:Country ;
     ns1:name "Czech Republic" .
 
-<http://example.org/entity/Davila_Fajardo_Person> a ns1:Person ;
+<http://example.org/entity/DAngio_G_J_author> a ns1:author ;
+    ns1:name "D'Angio, G. J." .
+
+<http://example.org/entity/Davila_Fajardo_author> a ns1:author ;
     ns1:name "Davila Fajardo" .
+
+<http://example.org/entity/Daw_N_C_author> a ns1:author ;
+    ns1:name "Daw, N. C." .
 
 <http://example.org/entity/Denmark_Country> a ns1:Country ;
     ns1:name "Denmark" .
 
-<http://example.org/entity/Department_of_Paediatric_Oncology_entity> ns2:part_of <http://example.org/entity/Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_entity> .
+<http://example.org/entity/Denys_Drash_Syndrome> a ns1:Syndrome ;
+    ns1:name "Denys-Drash" .
 
-<http://example.org/entity/Department_of_Paediatric_Oncology_organization> a ns1:organization ;
-    ns1:name "Department of Paediatric Oncology" .
+<http://example.org/entity/Department_of_Paediatric_Oncology_Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_institution> a ns1:institution ;
+    ns1:name "Department of Paediatric Oncology, Princess Máxima Center for Paediatric Oncology" .
 
-<http://example.org/entity/Doxorubicin_Medication> a ns1:Medication ;
+<http://example.org/entity/Dix_D_B_author> a ns1:author ;
+    ns1:name "Dix, D. B." .
+
+<http://example.org/entity/Dome_J_S_author> a ns1:author ;
+    ns1:name "Dome, J. S." .
+
+<http://example.org/entity/Doxorubicin_treatment> a ns1:treatment ;
     ns1:name "Doxorubicin" .
-
-<http://example.org/entity/EFS_Probability_Metric> a ns1:Metric ;
-    ns1:name "EFS Probability" .
 
 <http://example.org/entity/End_stage_renal_disease_ESRD_Condition> a ns1:Condition ;
     ns1:name "End-stage renal disease (ESRD)" .
@@ -493,23 +658,26 @@
 <http://example.org/entity/Estonia_Country> a ns1:Country ;
     ns1:name "Estonia" .
 
-<http://example.org/entity/Etoposide_Medication> a ns1:Medication ;
+<http://example.org/entity/Etoposide_treatment> a ns1:treatment ;
     ns1:name "Etoposide" .
 
-<http://example.org/entity/Event_Free_Survival_EFS_Statistic_Topic> a ns1:Statistic_Topic ;
+<http://example.org/entity/Event_Free_Survival_EFS_metric> a ns1:metric ;
     ns1:name "Event-Free Survival (EFS)" .
 
-<http://example.org/entity/Event_Free_Survival_EFS_at_60_months_Metric> a ns1:Metric ;
-    ns1:name "Event-Free Survival (EFS) at 60 months" .
-
-<http://example.org/entity/ExPOrNet_Project> a ns1:Project ;
+<http://example.org/entity/ExPOrNet_Network> a ns1:Network ;
     ns1:name "ExPO‑r‑Net" .
 
 <http://example.org/entity/Faculty_of_Medicine_Gdansk_Institution> a ns1:Institution ;
     ns1:name "Faculty of Medicine, Gdansk" .
 
-<http://example.org/entity/Figure_3_Data_Visualization> a ns1:Data_Visualization ;
-    ns1:name "Figure 3" .
+<http://example.org/entity/Figure_1_figure> a ns1:figure ;
+    ns1:name "Figure 1" .
+
+<http://example.org/entity/Figure_2_figure> a ns1:figure ;
+    ns1:name "Figure 2" .
+
+<http://example.org/entity/Filippo_Spreafico_person> a ns1:person ;
+    ns1:name "Filippo Spreafico" .
 
 <http://example.org/entity/Finland_Country> a ns1:Country ;
     ns1:name "Finland" .
@@ -517,38 +685,65 @@
 <http://example.org/entity/Fondazione_IRCCS_Istituto_Nazionale_dei_Tumori_Institution> a ns1:Institution ;
     ns1:name "Fondazione IRCCS Istituto Nazionale dei Tumori" .
 
+<http://example.org/entity/Four_drug_regimen_Treatment_Regimen> a ns1:Treatment_Regimen ;
+    ns1:name "Four-drug regimen" .
+
 <http://example.org/entity/France_Country> a ns1:Country ;
     ns1:name "France" .
 
-<http://example.org/entity/GPOH_nephroblastoma_Study_Study> a ns1:Study ;
-    ns1:name "GPOH-nephroblastoma Study" .
+<http://example.org/entity/Furtwangler_R_author> a ns1:author ;
+    ns1:name "Furtwangler, R." .
+
+<http://example.org/entity/Geert_O_Janssens_person> a ns1:person ;
+    ns1:name "Geert O. Janssens" .
+
+<http://example.org/entity/Gema_L_Ram%C3%ADrez_Villar_person> a ns1:person ;
+    ns1:name "Gema L. Ramírez-Villar" .
 
 <http://example.org/entity/Germany_Country> a ns1:Country ;
     ns1:name "Germany" .
 
+<http://example.org/entity/Gordan_M_Vujanic_person> a ns1:person ;
+    ns1:name "Gordan M. Vujanic" .
+
+<http://example.org/entity/Graf_N_author> a ns1:author ;
+    ns1:name "Graf, N." .
+
 <http://example.org/entity/Great_Ormond_Street_Hospital_Institution> a ns1:Institution ;
     ns1:name "Great Ormond Street Hospital" .
+
+<http://example.org/entity/Great_Ormond_Street_Institute_of_Child_Health_Institution> a ns1:Institution ;
+    ns1:name "Great Ormond Street Institute of Child Health" .
 
 <http://example.org/entity/Greece_Country> a ns1:Country ;
     ns1:name "Greece" .
 
-<http://example.org/entity/Group_AA_Patient_Group> a ns1:Patient_Group ;
-    ns1:name "Group AA" .
+<http://example.org/entity/Green_D_M_author> a ns1:author ;
+    ns1:name "Green, D. M." .
 
-<http://example.org/entity/Group_BB_Patient_Group> a ns1:Patient_Group ;
-    ns1:name "Group BB" .
+<http://example.org/entity/Grundy_P_E_author> a ns1:author ;
+    ns1:name "Grundy, P. E." .
 
-<http://example.org/entity/Group_CC_Patient_Group> a ns1:Patient_Group ;
-    ns1:name "Group CC" .
+<http://example.org/entity/Guidelines_for_Standardized_Diagnostics_Integrated_Research_and_Standard_Therapy_document> a ns1:document ;
+    ns1:name "Guidelines for Standardized Diagnostics, Integrated Research, and Standard Therapy" .
 
-<http://example.org/entity/HR_1_Treatment_regimen> a ns1:Treatment_regimen ;
+<http://example.org/entity/HR_1_treatment> a ns1:treatment ;
     ns1:name "HR-1" .
 
-<http://example.org/entity/HR_Statistic> a ns1:Statistic ;
-    ns1:name "HR" .
+<http://example.org/entity/Ha_T_C_author> a ns1:author ;
+    ns1:name "Ha, T. C." .
 
-<http://example.org/entity/Hospital_Universitario_Virgen_del_Rocio_Institution> a ns1:Institution ;
-    ns1:name "Hospital Universitario Virgen del Rocio" .
+<http://example.org/entity/Harm_van_Tinteren_person> a ns1:person ;
+    ns1:name "Harm van Tinteren" .
+
+<http://example.org/entity/Hazard_Ratio_HR_statistic> a ns1:statistic ;
+    ns1:name "Hazard Ratio (HR)" .
+
+<http://example.org/entity/Heidi_Segers_person> a ns1:person ;
+    ns1:name "Heidi Segers" .
+
+<http://example.org/entity/Hospital_Universitario_Virgen_del_Roc%C3%ADo_Institution> a ns1:Institution ;
+    ns1:name "Hospital Universitario Virgen del Rocío" .
 
 <http://example.org/entity/Hospital_Vall_dHebron_Institution> a ns1:Institution ;
     ns1:name "Hospital Vall d’Hebron" .
@@ -556,17 +751,23 @@
 <http://example.org/entity/Hungary_Country> a ns1:Country ;
     ns1:name "Hungary" .
 
+<http://example.org/entity/INCA_Acronym> a ns1:Acronym ;
+    ns1:name "INCA" .
+
 <http://example.org/entity/Iceland_Country> a ns1:Country ;
     ns1:name "Iceland" .
 
-<http://example.org/entity/Infant_Wilms_Tumours_Condition> a ns1:Condition ;
-    ns1:name "Infant Wilms Tumours" .
+<http://example.org/entity/Infant_Wilms_Tumors_condition> a ns1:condition ;
+    ns1:name "Infant Wilms Tumors" .
 
 <http://example.org/entity/Innovative_Therapies_for_Children_with_Cancer_consortium_Organization> a ns1:Organization ;
     ns1:name "Innovative Therapies for Children with Cancer consortium" .
 
-<http://example.org/entity/International_Society_of_Paediatric_Oncology_organization> a ns1:organization ;
-    ns1:name "International Society of Paediatric Oncology" .
+<http://example.org/entity/Institut_dH%C3%A9matologie_et_dOncologie_P%C3%A9diatrique_Institution> a ns1:Institution ;
+    ns1:name "Institut d’Hématologie et d’Oncologie Pédiatrique" .
+
+<http://example.org/entity/Instituto_Nacional_de_Cancer_Institution> a ns1:Institution ;
+    ns1:name "Instituto Nacional de Cancer" .
 
 <http://example.org/entity/Ireland_Country> a ns1:Country ;
     ns1:name "Ireland" .
@@ -574,8 +775,32 @@
 <http://example.org/entity/Italy_Country> a ns1:Country ;
     ns1:name "Italy" .
 
+<http://example.org/entity/Ivo_Leuschner_person> a ns1:person ;
+    ns1:name "Ivo Leuschner" .
+
+<http://example.org/entity/Jan_Godzinski_person> a ns1:person ;
+    ns1:name "Jan Godzinski" .
+
+<http://example.org/entity/Janna_A_Hol_person> a ns1:person ;
+    ns1:name "Janna A. Hol" .
+
+<http://example.org/entity/Jesper_Brok_person> a ns1:person ;
+    ns1:name "Jesper Brok" .
+
+<http://example.org/entity/Kaplan_Meier_curves_analysis_method> a ns1:analysis_method ;
+    ns1:name "Kaplan-Meier curves" .
+
+<http://example.org/entity/Kathy_Pritchard_Jones_person> a ns1:person ;
+    ns1:name "Kathy Pritchard-Jones" .
+
+<http://example.org/entity/Kremens_B_author> a ns1:author ;
+    ns1:name "Kremens, B." .
+
 <http://example.org/entity/LInstitut_dH%C3%A9matologie_et_dOncologie_P%C3%A9diatrique_de_Lyon_Institution> a ns1:Institution ;
     ns1:name "L’Institut d’Hématologie et d’Oncologie Pédiatrique de Lyon" .
+
+<http://example.org/entity/La_Timone_Childrens_Hospital_Institution> a ns1:Institution ;
+    ns1:name "La Timone Children’s Hospital" .
 
 <http://example.org/entity/Latvia_Country> a ns1:Country ;
     ns1:name "Latvia" .
@@ -586,26 +811,32 @@
 <http://example.org/entity/Lithuania_Country> a ns1:Country ;
     ns1:name "Lithuania" .
 
-<http://example.org/entity/LogRank_P_Statistic> a ns1:Statistic ;
+<http://example.org/entity/LogRank_P_statistic> a ns1:statistic ;
     ns1:name "Log–Rank P" .
 
 <http://example.org/entity/Luxembourg_Country> a ns1:Country ;
     ns1:name "Luxembourg" .
 
-<http://example.org/entity/MRTK_Cancer_Type> a ns1:Cancer_Type ;
+<http://example.org/entity/MMvdH_E_person> a ns1:person ;
+    ns1:name "M.M.v.d.H.-E." .
+
+<http://example.org/entity/MRTK_condition> a ns1:condition ;
     ns1:name "MRTK" .
 
 <http://example.org/entity/Macedonia_Country> a ns1:Country ;
     ns1:name "Macedonia" .
 
-<http://example.org/entity/Macmillan_Publishers_Limited_Organization> a ns1:Organization ;
+<http://example.org/entity/Macmillan_Publishers_Limited_Publisher> a ns1:Publisher ;
     ns1:name "Macmillan Publishers Limited" .
 
-<http://example.org/entity/Macmillan_Publishers_Limited_organization> a ns1:organization ;
-    ns1:name "Macmillan Publishers Limited" .
+<http://example.org/entity/Macmillan_Publishers_publisher> a ns1:publisher ;
+    ns1:name "Macmillan Publishers" .
 
 <http://example.org/entity/Malta_Country> a ns1:Country ;
     ns1:name "Malta" .
+
+<http://example.org/entity/Manfred_Gessler_person> a ns1:person ;
+    ns1:name "Manfred Gessler" .
 
 <http://example.org/entity/Marciniak_Hospital_Institution> a ns1:Institution ;
     ns1:name "Marciniak Hospital" .
@@ -613,8 +844,14 @@
 <http://example.org/entity/Marry_M_van_den_Heuvel_Eibrink_person> a ns1:person ;
     ns1:name "Marry M. van den Heuvel-Eibrink" .
 
-<http://example.org/entity/Metastatic_Disease_Stage_IV_Section> a ns1:Section ;
+<http://example.org/entity/Medical_University_Institution> a ns1:Institution ;
+    ns1:name "Medical University" .
+
+<http://example.org/entity/Metastatic_Disease_Stage_IV_section> a ns1:section ;
     ns1:name "Metastatic Disease (Stage IV)" .
+
+<http://example.org/entity/Mitchell_C_author> a ns1:author ;
+    ns1:name "Mitchell, C." .
 
 <http://example.org/entity/Moldova_Country> a ns1:Country ;
     ns1:name "Moldova" .
@@ -628,37 +865,41 @@
 <http://example.org/entity/Morocco_Country> a ns1:Country ;
     ns1:name "Morocco" .
 
-<http://example.org/entity/NATURE_REVIEWS_UROLOGY_journal> a ns1:journal ;
-    ns1:name "NATURE REVIEWS | UROLOGY" .
+<http://example.org/entity/NWTS5_relapse_protocol_Protocol> a ns1:Protocol ;
+    ns1:name "NWTS‑5 relapse protocol" .
 
-<http://example.org/entity/National_Wilms_Tumor_Studies_Study> a ns1:Study ;
+<http://example.org/entity/National_Wilms_Tumor_Studies_study_series> a ns1:study_series ;
     ns1:name "National Wilms Tumor Studies" .
 
-<http://example.org/entity/National_Wilms_Tumor_Study_Group_Organization> a ns1:Organization ;
+<http://example.org/entity/National_Wilms_Tumor_Study_Group_research_group> a ns1:research_group ;
     ns1:name "National Wilms Tumor Study Group" .
 
-<http://example.org/entity/Nephron_sparing_surgery_NSS_Surgical_Procedure> a ns1:Surgical_Procedure ;
+<http://example.org/entity/Nephron_sparing_surgery_NSS_surgery> a ns1:surgery ;
     ns1:name "Nephron-sparing surgery (NSS)" .
 
-<http://example.org/entity/Nephron_sparing_surgery_NSS_entity> ns2:used_for <http://example.org/entity/Wilms_tumor_entity> .
+<http://example.org/entity/Netherlands_Cancer_Institute_Institution> a ns1:Institution ;
+    ns1:name "Netherlands Cancer Institute" .
 
-<http://example.org/entity/Ninth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_Study> a ns1:Study ;
+<http://example.org/entity/Ninth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_study> a ns1:study ;
     ns1:name "Ninth International Society of Pediatric Oncology Wilms’ Tumor Trial and Study" .
+
+<http://example.org/entity/Non_Wilms_Tumour_condition> a ns1:condition ;
+    ns1:name "Non-Wilms Tumour" .
+
+<http://example.org/entity/Norbert_Graf_person> a ns1:person ;
+    ns1:name "Norbert Graf" .
 
 <http://example.org/entity/Norway_Country> a ns1:Country ;
     ns1:name "Norway" .
 
-<http://example.org/entity/OS_Probability_Metric> a ns1:Metric ;
-    ns1:name "OS Probability" .
-
 <http://example.org/entity/Ospedale_Pediatrico_Bambino_Ges%C3%B9_Institution> a ns1:Institution ;
     ns1:name "Ospedale Pediatrico Bambino Gesù" .
 
-<http://example.org/entity/Overall_Survival_OS_Statistic_Topic> a ns1:Statistic_Topic ;
+<http://example.org/entity/Overall_Survival_OS_metric> a ns1:metric ;
     ns1:name "Overall Survival (OS)" .
 
-<http://example.org/entity/Overall_Survival_OS_at_60_months_Metric> a ns1:Metric ;
-    ns1:name "Overall Survival (OS) at 60 months" .
+<http://example.org/entity/Paola_Collini_person> a ns1:person ;
+    ns1:name "Paola Collini" .
 
 <http://example.org/entity/Poland_Country> a ns1:Country ;
     ns1:name "Poland" .
@@ -666,30 +907,31 @@
 <http://example.org/entity/Portugal_Country> a ns1:Country ;
     ns1:name "Portugal" .
 
-<http://example.org/entity/Preoperative_Treatment_for_Metastatic_Disease_Treatment_Method> a ns1:Treatment_Method ;
-    ns1:name "Preoperative Treatment for Metastatic Disease" .
+<http://example.org/entity/Preoperative_Treatment_treatment_phase> a ns1:treatment_phase ;
+    ns1:name "Preoperative Treatment" .
 
-<http://example.org/entity/Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_organization> a ns1:organization ;
+<http://example.org/entity/Princess_M%C3%A1xima_Center_for_Paediatric_Oncology_Institution> a ns1:Institution ;
     ns1:name "Princess Máxima Center for Paediatric Oncology" .
 
 <http://example.org/entity/Prinses_Maxima_Centrum_Institution> a ns1:Institution ;
     ns1:name "Prinses Maxima Centrum" .
 
-<http://example.org/entity/RCC_Cancer_Type> a ns1:Cancer_Type ;
-    ns1:name "RCC" .
+<http://example.org/entity/Pritchard_Jones_K_author> a ns1:author ;
+    ns1:name "Pritchard-Jones, K." .
 
-<http://example.org/entity/Relapse_Section> a ns1:Section ;
+<http://example.org/entity/Relapse_section> a ns1:section ;
     ns1:name "Relapse" .
 
-<http://example.org/entity/Relapsed_Wilms_Tumour_Disease> a ns1:Disease ;
-    ns1:name "Relapsed Wilms Tumour" .
+<http://example.org/entity/Relapsed_Wilms_Tumor_Condition> a ns1:Condition ;
+    ns1:name "Relapsed Wilms Tumor" .
 
-<http://example.org/entity/Relapsed_Wilms_Tumour_entity> ns2:classification <http://example.org/entity/Group_AA_entity>,
-        <http://example.org/entity/Group_BB_entity>,
-        <http://example.org/entity/Group_CC_entity> .
+<http://example.org/entity/Relapsed_group_CC_Patient_Group> a ns1:Patient_Group ;
+    ns1:name "Relapsed group CC" .
 
-<http://example.org/entity/Renal_Tumour_Study_Group_organization> a ns1:organization ;
-    ns1:name "Renal Tumour Study Group" .
+<http://example.org/entity/Relapsed_group_CC_entity> ns2:part_of <http://example.org/entity/UMBRELLA_protocol_entity> .
+
+<http://example.org/entity/Rhoikos_Furtw%C3%A4ngler_person> a ns1:person ;
+    ns1:name "Rhoikos Furtwängler" .
 
 <http://example.org/entity/Romania_Country> a ns1:Country ;
     ns1:name "Romania" .
@@ -697,82 +939,78 @@
 <http://example.org/entity/Russia_Country> a ns1:Country ;
     ns1:name "Russia" .
 
-<http://example.org/entity/SIOP2001_Randomized_Controlled_Trial_Clinical_Trial> a ns1:Clinical_Trial ;
-    ns1:name "SIOP−2001 Randomized Controlled Trial" .
-
 <http://example.org/entity/SIOP2001_Study> a ns1:Study ;
-    ns1:name "SIOP−2001" .
-
-<http://example.org/entity/SIOP2001_Study_Protocol> a ns1:Study_Protocol ;
-    ns1:name "SIOP−2001" .
-
-<http://example.org/entity/SIOP2001_Trial> a ns1:Trial ;
     ns1:name "SIOP−2001" .
 
 <http://example.org/entity/SIOP2001_protocol> a ns1:protocol ;
     ns1:name "SIOP−2001" .
 
-<http://example.org/entity/SIOP2001_randomized_trial_Clinical_Trial> a ns1:Clinical_Trial ;
-    ns1:name "SIOP−2001 randomized trial" .
+<http://example.org/entity/SIOP2001_protocol_protocol> a ns1:protocol ;
+    ns1:name "SIOP−2001 protocol" .
 
-<http://example.org/entity/SIOP2001_study_Research_Study> a ns1:Research_Study ;
+<http://example.org/entity/SIOP2001_study> a ns1:study ;
+    ns1:name "SIOP−2001" .
+
+<http://example.org/entity/SIOP2001_study_Study> a ns1:Study ;
     ns1:name "SIOP−2001 study" .
 
-<http://example.org/entity/SIOP9301_Trial> a ns1:Trial ;
+<http://example.org/entity/SIOP2001_study_protocol> a ns1:study_protocol ;
+    ns1:name "SIOP−2001" .
+
+<http://example.org/entity/SIOP9301_protocol> a ns1:protocol ;
     ns1:name "SIOP−93–01" .
+
+<http://example.org/entity/SIOPGPOH_studies_study_series> a ns1:study_series ;
+    ns1:name "SIOP/GPOH studies" .
 
 <http://example.org/entity/SIOPRTSG_Organization> a ns1:Organization ;
     ns1:name "SIOP–RTSG" .
 
-<http://example.org/entity/SIOPRTSG_Research_Group> a ns1:Research_Group ;
+<http://example.org/entity/SIOPRTSG_organization> a ns1:organization ;
     ns1:name "SIOP–RTSG" .
 
-<http://example.org/entity/SIOPRTSG_abbreviation> a ns1:abbreviation ;
-    ns1:name "SIOP–RTSG" .
-
-<http://example.org/entity/SIOPRTSG_panel_Organization> a ns1:Organization ;
+<http://example.org/entity/SIOPRTSG_panel_organization> a ns1:organization ;
     ns1:name "SIOP−RTSG panel" .
 
-<http://example.org/entity/SIOP_2001GPOH_Study> a ns1:Study ;
-    ns1:name "SIOP 2001/GPOH" .
+<http://example.org/entity/SIOPRTSG_website_website> a ns1:website ;
+    ns1:name "SIOP–RTSG website" .
 
-<http://example.org/entity/SIOP_2001_Study_Study> a ns1:Study ;
-    ns1:name "SIOP 2001 Study" .
+<http://example.org/entity/SIOP_2001_study> a ns1:study ;
+    ns1:name "SIOP 2001" .
 
-<http://example.org/entity/SIOP_9301_Trial_Trial> a ns1:Trial ;
-    ns1:name "SIOP 93–01 Trial" .
+<http://example.org/entity/SIOP_9301_trial_trial_study> a ns1:trial_study ;
+    ns1:name "SIOP 93–01 trial" .
 
-<http://example.org/entity/SIOP_93_01_Study> a ns1:Study ;
+<http://example.org/entity/SIOP_93_01_experience> a ns1:experience ;
     ns1:name "SIOP 93 01" .
 
-<http://example.org/entity/SIOP_9GPOH_Study> a ns1:Study ;
+<http://example.org/entity/SIOP_9GPOH_trial_study> a ns1:trial_study ;
     ns1:name "SIOP-9/GPOH" .
 
-<http://example.org/entity/SIOP_Database_Database> a ns1:Database ;
-    ns1:name "SIOP Database" .
+<http://example.org/entity/SIOP_Organization> a ns1:Organization ;
+    ns1:name "SIOP" .
 
-<http://example.org/entity/SIOP_RTSG_Organization> a ns1:Organization ;
-    ns1:name "SIOP-RTSG" .
+<http://example.org/entity/SIOP_WT_2001_protocol_protocol> a ns1:protocol ;
+    ns1:name "SIOP WT 2001 protocol" .
 
-<http://example.org/entity/SIOP_Renal_Tumour_Study_Group_Organization> a ns1:Organization ;
-    ns1:name "SIOP Renal Tumour Study Group" .
+<http://example.org/entity/SIOP_entity> ns2:operates_in <http://example.org/entity/Europe_entity> .
 
-<http://example.org/entity/SIOP_Renal_Tumour_Study_Group_SIOP_RTSG_Organization> a ns1:Organization ;
-    ns1:name "SIOP Renal Tumour Study Group (SIOP-RTSG)" .
+<http://example.org/entity/SIOP_trial_and_study_9301_trial_study> a ns1:trial_study ;
+    ns1:name "SIOP trial and study 93–01" .
 
-<http://example.org/entity/SIOP_Trial_and_Study_9301_Study> a ns1:Study ;
-    ns1:name "SIOP Trial and Study 93–01" .
+<http://example.org/entity/Saarland_University_Institution> a ns1:Institution ;
+    ns1:name "Saarland University" .
 
 <http://example.org/entity/San_Marino_Country> a ns1:Country ;
     ns1:name "San Marino" .
 
-<http://example.org/entity/Second_National_Wilms_Tumor_Study_Study> a ns1:Study ;
+<http://example.org/entity/Second_National_Wilms_Tumor_Study_study> a ns1:study ;
     ns1:name "Second National Wilms’ Tumor Study" .
 
 <http://example.org/entity/Serbia_Country> a ns1:Country ;
     ns1:name "Serbia" .
 
-<http://example.org/entity/Sixth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_Study> a ns1:Study ;
+<http://example.org/entity/Sixth_International_Society_of_Pediatric_Oncology_Wilms_Tumor_Trial_and_Study_study> a ns1:study ;
     ns1:name "Sixth International Society of Pediatric Oncology Wilms’ Tumor Trial and Study" .
 
 <http://example.org/entity/Slovakia_Country> a ns1:Country ;
@@ -781,33 +1019,31 @@
 <http://example.org/entity/Slovenia_Country> a ns1:Country ;
     ns1:name "Slovenia" .
 
+<http://example.org/entity/Smets_A_M_author> a ns1:author ;
+    ns1:name "Smets, A. M." .
+
 <http://example.org/entity/Spain_Country> a ns1:Country ;
     ns1:name "Spain" .
 
-<http://example.org/entity/Springer_Nature_Organization> a ns1:Organization ;
-    ns1:name "Springer Nature" .
+<http://example.org/entity/Spreafico_F_author> a ns1:author ;
+    ns1:name "Spreafico, F." .
 
-<http://example.org/entity/Springer_Nature_organization> a ns1:organization ;
+<http://example.org/entity/Springer_Nature_Publisher> a ns1:Publisher ;
     ns1:name "Springer Nature" .
 
 <http://example.org/entity/St_Anna_KinderspitalCCRI_Institution> a ns1:Institution ;
     ns1:name "St. Anna Kinderspital/CCRI" .
 
-<http://example.org/entity/Stage_III_Stage> a ns1:Stage ;
-    ns1:name "Stage III" .
+<http://example.org/entity/Stage_IIII_category> a ns1:category ;
+    ns1:name "Stage I–III" .
 
-<http://example.org/entity/Stage_II_Stage> a ns1:Stage ;
-    ns1:name "Stage II" .
+<http://example.org/entity/Stage_IV_WT_Cancer_Stage> a ns1:Cancer_Stage ;
+    ns1:name "Stage IV WT" .
 
-<http://example.org/entity/Stage_IV_Stage> a ns1:Stage ;
+<http://example.org/entity/Stage_IV_category> a ns1:category ;
     ns1:name "Stage IV" .
 
-<http://example.org/entity/Stage_IV_entity> ns2:frequent_observation <http://example.org/entity/pulmonary_metastases_entity> .
-
-<http://example.org/entity/Stage_I_Stage> a ns1:Stage ;
-    ns1:name "Stage I" .
-
-<http://example.org/entity/Stage_V_Stage> a ns1:Stage ;
+<http://example.org/entity/Stage_V_category> a ns1:category ;
     ns1:name "Stage V" .
 
 <http://example.org/entity/Sweden_Country> a ns1:Country ;
@@ -816,17 +1052,20 @@
 <http://example.org/entity/Switzerland_Country> a ns1:Country ;
     ns1:name "Switzerland" .
 
-<http://example.org/entity/Synchronous_bilateral_Wilms_tumour_Disease> a ns1:Disease ;
-    ns1:name "Synchronous bilateral Wilms tumour" .
+<http://example.org/entity/Synchronous_bilateral_Wilms_tumor_Condition> a ns1:Condition ;
+    ns1:name "Synchronous bilateral Wilms tumor" .
 
-<http://example.org/entity/Table_3_Reference> a ns1:Reference ;
-    ns1:name "Table 3" .
+<http://example.org/entity/The_Renal_Tumour_Study_Group_of_the_International_Society_of_Paediatric_Oncology_SIOPRTSG_organization> a ns1:organization ;
+    ns1:name "The Renal Tumour Study Group of the International Society of Paediatric Oncology (SIOP–RTSG)" .
 
-<http://example.org/entity/Therapeutic_Recommendations_Section> a ns1:Section ;
+<http://example.org/entity/Therapeutic_Recommendations_section> a ns1:section ;
     ns1:name "Therapeutic Recommendations" .
 
-<http://example.org/entity/Third_National_Wilms_Tumor_Study_Study> a ns1:Study ;
+<http://example.org/entity/Third_National_Wilms_Tumor_Study_study> a ns1:study ;
     ns1:name "Third National Wilms’ Tumor Study" .
+
+<http://example.org/entity/Tournade_M_F_author> a ns1:author ;
+    ns1:name "Tournade, M. F." .
 
 <http://example.org/entity/Tunisia_Country> a ns1:Country ;
     ns1:name "Tunisia" .
@@ -834,39 +1073,40 @@
 <http://example.org/entity/Turkey_Country> a ns1:Country ;
     ns1:name "Turkey" .
 
-<http://example.org/entity/UKW3_Trial_Trial> a ns1:Trial ;
-    ns1:name "UKW3 Trial" .
+<http://example.org/entity/UKCCLG_Acronym> a ns1:Acronym ;
+    ns1:name "UKCCLG" .
 
-<http://example.org/entity/UKW3_trial_Clinical_Trial> a ns1:Clinical_Trial ;
+<http://example.org/entity/UKW3_Trial> a ns1:Trial ;
+    ns1:name "UKW3" .
+
+<http://example.org/entity/UKW3_entity> ns2:investigated_regimen_of <http://example.org/entity/actinomycin_D_and_vincristine_entity> ;
+    ns2:trial_participated_by <http://example.org/entity/Mitchell_C_entity> .
+
+<http://example.org/entity/UKW3_trial> a ns1:trial ;
+    ns1:name "UKW3" .
+
+<http://example.org/entity/UKW3_trial_trial_study> a ns1:trial_study ;
     ns1:name "UKW3 trial" .
 
-<http://example.org/entity/UKW3_trial_entity> ns2:evaluates <http://example.org/entity/preoperative_chemotherapy_entity> .
+<http://example.org/entity/UKWR_protocol_Protocol> a ns1:Protocol ;
+    ns1:name "UKW‑R protocol" .
 
-<http://example.org/entity/UK_Childrens_Cancer_Study_Group_Organization> a ns1:Organization ;
-    ns1:name "UK Children’s Cancer Study Group" .
+<http://example.org/entity/UK_Childrens_Cancer_and_Leukaemia_Group_Organization> a ns1:Organization ;
+    ns1:name "UK Children’s Cancer and Leukaemia Group" .
 
-<http://example.org/entity/UK_Childrens_Cancer_and_Leukaemia_Group_UKCCLG_Organization> a ns1:Organization ;
-    ns1:name "UK Children's Cancer and Leukaemia Group (UKCCLG)" .
-
-<http://example.org/entity/UMBBRELLA_protocol_Treatment_Protocol> a ns1:Treatment_Protocol ;
-    ns1:name "UMBBRELLA protocol" .
-
-<http://example.org/entity/UMBRELLA_Protocol_Treatment_Protocol> a ns1:Treatment_Protocol ;
+<http://example.org/entity/UMBRELLA_Protocol_Protocol> a ns1:Protocol ;
     ns1:name "UMBRELLA Protocol" .
 
 <http://example.org/entity/UMBRELLA_SIOP_RTSG_2016_protocol> a ns1:protocol ;
     ns1:name "UMBRELLA SIOP-RTSG 2016" .
 
-<http://example.org/entity/UMBRELLA_protocol_Guideline> a ns1:Guideline ;
-    ns1:name "UMBRELLA protocol" .
-
-<http://example.org/entity/UMBRELLA_protocol_Project> a ns1:Project ;
-    ns1:name "UMBRELLA protocol" .
-
 <http://example.org/entity/UMBRELLA_protocol_Protocol> a ns1:Protocol ;
     ns1:name "UMBRELLA protocol" .
 
-<http://example.org/entity/UMBRELLA_protocol_Treatment_Protocol> a ns1:Treatment_Protocol ;
+<http://example.org/entity/UMBRELLA_protocol_protocol> a ns1:protocol ;
+    ns1:name "UMBRELLA protocol" .
+
+<http://example.org/entity/UMBRELLA_protocol_study_protocol> a ns1:study_protocol ;
     ns1:name "UMBRELLA protocol" .
 
 <http://example.org/entity/Ukraine_Country> a ns1:Country ;
@@ -878,218 +1118,344 @@
 <http://example.org/entity/University_Hospital_Homburg_Institution> a ns1:Institution ;
     ns1:name "University Hospital Homburg" .
 
+<http://example.org/entity/University_Hospital_Leuven_Institution> a ns1:Institution ;
+    ns1:name "University Hospital Leuven" .
+
+<http://example.org/entity/University_Hospital_of_Kiel_Institution> a ns1:Institution ;
+    ns1:name "University Hospital of Kiel" .
+
 <http://example.org/entity/University_Hospital_of_Munich_Institution> a ns1:Institution ;
     ns1:name "University Hospital of Munich" .
 
-<http://example.org/entity/University_Hospital_of_Tuebingen_Institution> a ns1:Institution ;
-    ns1:name "University Hospital of Tuebingen" .
+<http://example.org/entity/University_Hospital_of_T%C3%BCbingen_Institution> a ns1:Institution ;
+    ns1:name "University Hospital of Tübingen" .
 
-<http://example.org/entity/Vincristine_Medication> a ns1:Medication ;
+<http://example.org/entity/University_Hospital_of_Wales_Institution> a ns1:Institution ;
+    ns1:name "University Hospital of Wales" .
+
+<http://example.org/entity/University_Hospital_of_the_Saarland_Institution> a ns1:Institution ;
+    ns1:name "University Hospital of the Saarland" .
+
+<http://example.org/entity/University_Medical_Center_Utrecht_Institution> a ns1:Institution ;
+    ns1:name "University Medical Center Utrecht" .
+
+<http://example.org/entity/VP16_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "VP16" .
+
+<http://example.org/entity/Verschuur_A_author> a ns1:author ;
+    ns1:name "Verschuur, A." .
+
+<http://example.org/entity/Vincristine_treatment> a ns1:treatment ;
     ns1:name "Vincristine" .
 
-<http://example.org/entity/Wilms_tumour_Condition> a ns1:Condition ;
-    ns1:name "Wilms tumour" .
+<http://example.org/entity/WT1_mutations_Genetic_Aberration> a ns1:Genetic_Aberration ;
+    ns1:name "WT1 mutations" .
 
-<http://example.org/entity/Wilms_tumour_Disease> a ns1:Disease ;
-    ns1:name "Wilms tumour" .
+<http://example.org/entity/Warmann_S_W_author> a ns1:author ;
+    ns1:name "Warmann, S. W." .
 
-<http://example.org/entity/Wilms_tumours_Condition> a ns1:Condition ;
+<http://example.org/entity/Weirich_A_author> a ns1:author ;
+    ns1:name "Weirich, A." .
+
+<http://example.org/entity/Wilms_Tumour_condition> a ns1:condition ;
+    ns1:name "Wilms Tumour" .
+
+<http://example.org/entity/Wilms_Tumours_Disease> a ns1:Disease ;
+    ns1:name "Wilms Tumours" .
+
+<http://example.org/entity/Wilms_tumor_aniridia_genitourinary_anomalies_and_retardation_WAGR_Syndrome> a ns1:Syndrome ;
+    ns1:name "Wilms tumor, aniridia, genitourinary anomalies, and retardation (WAGR)" .
+
+<http://example.org/entity/Wilms_tumours_condition> a ns1:condition ;
     ns1:name "Wilms tumours" .
 
 <http://example.org/entity/Wilms_tumours_medical_condition> a ns1:medical_condition ;
     ns1:name "Wilms tumours" .
 
+<http://example.org/entity/actinomycin_D_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "actinomycin-D" .
+
 <http://example.org/entity/actinomycin_D_Drug> a ns1:Drug ;
     ns1:name "actinomycin D" .
 
-<http://example.org/entity/actinomycin_D_Medication> a ns1:Medication ;
+<http://example.org/entity/actinomycin_D_drug> a ns1:drug ;
     ns1:name "actinomycin D" .
 
-<http://example.org/entity/actinomycin_D_entity> ns2:used_for <http://example.org/entity/Wilms_tumours_entity> ;
-    ns2:used_in <http://example.org/entity/Infant_Wilms_Tumours_entity> .
+<http://example.org/entity/actinomycin_D_entity> ns2:combined_with <http://example.org/entity/vincristine_entity> ;
+    ns2:is_used_to_treat <http://example.org/entity/Wilms_Tumours_entity> .
+
+<http://example.org/entity/adult_protocols_guideline> a ns1:guideline ;
+    ns1:name "adult protocols" .
+
+<http://example.org/entity/anaplasia_pathological_feature> a ns1:pathological_feature ;
+    ns1:name "anaplasia" .
+
+<http://example.org/entity/and_autologous_stem_cell_rescue_ASCR_Treatment> a ns1:Treatment ;
+    ns1:name "and autologous stem cell rescue (ASCR)" .
 
 <http://example.org/entity/arnauldverschuurap_hmfr_Contact> a ns1:Contact ;
     ns1:name "arnauld.verschuur@ap-hm.fr" .
 
-<http://example.org/entity/blastemal_type_Wilms_tumour_Condition> a ns1:Condition ;
-    ns1:name "blastemal-type Wilms tumour" .
+<http://example.org/entity/bilateral_Wilms_tumors_condition> a ns1:condition ;
+    ns1:name "bilateral Wilms tumors" .
 
-<http://example.org/entity/blastemal_type_Wilms_tumours_Condition_Subtype> a ns1:Condition_Subtype ;
+<http://example.org/entity/blastemal_type_Wilms_tumours_Disease_Subtype> a ns1:Disease_Subtype ;
     ns1:name "blastemal-type Wilms tumours" .
 
-<http://example.org/entity/blastemal_type_tumors_Condition> a ns1:Condition ;
-    ns1:name "blastemal-type tumors" .
-
-<http://example.org/entity/camptothecins_Medication> a ns1:Medication ;
+<http://example.org/entity/camptothecins_Chemotherapy_Class> a ns1:Chemotherapy_Class ;
     ns1:name "camptothecins" .
+
+<http://example.org/entity/carboplatin_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "carboplatin" .
 
 <http://example.org/entity/carboplatin_Drug> a ns1:Drug ;
     ns1:name "carboplatin" .
 
-<http://example.org/entity/carboplatin_Medication> a ns1:Medication ;
+<http://example.org/entity/carboplatin_drug> a ns1:drug ;
     ns1:name "carboplatin" .
 
-<http://example.org/entity/carboplatin_entity> ns2:used_in <http://example.org/entity/Adult_Wilms_Tumours_entity> .
-
-<http://example.org/entity/chemotherapy_Treatment> a ns1:Treatment ;
+<http://example.org/entity/chemotherapy_treatment> a ns1:treatment ;
     ns1:name "chemotherapy" .
 
-<http://example.org/entity/chemotherapy_Treatment_Method> a ns1:Treatment_Method ;
-    ns1:name "chemotherapy" .
-
-<http://example.org/entity/chemotherapy_entity> ns2:considered_after <http://example.org/entity/UMBRELLA_protocol_entity> ;
-    ns2:treats <http://example.org/entity/Wilms_tumours_entity> .
-
-<http://example.org/entity/chest_CT_Diagnostic_Tool> a ns1:Diagnostic_Tool ;
-    ns1:name "chest CT" .
-
-<http://example.org/entity/childhood_renal_tumours_entity> ns2:category_includes <http://example.org/entity/Wilms_tumours_entity>,
-        <http://example.org/entity/non_Wilms_tumours_entity> .
+<http://example.org/entity/childhood_renal_tumours_entity> ns2:includes <http://example.org/entity/Wilms_tumours_entity>,
+        <http://example.org/entity/clear_cell_sarcoma_of_the_kidney_entity>,
+        <http://example.org/entity/congenital_mesoblastic_nephroma_entity>,
+        <http://example.org/entity/malignant_rhabdoid_tumour_of_the_kidney_entity>,
+        <http://example.org/entity/renal_cell_carcinoma_entity> .
 
 <http://example.org/entity/childhood_renal_tumours_medical_condition> a ns1:medical_condition ;
     ns1:name "childhood renal tumours" .
 
+<http://example.org/entity/clear_cell_sarcoma_of_the_kidney_medical_condition> a ns1:medical_condition ;
+    ns1:name "clear cell sarcoma of the kidney" .
+
+<http://example.org/entity/complete_response_outcome> a ns1:outcome ;
+    ns1:name "complete response" .
+
+<http://example.org/entity/congenital_mesoblastic_nephroma_condition> a ns1:condition ;
+    ns1:name "congenital mesoblastic nephroma" .
+
+<http://example.org/entity/congenital_mesoblastic_nephroma_entity> ns2:needs <http://example.org/entity/surgery_alone_entity> .
+
+<http://example.org/entity/congenital_mesoblastic_nephroma_medical_condition> a ns1:medical_condition ;
+    ns1:name "congenital mesoblastic nephroma" .
+
+<http://example.org/entity/cyclophosphamide_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "cyclophosphamide" .
+
 <http://example.org/entity/cyclophosphamide_Drug> a ns1:Drug ;
     ns1:name "cyclophosphamide" .
 
-<http://example.org/entity/cyclophosphamide_Medication> a ns1:Medication ;
+<http://example.org/entity/cyclophosphamide_drug> a ns1:drug ;
     ns1:name "cyclophosphamide" .
 
-<http://example.org/entity/cyclophosphamide_entity> ns2:alternated_with <http://example.org/entity/ifosfamide_entity> ;
-    ns2:used_in <http://example.org/entity/Adult_Wilms_Tumours_entity> .
+<http://example.org/entity/de_Kraker_J_author> a ns1:author ;
+    ns1:name "de Kraker, J." .
 
-<http://example.org/entity/diffuse_anaplasia_Condition> a ns1:Condition ;
-    ns1:name "diffuse anaplasia" .
+<http://example.org/entity/doxorubicin_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "doxorubicin" .
 
 <http://example.org/entity/doxorubicin_Drug> a ns1:Drug ;
     ns1:name "doxorubicin" .
 
-<http://example.org/entity/doxorubicin_Medication> a ns1:Medication ;
+<http://example.org/entity/doxorubicin_drug> a ns1:drug ;
     ns1:name "doxorubicin" .
+
+<http://example.org/entity/enucleation_surgery> a ns1:surgery ;
+    ns1:name "enucleation" .
+
+<http://example.org/entity/etoposide_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "etoposide" .
 
 <http://example.org/entity/etoposide_Drug> a ns1:Drug ;
     ns1:name "etoposide" .
 
-<http://example.org/entity/etoposide_Medication> a ns1:Medication ;
+<http://example.org/entity/etoposide_and_carboplatin_Chemotherapy> a ns1:Chemotherapy ;
+    ns1:name "etoposide and carboplatin" .
+
+<http://example.org/entity/etoposide_drug> a ns1:drug ;
     ns1:name "etoposide" .
 
-<http://example.org/entity/etoposide_entity> ns2:used_in <http://example.org/entity/Adult_Wilms_Tumours_entity> .
+<http://example.org/entity/four_drug_regimen_entity> ns2:includes <http://example.org/entity/carboplatin_entity>,
+        <http://example.org/entity/cyclophosphamide_entity>,
+        <http://example.org/entity/etoposide_entity> .
 
-<http://example.org/entity/flank_irradiation_entity> ns2:treatment_for <http://example.org/entity/Wilms_tumours_entity> .
+<http://example.org/entity/four_drug_regimen_treatment> a ns1:treatment ;
+    ns1:name "four-drug regimen" .
 
-<http://example.org/entity/flank_radiotherapy_Treatment_method> a ns1:Treatment_method ;
-    ns1:name "flank radiotherapy" .
+<http://example.org/entity/group_AA_Group_Classification> a ns1:Group_Classification ;
+    ns1:name "group AA" .
+
+<http://example.org/entity/group_BB_Group_Classification> a ns1:Group_Classification ;
+    ns1:name "group BB" .
+
+<http://example.org/entity/group_BB_protocol_Protocol> a ns1:Protocol ;
+    ns1:name "group BB protocol" .
+
+<http://example.org/entity/group_CC_Group_Classification> a ns1:Group_Classification ;
+    ns1:name "group CC" .
 
 <http://example.org/entity/high_dose_chemotherapy_Treatment> a ns1:Treatment ;
     ns1:name "high-dose chemotherapy" .
 
-<http://example.org/entity/ifosfamide_Medication> a ns1:Medication ;
+<http://example.org/entity/high_dose_melphalan_Drug> a ns1:Drug ;
+    ns1:name "high-dose melphalan" .
+
+<http://example.org/entity/high_risk_entity> ns2:requires_specific <http://example.org/entity/radiotherapy_entity> .
+
+<http://example.org/entity/high_risk_risk_category> a ns1:risk_category ;
+    ns1:name "high-risk" .
+
+<http://example.org/entity/histological_subtype_classification> a ns1:classification ;
+    ns1:name "histological subtype" .
+
+<http://example.org/entity/ifosfamide_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
     ns1:name "ifosfamide" .
 
-<http://example.org/entity/ifosfamide_entity> ns2:causes <http://example.org/entity/nephrotoxicity_entity> .
+<http://example.org/entity/ifosfamide_Drug> a ns1:Drug ;
+    ns1:name "ifosfamide" .
 
-<http://example.org/entity/irinotecan_Medication> a ns1:Medication ;
+<http://example.org/entity/induction_chemotherapy_treatment> a ns1:treatment ;
+    ns1:name "induction chemotherapy" .
+
+<http://example.org/entity/intermediate_risk_risk_category> a ns1:risk_category ;
+    ns1:name "intermediate-risk" .
+
+<http://example.org/entity/irinotecan_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
     ns1:name "irinotecan" .
 
-<http://example.org/entity/laparoscopic_surgery_Treatment> a ns1:Treatment ;
+<http://example.org/entity/laparoscopic_surgery_treatment> a ns1:treatment ;
     ns1:name "laparoscopic surgery" .
 
-<http://example.org/entity/large_volume_tumours_Condition> a ns1:Condition ;
-    ns1:name "large-volume tumours" .
-
-<http://example.org/entity/locoregional_disease_Condition> a ns1:Condition ;
+<http://example.org/entity/locoregional_disease_treatment_category> a ns1:treatment_category ;
     ns1:name "locoregional disease" .
 
-<http://example.org/entity/metastatic_disease_Condition> a ns1:Condition ;
+<http://example.org/entity/low_risk_risk_category> a ns1:risk_category ;
+    ns1:name "low-risk" .
+
+<http://example.org/entity/malignant_rhabdoid_tumors_condition> a ns1:condition ;
+    ns1:name "malignant rhabdoid tumors" .
+
+<http://example.org/entity/malignant_rhabdoid_tumour_of_the_kidney_medical_condition> a ns1:medical_condition ;
+    ns1:name "malignant rhabdoid tumour of the kidney" .
+
+<http://example.org/entity/metastatic_disease_treatment_category> a ns1:treatment_category ;
     ns1:name "metastatic disease" .
 
-<http://example.org/entity/minimally_invasive_surgery_Treatment> a ns1:Treatment ;
+<http://example.org/entity/minimally_invasive_surgery_treatment> a ns1:treatment ;
     ns1:name "minimally invasive surgery" .
 
-<http://example.org/entity/n_Sample_Size> a ns1:Sample_Size ;
-    ns1:name "n" .
+<http://example.org/entity/national_Wilms_tumor_studies_4_and_5_study_series> a ns1:study_series ;
+    ns1:name "national Wilms tumor studies-4 and -5" .
 
-<http://example.org/entity/nephrectomy_Surgical_Procedure> a ns1:Surgical_Procedure ;
+<http://example.org/entity/nephrectomy_surgery> a ns1:surgery ;
     ns1:name "nephrectomy" .
 
-<http://example.org/entity/nephron_sparing_surgery_NSS_Treatment> a ns1:Treatment ;
+<http://example.org/entity/nephron_sparing_surgery_NSS_treatment> a ns1:treatment ;
     ns1:name "nephron-sparing surgery (NSS)" .
 
-<http://example.org/entity/nephrotoxicity_Condition> a ns1:Condition ;
-    ns1:name "nephrotoxicity" .
+<http://example.org/entity/paediatric_protocols_guideline> a ns1:guideline ;
+    ns1:name "paediatric protocols" .
 
-<http://example.org/entity/non_Wilms_tumours_medical_condition> a ns1:medical_condition ;
-    ns1:name "non-Wilms tumours" .
+<http://example.org/entity/partial_nephrectomy_surgery> a ns1:surgery ;
+    ns1:name "partial nephrectomy" .
 
-<http://example.org/entity/proton_therapy_Treatment> a ns1:Treatment ;
+<http://example.org/entity/proton_therapy_treatment> a ns1:treatment ;
     ns1:name "proton therapy" .
 
-<http://example.org/entity/pulmonary_metastases_Condition> a ns1:Condition ;
+<http://example.org/entity/pulmonary_metastases_condition> a ns1:condition ;
     ns1:name "pulmonary metastases" .
-
-<http://example.org/entity/pulmonary_radiotherapy_Treatment> a ns1:Treatment ;
-    ns1:name "pulmonary radiotherapy" .
-
-<http://example.org/entity/radiotherapy_Treatment> a ns1:Treatment ;
-    ns1:name "radiotherapy" .
 
 <http://example.org/entity/radiotherapy_Treatment_Method> a ns1:Treatment_Method ;
     ns1:name "radiotherapy" .
 
-<http://example.org/entity/small_volume_tumours_Condition> a ns1:Condition ;
-    ns1:name "small-volume tumours" .
+<http://example.org/entity/radiotherapy_treatment> a ns1:treatment ;
+    ns1:name "radiotherapy" .
 
-<http://example.org/entity/surgery_Treatment> a ns1:Treatment ;
+<http://example.org/entity/renal_cell_carcinoma_condition> a ns1:condition ;
+    ns1:name "renal cell carcinoma" .
+
+<http://example.org/entity/renal_cell_carcinoma_medical_condition> a ns1:medical_condition ;
+    ns1:name "renal cell carcinoma" .
+
+<http://example.org/entity/risk_group_classification> a ns1:classification ;
+    ns1:name "risk group" .
+
+<http://example.org/entity/surgery_treatment> a ns1:treatment ;
     ns1:name "surgery" .
 
-<http://example.org/entity/surgery_Treatment_Method> a ns1:Treatment_Method ;
-    ns1:name "surgery" .
+<http://example.org/entity/surgical_excision_Treatment_Method> a ns1:Treatment_Method ;
+    ns1:name "surgical excision" .
 
-<http://example.org/entity/topotecan_Medication> a ns1:Medication ;
+<http://example.org/entity/topotecan_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
     ns1:name "topotecan" .
+
+<http://example.org/entity/treatment_efficacy_Outcome> a ns1:Outcome ;
+    ns1:name "treatment efficacy" .
+
+<http://example.org/entity/tumor_volume_Medical_Measurement> a ns1:Medical_Measurement ;
+    ns1:name "tumor volume" .
+
+<http://example.org/entity/van_den_Heuvel_Eibrink_M_M_author> a ns1:author ;
+    ns1:name "van den Heuvel-Eibrink, M. M." .
+
+<http://example.org/entity/vincristine_Chemotherapy_Agent> a ns1:Chemotherapy_Agent ;
+    ns1:name "vincristine" .
 
 <http://example.org/entity/vincristine_Drug> a ns1:Drug ;
     ns1:name "vincristine" .
 
-<http://example.org/entity/vincristine_Medication> a ns1:Medication ;
+<http://example.org/entity/vincristine_and_actinomycin_D_Chemotherapy> a ns1:Chemotherapy ;
+    ns1:name "vincristine and actinomycin D" .
+
+<http://example.org/entity/vincristine_and_actinomycin_D_plus_doxorubicin_treatment> a ns1:treatment ;
+    ns1:name "vincristine and actinomycin D plus doxorubicin" .
+
+<http://example.org/entity/vincristine_and_actinomycin_D_treatment> a ns1:treatment ;
+    ns1:name "vincristine and actinomycin D" .
+
+<http://example.org/entity/vincristine_drug> a ns1:drug ;
     ns1:name "vincristine" .
 
-<http://example.org/entity/vincristine_and_actinomycin_D_plus_five_doses_of_doxorubicin_Treatment_regimen> a ns1:Treatment_regimen ;
-    ns1:name "vincristine and actinomycin D plus five doses of doxorubicin" .
+<http://example.org/entity/vincristine_entity> ns2:combined_with_for_non_anaplastic <http://example.org/entity/doxorubicin_entity> ;
+    ns2:is_used_to_treat <http://example.org/entity/Wilms_Tumours_entity> .
 
-<http://example.org/entity/vincristine_and_actinomycin_D_without_doxorubicin_Treatment_regimen> a ns1:Treatment_regimen ;
-    ns1:name "vincristine and actinomycin D without doxorubicin" .
-
-<http://example.org/entity/whole_abdominal_radiotherapy_Treatment> a ns1:Treatment ;
-    ns1:name "whole-abdominal radiotherapy" .
-
-<http://example.org/entity/whole_lung_irradiation_Treatment> a ns1:Treatment ;
+<http://example.org/entity/whole_lung_irradiation_treatment> a ns1:treatment ;
     ns1:name "whole-lung irradiation" .
 
 <http://example.org/entity/wwwsiop_rtsgeu_website> a ns1:website ;
     ns1:name "www.siop-rtsg.eu" .
 
-<http://example.org/entity/Infant_Wilms_Tumours_entity> ns2:subject_to <http://example.org/entity/nephrectomy_entity> .
+<http://example.org/entity/UMBRELLA_SIOP_RTSG_2016_entity> ns2:addresses <http://example.org/entity/childhood_renal_tumours_entity> ;
+    ns2:succeeds <http://example.org/entity/SIOP2001_protocol_entity> .
 
-<http://example.org/entity/nephrectomy_entity> ns2:followed_by <http://example.org/entity/chemotherapy_entity> .
+<http://example.org/entity/carboplatin_entity> ns2:combined_with <http://example.org/entity/cyclophosphamide_entity> .
 
-<http://example.org/entity/doxorubicin_entity> ns2:used_for <http://example.org/entity/Wilms_tumours_entity> ;
-    ns2:used_in <http://example.org/entity/Adult_Wilms_Tumours_entity> .
+<http://example.org/entity/cyclophosphamide_entity> ns2:combined_with <http://example.org/entity/etoposide_entity> ;
+    ns2:included_in <http://example.org/entity/group_BB_protocol_entity> .
 
-<http://example.org/entity/Adult_Wilms_Tumours_entity> ns2:subject_to <http://example.org/entity/nephrectomy_entity> .
+<http://example.org/entity/etoposide_entity> ns2:combined_with <http://example.org/entity/doxorubicin_entity> .
 
-<http://example.org/entity/SIOP2001_entity> ns2:treatment_of <http://example.org/entity/blastemal_type_Wilms_tumour_entity> .
+<http://example.org/entity/SIOP2001_entity> ns2:influences <http://example.org/entity/UMBRELLA_protocol_entity> ;
+    ns2:investigated_omission_of <http://example.org/entity/doxorubicin_entity> ;
+    ns2:refined_based_on <http://example.org/entity/COGNWTS_trials_entity> .
 
-<http://example.org/entity/Wilms_tumour_entity> ns2:diagnosed_in <http://example.org/entity/Europe_entity> .
+<http://example.org/entity/Wilms_Tumours_entity> ns2:is_treated_in <http://example.org/entity/UMBRELLA_Protocol_entity> .
 
-<http://example.org/entity/Wilms_tumours_entity> ns2:presentation <http://example.org/entity/Stage_IV_entity> .
+<http://example.org/entity/doxorubicin_entity> ns2:is_used_to_treat <http://example.org/entity/Wilms_Tumours_entity> .
 
-<http://example.org/entity/UMBRELLA_protocol_entity> ns2:addresses <http://example.org/entity/childhood_renal_tumours_entity> ;
-    ns2:adoption <http://example.org/entity/SIOP2001_entity> ;
-    ns2:available_on <http://example.org/entity/wwwsiop_rtsgeu_entity> ;
-    ns2:guides_treatment_for <http://example.org/entity/Wilms_tumour_entity> ;
-    ns2:involves <http://example.org/entity/over_50_countries_entity> ;
-    ns2:treats <http://example.org/entity/blastemal_type_tumors_entity>,
-        <http://example.org/entity/diffuse_anaplasia_entity> ;
+<http://example.org/entity/radiotherapy_entity> ns2:applies_to <http://example.org/entity/initially_non_irradiated_sites_entity> ;
     ns2:used_for <http://example.org/entity/Wilms_tumours_entity> .
+
+<http://example.org/entity/HR_1_entity> ns2:treats <http://example.org/entity/Wilms_Tumour_entity> .
+
+<http://example.org/entity/UMBRELLA_protocol_entity> ns2:applied_in <http://example.org/entity/Europe_entity> ;
+    ns2:backbone_for <http://example.org/entity/SIOP_entity> ;
+    ns2:limits <http://example.org/entity/max_12_weeks_of_preoperative_chemotherapy_entity> ;
+    ns2:recommends_contacting <http://example.org/entity/SIOPRTSG_panel_entity> ;
+    ns2:recommends_dose <http://example.org/entity/150_mgm%C2%B2_doxorubicin_entity> ;
+    ns2:recommends_regimen <http://example.org/entity/four_drug_regimen_entity> ;
+    ns2:refines <http://example.org/entity/SIOP2001_entity> ;
+    ns2:supports_initiatives_of <http://example.org/entity/Innovative_Therapies_for_Children_with_Cancer_consortium_entity> ;
+    ns2:targets <http://example.org/entity/Wilms_Tumour_entity> .
 
