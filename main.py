@@ -1,128 +1,475 @@
+"""
+pdf_parsers.py
+
+PDF Parser Factory Module
+
+This module provides a factory pattern implementation for different PDF parsers:
+1. PyMuPDF4LLM (Fast, lightweight, best for simple PDFs)
+2. Gemini Flash (Best for complex layouts, requires Google API)
+3. Llama Parse (Strong structure preservation, requires Llama API)
+
+Each parser implements a common interface for consistency and easy switching.
+"""
+
 import os
+import io
+import re
 import json
+import base64
+from abc import ABC, abstractmethod
+from typing import List, Dict, Any
 from pathlib import Path
+
 from dotenv import load_dotenv
-from typing import Optional
-from src.pipeline import create_pipeline
+from tqdm import tqdm
+from PIL import Image
 
-def load_environment():
-    """Load environment variables from .env file"""
-    load_dotenv()
-    required_vars = [
-        'GOOGLE_API_KEY',
-        'LLAMA_CLOUD_API_KEY', 
-        'ANTHROPIC_API_KEY',
-        'OPENAI_API_KEY'
-    ]
+import fitz  # PyMuPDF
+import google.generativeai as genai
+from llama_parse import LlamaParse
+from openai import OpenAI
+
+from pydantic import BaseModel, Field
+
+# ---------------------------
+# Global Debug Flag and Helper Function
+# ---------------------------
+DEBUG = True  # Set to False to disable debug output
+
+def debug(msg: str):
+    if DEBUG:
+        print(f"[DEBUG] {msg}")
+
+# ---------------------------
+# Load Environment Variables
+# ---------------------------
+load_dotenv()
+
+# ---------------------------
+# Pydantic Models for Schema
+# ---------------------------
+class BoundingBox(BaseModel):
+    """Model for bounding box coordinates."""
+    x1: float = Field(..., ge=0.0, le=1.0)
+    y1: float = Field(..., ge=0.0, le=1.0)
+    x2: float = Field(..., ge=0.0, le=1.0)
+    y2: float = Field(..., ge=0.0, le=1.0)
+
+class Metadata(BaseModel):
+    title: str
+    pages: int
+    parser: str
+    text_nodes: List[str]
+    bounding_boxes: Dict[str, BoundingBox] = {}
+
+class ParsedPDF(BaseModel):
+    metadata: Metadata
+    content: str
+
+# ---------------------------
+# Custom Exception
+# ---------------------------
+class PDFParsingError(Exception):
+    """Custom exception for PDF parsing errors."""
+    pass
+
+# ---------------------------
+# Gemini Flash Helper Functions
+# ---------------------------
+def extract_markdown(pdf_path: str, prompt: str) -> str:
+    """
+    Extract markdown text with semantic chunking from a PDF.
     
-    missing = [var for var in required_vars if not os.getenv(var)]
-    if missing:
-        print("Warning: The following API keys are missing:")
-        for var in missing:
-            print(f"- {var}")
-        print("\nSome features may be limited.")
-
-def select_parser() -> str:
-    """Let user select the PDF parser to use"""
-    print("\nAvailable PDF Parsers:")
-    print("1. PyMuPDF4LLM (Fast, lightweight, best for simple PDFs)")
-    print("2. Gemini Flash (Best for complex layouts, requires Google API)")
-    print("3. Llama Parse (Strong structure preservation, requires Llama API)")
+    Converts each PDF page into an image and sends it along with the prompt to Gemini Flash.
+    """
+    debug(f"Starting extract_markdown for: {pdf_path}")
+    doc = fitz.open(pdf_path)
+    full_text = []
+    model = genai.GenerativeModel('gemini-1.5-flash')
     
-    while True:
-        choice = input("\nSelect parser (1-3): ").strip()
-        if choice == '1':
-            return 'pymupdf4llm'
-        elif choice == '2':
-            return 'gemini_flash'
-        elif choice == '3':
-            return 'llama_parse'
-        print("Invalid choice. Please select 1, 2, or 3.")
-
-def get_input_path() -> Path:
-    """Get input PDF file or directory path from user"""
-    while True:
-        path = input("\nEnter path to PDF file or directory: ").strip()
-        path = Path(path)
-        
-        if not path.exists():
-            print("Path does not exist. Please try again.")
-            continue
-            
-        if path.is_file() and path.suffix.lower() != '.pdf':
-            print("File must be a PDF. Please try again.")
-            continue
-            
-        return path
-
-def get_output_path() -> Path:
-    """Get output directory path from user"""
-    while True:
-        path = input("\nEnter output directory path (default: ./output): ").strip()
-        if not path:
-            path = './output'
-            
-        path = Path(path)
+    for page in tqdm(doc, desc="Processing pages with Gemini Flash (Markdown extraction)"):
         try:
-            path.mkdir(parents=True, exist_ok=True)
-            return path
+            pix = page.get_pixmap()
+            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+            img_byte_arr = io.BytesIO()
+            img.save(img_byte_arr, format='PNG')
+            img_bytes = img_byte_arr.getvalue()
+            
+            response = model.generate_content([
+                prompt,
+                {"mime_type": "image/png", "data": img_bytes}
+            ])
+            
+            debug(f"extract_markdown: response type {type(response)}")
+            if isinstance(response, dict):
+                text = response.get("text", "")
+                debug(f"extract_markdown: received dict with text: {text[:100]}")
+            elif hasattr(response, "text"):
+                text = response.text
+                debug(f"extract_markdown: response.text: {text[:100]}")
+            elif isinstance(response, str):
+                text = response
+                debug(f"extract_markdown: response as string: {text[:100]}")
+            else:
+                text = ""
+                debug("extract_markdown: Unknown response type")
+            
+            if text:
+                full_text.append(text)
+            else:
+                debug("extract_markdown: No text found in response.")
         except Exception as e:
-            print(f"Error creating directory: {e}")
-            print("Please try a different path.")
+            debug(f"Error processing page {page.number}: {e}")
+    
+    doc.close()
+    combined_text = "\n\n".join(full_text)
+    debug(f"Completed extract_markdown, length of combined text: {len(combined_text)}")
+    return combined_text
 
-def process_documents(
-    pipeline,
-    input_path: Path,
-    output_path: Path
-) -> None:
-    """Process PDF document(s) and save results"""
+def extract_text_nodes(pdf_path: str) -> List[str]:
+    """
+    Extract text nodes from the PDF by splitting each page's text into paragraphs.
+    """
+    debug(f"Starting extract_text_nodes for: {pdf_path}")
+    doc = fitz.open(pdf_path)
+    text_nodes = []
+    for page in tqdm(doc, desc="Extracting text nodes with Gemini Flash"):
+        text = page.get_text("text")
+        nodes = [node.strip() for node in text.split('\n\n') if node.strip()]
+        debug(f"Page {page.number}: extracted {len(nodes)} nodes.")
+        text_nodes.extend(nodes)
+    doc.close()
+    debug(f"Completed extract_text_nodes, total nodes: {len(text_nodes)}")
+    return text_nodes
+
+def get_bounding_boxes(text_nodes: List[str], prompt: str, pdf_path: str) -> Dict[str, Dict]:
+    """
+    Get bounding boxes for each text node using Gemini Flash.
+    
+    For each text node, the function sends a prompt and the first page image to Gemini Flash.
+    Expects a response containing four numbers representing the bounding box.
+    """
+    debug("Starting get_bounding_boxes")
+    model = genai.GenerativeModel('gemini-1.5-flash')
+    bounding_boxes = {}
+    doc = fitz.open(pdf_path)
     
     try:
-        if input_path.is_file():
-            print(f"\nProcessing file: {input_path}")
-            results = pipeline.process_pdf(str(input_path))
-        else:
-            print(f"\nProcessing directory: {input_path}")
-            results = pipeline.process_directory(str(input_path))
-            
-        # Save knowledge graph
-        graph_path = output_path / 'knowledge_graph'
-        pipeline.save_knowledge_graph(str(graph_path))
+        page = doc[0]
+        pix = page.get_pixmap()
+        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        img_byte_arr = io.BytesIO()
+        img.save(img_byte_arr, format='PNG')
+        img_bytes = img_byte_arr.getvalue()
         
-        # Save processing results
-        results_file = output_path / 'processing_results.json'
-        with open(results_file, 'w') as f:
-            json.dump(results, f, indent=2)
-            
-        print("\nProcessing completed successfully!")
-        print(f"\nResults saved to:")
-        print(f"- Knowledge Graph: {graph_path}")
-        print(f"- Processing Results: {results_file}")
-        
-    except Exception as e:
-        print(f"\nError during processing: {e}")
+        for node in tqdm(text_nodes, desc="Extracting bounding boxes with Gemini Flash"):
+            try:
+                formatted_prompt = prompt.format(nodes=node)
+                response = model.generate_content([
+                    formatted_prompt,
+                    {"mime_type": "image/png", "data": img_bytes}
+                ])
+                
+                debug(f"get_bounding_boxes: Received response for node '{node[:50]}...' with type {type(response)}")
+                if isinstance(response, dict):
+                    response_text = response.get("text", "").strip()
+                elif hasattr(response, "text"):
+                    response_text = response.text.strip()
+                elif isinstance(response, str):
+                    response_text = response.strip()
+                else:
+                    response_text = ""
+                    debug("get_bounding_boxes: Unknown response type")
+                
+                debug(f"get_bounding_boxes: Response text: {response_text}")
+                
+                if not response_text:
+                    debug(f"Warning: No response text for node: {node[:50]}...")
+                    bounding_boxes[node] = {}
+                    continue
+                
+                numbers = re.findall(r"[-+]?\d*\.\d+|\d+", response_text)
+                debug(f"get_bounding_boxes: Found numbers: {numbers}")
+                if len(numbers) >= 4:
+                    coords = numbers[:4]
+                    try:
+                        bounding_boxes[node] = {
+                            'x1': float(coords[0]),
+                            'y1': float(coords[1]),
+                            'x2': float(coords[2]),
+                            'y2': float(coords[3])
+                        }
+                    except (ValueError, IndexError) as conv_err:
+                        debug(f"Warning: Invalid coordinate conversion for: {coords} ({conv_err})")
+                        bounding_boxes[node] = {}
+                else:
+                    debug(f"Warning: Insufficient coordinates found in response: {response_text}")
+                    bounding_boxes[node] = {}
+                    
+            except Exception as inner_e:
+                debug(f"Error processing node: {node[:50]}... Exception: {inner_e}")
+                bounding_boxes[node] = {}
+    
+    finally:
+        doc.close()
+    
+    debug("Completed get_bounding_boxes")
+    return bounding_boxes
 
-def main():
-    """Main application entry point"""
-    print("\n=== PDF Knowledge Graph Builder ===\n")
+# ---------------------------
+# Abstract PDFParser Class
+# ---------------------------
+class PDFParser(ABC):
+    """Abstract base class for PDF parsers."""
     
-    # Load environment variables
-    load_environment()
+    @abstractmethod
+    def parse(self, pdf_path: str) -> Dict[str, Any]:
+        """
+        Parse a PDF file and return structured content.
+        """
+        pass
+
+# ---------------------------
+# Gemini Flash Parser Class
+# ---------------------------
+class GeminiFlashParser(PDFParser):
+    """Gemini Flash implementation of PDF parser using refined prompts and debugging."""
     
-    # Get user inputs
-    parser_type = select_parser()
-    input_path = get_input_path()
-    output_path = get_output_path()
-    
-    # Create and configure pipeline
-    print("\nInitializing pipeline...")
-    pipeline = create_pipeline(
-        parser_type=parser_type,
-        graph_dir=str(output_path / 'knowledge_graph')
+    CHUNKING_PROMPT = (
+        "Please perform OCR on the attached PDF page image and output the text in Markdown format. "
+        "Convert any tables into well-structured HTML tables without enclosing the result in triple backticks. "
+        "Additionally, segment the text into semantically coherent chunks of approximately 250 to 1000 words each. "
+        "Wrap each chunk with <chunk> and </chunk> tags."
     )
     
-    # Process documents
-    process_documents(pipeline, input_path, output_path)
+    GET_NODE_BOUNDING_BOXES_PROMPT = (
+        "Given the attached image and the following text snippet:\n\n{nodes}\n\n"
+        "determine the exact bounding box that encloses this text. "
+        "Provide the coordinates as percentages (from 0 to 1) of the image dimensions in the order: x1, y1, x2, y2. "
+        "Ensure the values are accurate and strictly in this order."
+    )
+    
+    def __init__(self):
+        debug("Initializing GeminiFlashParser")
+        GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+        if not GOOGLE_API_KEY:
+            raise ValueError("GOOGLE_API_KEY environment variable not set")
+        genai.configure(api_key=GOOGLE_API_KEY)
+        self.model = genai.GenerativeModel('gemini-1.5-flash')
+    
+    def parse(self, pdf_path: str) -> dict:
+        debug(f"GeminiFlashParser: Starting parse on {pdf_path}")
+        try:
+            markdown_text = extract_markdown(pdf_path, prompt=self.CHUNKING_PROMPT)
+            debug("GeminiFlashParser: Markdown extraction completed.")
+            
+            text_nodes = extract_text_nodes(pdf_path)
+            debug(f"GeminiFlashParser: Extracted {len(text_nodes)} text nodes.")
+            
+            raw_boxes = get_bounding_boxes(text_nodes, prompt=self.GET_NODE_BOUNDING_BOXES_PROMPT, pdf_path=pdf_path)
+            debug("GeminiFlashParser: Raw bounding boxes extracted.")
+            
+            valid_boxes = {}
+            for node, box in raw_boxes.items():
+                if box:
+                    try:
+                        valid_boxes[node] = BoundingBox(**box)
+                    except Exception as e:
+                        debug(f"Warning: Skipping invalid bounding box for node: {node[:50]}... Error: {e}")
+                        valid_boxes[node] = None
+                else:
+                    debug(f"Warning: Skipping empty bounding box for node: {node[:50]}...")
+                    valid_boxes[node] = None
+            
+            title = os.path.basename(pdf_path)
+            pages = len(fitz.open(pdf_path))
+            
+            metadata = Metadata(
+                title=title,
+                pages=pages,
+                parser="gemini_flash",
+                text_nodes=text_nodes,
+                bounding_boxes=valid_boxes
+            )
+            
+            parsed_pdf = ParsedPDF(
+                metadata=metadata,
+                content=markdown_text
+            )
+            
+            # Return the full structure with nested "metadata" key.
+            result = parsed_pdf.dict()
+            debug(f"GeminiFlashParser: ParsedPDF.dict() result keys: {list(result.keys())}")
+            debug("GeminiFlashParser: Parse completed successfully.")
+            return result
 
+        except Exception as e:
+            debug(f"GeminiFlashParser: Error during parsing: {e}")
+            raise PDFParsingError(f"Gemini Flash parsing failed: {str(e)}")
+
+# ---------------------------
+# Llama Parse Parser Class
+# ---------------------------
+class LlamaParser(PDFParser):
+    """Llama Parse implementation of PDF parser."""
+    
+    def __init__(self):
+        debug("Initializing LlamaParser")
+        api_key = os.getenv("LLAMA_CLOUD_API_KEY")
+        if not api_key:
+            raise ValueError("LLAMA_CLOUD_API_KEY environment variable not set")
+        self.parser = LlamaParse(api_key=api_key)
+    
+    def parse(self, pdf_path: str) -> Dict[str, Any]:
+        debug(f"LlamaParser: Starting parse on {pdf_path}")
+        documents = self.parser.load_data(pdf_path)
+        parsed_content = []
+        for doc in tqdm(documents, desc="Processing pages with Llama Parse"):
+            parsed_content.append({
+                'page': doc.metadata.get('page', 0) + 1,
+                'content': doc.text,
+                'type': 'text'
+            })
+        result = {
+            'metadata': {
+                'title': os.path.basename(pdf_path),
+                'pages': len(documents),
+                'parser': 'llama_parse',
+                'text_nodes': [],
+                'bounding_boxes': {}
+            },
+            'content': parsed_content
+        }
+        debug("LlamaParser: Parse completed successfully.")
+        return result
+
+# ---------------------------
+# PyMuPDF4LLM Parser Class
+# ---------------------------
+class PyMuPDF4LLMParser(PDFParser):
+    """
+    PyMuPDF4LLM implementation of PDF parser that uses PyMuPDF for extraction
+    and GPT-4 for text enhancement.
+    """
+    
+    def __init__(self):
+        debug("Initializing PyMuPDF4LLMParser")
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY environment variable not set")
+        self.client = OpenAI(api_key=api_key)
+    
+    def _enhance_text(self, text: str) -> str:
+        """
+        Enhance extracted text using GPT-4.
+        """
+        prompt = (
+            "Please analyze and enhance the following extracted PDF text. "
+            "Maintain the original information and structure, fix any OCR or formatting errors, "
+            "and preserve important formatting such as lists and paragraphs. "
+            "Here is the text to enhance:\n\n"
+        )
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "You are a PDF text enhancement specialist."},
+                    {"role": "user", "content": prompt + text}
+                ],
+                temperature=0.3,
+                max_tokens=1500
+            )
+            debug(f"PyMuPDF4LLMParser: Received GPT-4 response: {response}")
+            enhanced_text = response.choices[0].message.content
+            return enhanced_text
+        except Exception as e:
+            debug(f"PyMuPDF4LLMParser: Error during text enhancement: {e}")
+            return text  # Fallback to raw text if enhancement fails
+    
+    def parse(self, pdf_path: str) -> Dict[str, Any]:
+        debug(f"PyMuPDF4LLMParser: Starting parse on {pdf_path}")
+        doc = fitz.open(pdf_path)
+        parsed_content = []
+        for page_num in tqdm(range(len(doc)), desc="Processing pages with PyMuPDF4LLM"):
+            page = doc[page_num]
+            raw_text = page.get_text()
+            enhanced_text = self._enhance_text(raw_text)
+            images = []
+            for img in page.get_images():
+                xref = img[0]
+                try:
+                    base_image = doc.extract_image(xref)
+                    if base_image:
+                        images.append({
+                            'type': 'image',
+                            'format': base_image.get("ext"),
+                            'data': base_image.get("image")
+                        })
+                except Exception as img_e:
+                    debug(f"PyMuPDF4LLMParser: Error extracting image: {img_e}")
+            parsed_content.append({
+                'page': page_num + 1,
+                'content': enhanced_text,
+                'type': 'text',
+                'images': images
+            })
+        result = {
+            'metadata': {
+                'title': os.path.basename(pdf_path),
+                'pages': len(doc),
+                'parser': 'pymupdf4llm',
+                'text_nodes': [],
+                'bounding_boxes': {}
+            },
+            'content': parsed_content
+        }
+        debug("PyMuPDF4LLMParser: Parse completed successfully.")
+        return result
+
+# ---------------------------
+# PDF Parser Factory
+# ---------------------------
+class PDFParserFactory:
+    """Factory class for creating PDF parser instances."""
+    
+    @staticmethod
+    def get_parser(parser_type: str) -> PDFParser:
+        debug(f"PDFParserFactory: Requested parser type: {parser_type}")
+        parsers = {
+            'gemini_flash': GeminiFlashParser,
+            'llama_parse': LlamaParser,
+            'pymupdf4llm': PyMuPDF4LLMParser
+        }
+        parser_class = parsers.get(parser_type.lower())
+        if not parser_class:
+            raise ValueError(f"Unknown parser type: {parser_type}")
+        debug(f"PDFParserFactory: Instantiating parser: {parser_class.__name__}")
+        return parser_class()
+
+# ---------------------------
+# Convenience Function
+# ---------------------------
+def parse_pdf(pdf_path: str, parser_type: str = 'pymupdf4llm') -> Dict[str, Any]:
+    """
+    Convenience function to parse a PDF file using the specified parser.
+    """
+    debug(f"parse_pdf: Using parser {parser_type} for file {pdf_path}")
+    parser = PDFParserFactory.get_parser(parser_type)
+    result = parser.parse(pdf_path)
+    debug("parse_pdf: Processing complete.")
+    return result
+
+# ---------------------------
+# Module Test Code (if run as script)
+# ---------------------------
 if __name__ == "__main__":
-    main()
+    # Example usage for debugging purposes.
+    sample_pdf = "data/pdfs/example.pdf"  # Replace with a valid PDF path for testing.
+    chosen_parser = "gemini_flash"  # Change to "pymupdf4llm" or "llama_parse" as needed.
+    
+    try:
+        result = parse_pdf(sample_pdf, parser_type=chosen_parser)
+        print("Parsing result:")
+        print(json.dumps(result, indent=2, default=str))
+    except Exception as e:
+        print(f"Error during parsing: {e}")

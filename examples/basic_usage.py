@@ -9,8 +9,16 @@ This script demonstrates the core functionality of the PDF Knowledge Graph pipel
 """
 
 import os
+import sys
 import json
 from dotenv import load_dotenv
+
+# Add the project root directory to Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)  # Go up one level to project root
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
 from src.pipeline import create_pipeline
 
 # Load environment variables

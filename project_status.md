@@ -1,27 +1,5 @@
 # Project Status
 
-## Completed Steps
-- Created main.py with interactive CLI interface
-- Implemented parser selection
-- Added input/output path handling
-- Integrated environment variable loading
-- Added result saving functionality
-
-## Current Tasks
-- Implement src/pipeline.py
-- Implement src/pdf_parsers.py
-- Implement src/knowledge_graph.py
-- Create test suite
-
-## Remaining Tasks
-- Implement evaluation framework
-- Add query interface
-- Add comprehensive error handling
-- Add logging system
-- Create example test queries
-- Add documentation
-- Set up CI/CD pipeline
-
 ## Completed Tasks
 
 1. Project Setup
@@ -52,6 +30,39 @@
    - [x] Added usage examples
    - [x] Added evaluation guidelines
    - [x] Created basic usage example script
+
+## Current Tasks
+
+1. Testing
+   - [ ] Write unit tests for parsers
+   - [ ] Write unit tests for knowledge graph
+   - [ ] Write integration tests
+   - [ ] Create test dataset
+
+2. Optimization
+   - [ ] Optimize entity extraction
+   - [ ] Improve relationship detection
+   - [ ] Enhance query performance
+
+## Remaining Tasks
+
+1. Features
+   - [ ] Add support for more document formats
+   - [ ] Implement advanced graph visualization
+   - [ ] Add batch processing capabilities
+   - [ ] Create web interface
+
+2. Documentation
+   - [ ] Add API documentation
+   - [ ] Create Jupyter notebook tutorials
+   - [ ] Add performance benchmarks
+   - [ ] Create video tutorials
+
+3. Deployment
+   - [ ] Package for PyPI
+   - [ ] Create Docker container
+   - [ ] Set up CI/CD pipeline
+   - [ ] Create cloud deployment guide
 
 ## Known Issues
 

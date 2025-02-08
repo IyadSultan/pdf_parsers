@@ -21,11 +21,15 @@ Surround the chunks with <chunk> </chunk> html tags.
 
 # Prompt to retrieve strict bounding boxes for given text nodes.
 GET_NODE_BOUNDING_BOXES_PROMPT = """\
-Please provide me strict bounding boxes that encompasses the following text in the attached image? I'm trying to draw a rectangle around the text.
-- Use the top-left coordinate system
-- Values should be percentages of the image width and height (0 to 1)
-
-{nodes}
+Look at the image and find this exact text: "{nodes}"
+    Return ONLY the bounding box coordinates as four comma-separated numbers (x1,y1,x2,y2) representing percentages of the image dimensions.
+    For example: 10.5,20.3,45.8,60.2
+    The coordinates should represent:
+    x1: left edge (percentage from left)
+    y1: top edge (percentage from top)
+    x2: right edge (percentage from left)
+    y2: bottom edge (percentage from top)
+    Return only the numbers, no other text.
 """
 
 # --- Processing functions ---
