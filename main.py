@@ -44,21 +44,10 @@ def setup_directories():
         os.makedirs(directory, exist_ok=True)
 
 def get_test_queries():
-    """Define test queries for evaluation."""
-    return [
-        {
-            'question': "What are the main topics discussed in the document?",
-            'expected_answer': "The document discusses key topics related to its content. The exact topics should be identified from the actual document content."
-        },
-        {
-            'question': "What are the key findings or conclusions?",
-            'expected_answer': "The document presents specific findings and conclusions related to its main topics. These should be accurately extracted from the document content."
-        },
-        {
-            'question': "Who are the main entities mentioned and what are their relationships?",
-            'expected_answer': "The document mentions specific entities and describes relationships between them. These should be correctly identified from the document content."
-        }
-    ]
+    """Load test queries from sample JSON file."""
+    with open('data/evaluations/sample.json', 'r', encoding='utf-8') as f:
+        test_queries = json.load(f)
+    return test_queries
 
 def process_with_parser(parser_type: str, input_path: str):
     """

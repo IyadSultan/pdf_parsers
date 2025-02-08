@@ -1,0 +1,103 @@
+[
+    {
+      "question": "What is the primary goal of the UMBRELLA protocol?",
+      "expected_answer": "The UMBRELLA protocol aims to standardize the diagnosis and treatment of childhood renal tumours and promote international collaboration.",
+      "criteria": "The answer must mention standardization in treatment/diagnosis and international collaboration."
+    },
+    {
+      "question": "Which patient group is primarily addressed by the UMBRELLA protocol?",
+      "expected_answer": "Childhood patients with renal tumours, particularly those with Wilms tumour.",
+      "criteria": "The answer must identify childhood renal tumours and mention Wilms tumour."
+    },
+    {
+      "question": "What does the protocol aim to replace?",
+      "expected_answer": "It succeeds the SIOP−2001 protocol.",
+      "criteria": "The answer must reference the protocol succeeding the SIOP−2001 protocol."
+    },
+    {
+      "question": "How does the UMBRELLA protocol plan to support research?",
+      "expected_answer": "By integrating biomarker and imaging research with standardized treatment guidelines.",
+      "criteria": "The answer must mention both biomarker/imaging research and standard treatment guidelines."
+    },
+    {
+      "question": "What is the significance of tumor volume in the treatment guidelines?",
+      "expected_answer": "Tumor volume is used to stratify patients and guide treatment intensity, especially regarding the use of chemotherapy agents like doxorubicin.",
+      "criteria": "The answer must explain that tumor volume affects patient stratification and treatment intensity."
+    },
+    {
+      "question": "What imaging modality is mentioned for staging in the UMBRELLA protocol?",
+      "expected_answer": "Chest CT is mentioned for staging, particularly to detect small pulmonary nodules.",
+      "criteria": "The answer must reference chest CT and its role in detecting pulmonary metastases."
+    },
+    {
+      "question": "What is the role of radiotherapy according to the protocol?",
+      "expected_answer": "Radiotherapy is used to treat metastatic sites and in cases where a complete surgical resection is not feasible.",
+      "criteria": "The answer must mention radiotherapy for metastases or as an adjunct when surgery cannot achieve complete resection."
+    },
+    {
+      "question": "How does the protocol address the treatment of relapsed Wilms tumour?",
+      "expected_answer": "It recommends a structured approach that may include combinations of chemotherapy agents and, in some cases, high-dose chemotherapy with autologous stem cell rescue.",
+      "criteria": "The answer must include the use of combination chemotherapy and mention high-dose therapy if applicable."
+    },
+    {
+      "question": "What specific chemotherapy agents are mentioned in the treatment recommendations?",
+      "expected_answer": "Agents such as vincristine, actinomycin D, doxorubicin, and in some cases etoposide and cyclophosphamide are mentioned.",
+      "criteria": "The answer must list at least three of the mentioned chemotherapy agents."
+    },
+    {
+      "question": "What is the significance of preoperative chemotherapy in the protocol?",
+      "expected_answer": "Preoperative chemotherapy is used to downstage the tumor and assess its chemosensitivity before surgery.",
+      "criteria": "The answer must explain the role of preoperative chemotherapy in tumor downstaging and evaluating response."
+    },
+    {
+      "question": "What percentage of childhood malignancies do renal tumours approximately represent?",
+      "expected_answer": "Renal tumours account for about 5% of all paediatric malignancies.",
+      "criteria": "The answer must state that renal tumours make up roughly 5% of pediatric cancers."
+    },
+    {
+      "question": "How are bilateral renal tumours addressed in the protocol?",
+      "expected_answer": "Bilateral tumours are managed with a focus on nephron-sparing surgery and careful evaluation to avoid total nephrectomy.",
+      "criteria": "The answer must mention the use of nephron-sparing surgery and avoiding complete kidney removal."
+    },
+    {
+      "question": "What does the protocol suggest about radiotherapy dosage for lung metastases?",
+      "expected_answer": "It suggests that the whole-lung irradiation dose may be reduced (for example, from 15 Gy to 12 Gy) in selected cases.",
+      "criteria": "The answer must include the detail that lung irradiation doses are adjusted based on the protocol."
+    },
+    {
+      "question": "How does the protocol plan to monitor long-term outcomes?",
+      "expected_answer": "By collecting comprehensive, prospective data from a large cohort of patients.",
+      "criteria": "The answer must mention prospective data collection and long-term monitoring."
+    },
+    {
+      "question": "Which international society is responsible for the protocol?",
+      "expected_answer": "The International Society of Paediatric Oncology (SIOP–RTSG) developed the UMBRELLA protocol.",
+      "criteria": "The answer must identify the SIOP–RTSG as the organizing body."
+    },
+    {
+      "question": "What does the term ‘UMBRELLA’ symbolize in this context?",
+      "expected_answer": "It symbolizes the comprehensive and wide-ranging approach to treating all paediatric renal tumours.",
+      "criteria": "The answer must convey that the term indicates a comprehensive treatment strategy."
+    },
+    {
+      "question": "How does the protocol propose handling cases of misdiagnosis?",
+      "expected_answer": "It recommends direct surgery or biopsy in cases where imaging and clinical features are atypical to avoid treatment delays.",
+      "criteria": "The answer must mention the use of biopsy or direct surgery in atypical cases."
+    },
+    {
+      "question": "What are the expected outcomes for patients with Wilms tumour under this protocol?",
+      "expected_answer": "Survival rates are expected to be high, with improvements in event-free and overall survival due to standardized treatment approaches.",
+      "criteria": "The answer must reference high survival rates and improved outcomes due to standardization."
+    },
+    {
+      "question": "How is international collaboration emphasized in the protocol?",
+      "expected_answer": "The protocol is designed to be implemented in over 50 countries, facilitating data sharing and research across borders.",
+      "criteria": "The answer must include that the protocol involves many countries and supports international data sharing."
+    },
+    {
+      "question": "What is the intended benefit of standardizing treatment for renal tumours?",
+      "expected_answer": "Standardization should lead to more homogeneous patient data, better prognostic assessments, and improved opportunities for future research and clinical trials.",
+      "criteria": "The answer must include improved data uniformity and better research opportunities."
+    }
+  ]
+  

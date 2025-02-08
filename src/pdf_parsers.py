@@ -307,8 +307,13 @@ class GeminiFlashParser(PDFParser):
                 result.update(metadata_dict)
             debug(f"After flattening, result keys: {list(result.keys())}")
             
+            # NEW: Ensure that content is a list of dictionaries for consistency
+            if isinstance(result.get("content"), str):
+                result["content"] = [{"page": 1, "content": result["content"]}]
+
             debug("GeminiFlashParser: Parse completed successfully.")
             return result
+
 
         except Exception as e:
             debug(f"GeminiFlashParser: Error during parsing: {e}")
