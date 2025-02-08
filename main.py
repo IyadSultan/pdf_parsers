@@ -7,8 +7,8 @@ This script runs the PDF processing pipeline using all three available parsers:
 3. Llama Parse
 
 For each parser, it:
-1. Parses PDFs and saves raw output
-2. Creates a knowledge graph
+1. Creates a separate pipeline
+2. Processes PDFs
 3. Saves the knowledge graph
 4. Runs evaluation
 """
@@ -25,7 +25,7 @@ if current_dir not in sys.path:
     sys.path.append(current_dir)
 
 from src.pipeline import create_pipeline
-from src.pdf_parsers import parse_pdf, save_parsed_pdf_as_markdown
+from src.pdf_parsers import save_parsed_pdf_as_markdown
 
 # Load environment variables
 load_dotenv()
@@ -37,48 +37,28 @@ def setup_directories():
         'graphs/pymupdf4llm',
         'graphs/gemini_flash',
         'graphs/llama_parse',
-        'output/parsed',
         'output/markdown',
         'evaluation'
     ]
     for directory in directories:
         os.makedirs(directory, exist_ok=True)
 
-def parse_and_save(parser_type: str, input_path: str) -> dict:
-    """
-    Parse PDF and save raw output before processing.
-    
-    Args:
-        parser_type (str): Type of parser to use
-        input_path (str): Path to PDF file
-        
-    Returns:
-        dict: Parsed content
-    """
-    print(f"\nParsing with {parser_type}...")
-    
-    # Parse the PDF
-    parsed_content = parse_pdf(input_path, parser_type=parser_type)
-    
-    # Save raw parsed content as JSON
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    base_name = os.path.splitext(os.path.basename(input_path))[0]
-    json_filename = f"{base_name}_{parser_type}_{timestamp}.json"
-    json_path = os.path.join('output/parsed', json_filename)
-    
-    with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(parsed_content, f, indent=2, default=str)
-    print(f"Saved parsed content to: {json_path}")
-    
-    # Save as markdown for readability
-    save_parsed_pdf_as_markdown(
-        parsed_content, 
-        input_path, 
-        parser_type,
-        output_dir='output/markdown'
-    )
-    
-    return parsed_content
+def get_test_queries():
+    """Define test queries for evaluation."""
+    return [
+        {
+            'question': "What are the main topics discussed in the document?",
+            'expected_answer': "The document discusses key topics related to its content. The exact topics should be identified from the actual document content."
+        },
+        {
+            'question': "What are the key findings or conclusions?",
+            'expected_answer': "The document presents specific findings and conclusions related to its main topics. These should be accurately extracted from the document content."
+        },
+        {
+            'question': "Who are the main entities mentioned and what are their relationships?",
+            'expected_answer': "The document mentions specific entities and describes relationships between them. These should be correctly identified from the document content."
+        }
+    ]
 
 def process_with_parser(parser_type: str, input_path: str):
     """
@@ -101,23 +81,22 @@ def process_with_parser(parser_type: str, input_path: str):
     # Process PDF(s)
     if os.path.isfile(input_path):
         print(f"Processing single PDF: {input_path}")
-        parsed_content = parse_and_save(parser_type, input_path)
-        result = pipeline.process_parsed_content(parsed_content)
+        result = pipeline.process_pdf(input_path)
         results = [result]
+        print(f"Processed {result['title']} with {result['pages']} pages")
     else:
         print(f"Processing directory: {input_path}")
-        results = []
-        for filename in os.listdir(input_path):
-            if filename.lower().endswith('.pdf'):
-                pdf_path = os.path.join(input_path, filename)
-                parsed_content = parse_and_save(parser_type, pdf_path)
-                result = pipeline.process_parsed_content(parsed_content)
-                results.append(result)
+        results = pipeline.process_directory(input_path)
+        print(f"Processed {len(results)} PDFs")
     
     # Save knowledge graph
     graph_dir = f'graphs/{parser_type}'
-    print(f"Saving knowledge graph to {graph_dir}")
+    print(f"\nSaving knowledge graph to {graph_dir}")
     pipeline.save_knowledge_graph(graph_dir)
+    
+    # Save parsed content as markdown
+    for result in results:
+        save_parsed_pdf_as_markdown(result, input_path, parser_type, f'output/markdown')
     
     # Run evaluation
     print(f"\nRunning evaluation for {parser_type}...")
@@ -133,23 +112,6 @@ def process_with_parser(parser_type: str, input_path: str):
     print(f"Evaluation results saved to: {eval_output_file}")
     
     return results, evaluation_results
-
-def get_test_queries():
-    """Define test queries for evaluation."""
-    return [
-        {
-            'question': "What are the main topics discussed in the document?",
-            'expected_answer': "The document discusses key topics related to its content. The exact topics should be identified from the actual document content."
-        },
-        {
-            'question': "What are the key findings or conclusions?",
-            'expected_answer': "The document presents specific findings and conclusions related to its main topics. These should be accurately extracted from the document content."
-        },
-        {
-            'question': "Who are the main entities mentioned and what are their relationships?",
-            'expected_answer': "The document mentions specific entities and describes relationships between them. These should be correctly identified from the document content."
-        }
-    ]
 
 def main():
     """Main execution function."""

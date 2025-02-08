@@ -10,7 +10,7 @@ This module implements the main pipeline that:
 import os
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
-from .pdf_parsers import parse_pdf
+from .pdf_parsers import parse_pdf, debug
 from .knowledge_graph import KnowledgeGraphBuilder
 from deepeval import evaluate
 from deepeval.metrics import (
@@ -34,6 +34,7 @@ class Pipeline:
         Args:
             parser_type (str): Type of PDF parser to use
         """
+        debug(f"Initializing pipeline with parser: {parser_type}")
         self.parser_type = parser_type
         self.graph_builder = KnowledgeGraphBuilder()
         
@@ -47,11 +48,16 @@ class Pipeline:
         Returns:
             Dict[str, Any]: Processing results
         """
+        debug(f"Processing PDF: {pdf_path}")
+        
         # Parse PDF
         parsed_content = parse_pdf(pdf_path, self.parser_type)
+        debug("PDF parsing completed")
         
         # Add to knowledge graph
+        debug("Building knowledge graph...")
         self.graph_builder.add_document(parsed_content)
+        debug("Knowledge graph updated")
         
         return parsed_content
         
@@ -65,6 +71,7 @@ class Pipeline:
         Returns:
             List[Dict[str, Any]]: Processing results for each PDF
         """
+        debug(f"Processing directory: {dir_path}")
         results = []
         for filename in os.listdir(dir_path):
             if filename.lower().endswith('.pdf'):
@@ -80,7 +87,10 @@ class Pipeline:
         Args:
             output_dir (str): Directory to save the graph
         """
+        debug(f"Saving knowledge graph to: {output_dir}")
+        os.makedirs(output_dir, exist_ok=True)
         self.graph_builder.save_graph(output_dir)
+        debug("Knowledge graph saved")
         
     def load_knowledge_graph(self, input_dir: str) -> None:
         """
