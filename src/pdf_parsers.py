@@ -367,9 +367,13 @@ class PyMuPDF4LLMParser(PDFParser):
             raise ValueError("OPENAI_API_KEY environment variable not set")
         self.client = OpenAI(api_key=api_key)
     
-    def _enhance_text(self, text: str) -> str:
+    def _enhance_text(self, text: str, model: str = "gpt-4o-mini") -> str:
         """
-        Enhance extracted text using GPT-4.
+        Enhance extracted text using specified model.
+        
+        Args:
+            text (str): Text to enhance
+            model (str): Model to use for enhancement. Defaults to "gpt-4o-mini"
         """
         prompt = (
             "Please analyze and enhance the following extracted PDF text. "
@@ -379,7 +383,7 @@ class PyMuPDF4LLMParser(PDFParser):
         )
         try:
             response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
+                model=model,  # Use the provided model parameter
                 messages=[
                     {"role": "system", "content": "You are a PDF text enhancement specialist."},
                     {"role": "user", "content": prompt + text}
@@ -387,7 +391,7 @@ class PyMuPDF4LLMParser(PDFParser):
                 temperature=0.3,
                 max_tokens=1500
             )
-            debug(f"PyMuPDF4LLMParser: Received GPT-4 response: {response}")
+            debug(f"PyMuPDF4LLMParser: Received model response: {response}")
             enhanced_text = response.choices[0].message.content
             return enhanced_text
         except Exception as e:

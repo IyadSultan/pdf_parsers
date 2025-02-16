@@ -113,7 +113,12 @@ class Pipeline:
         """
         return self.graph_builder.query_graph(query)
 
-    def evaluate(self, test_queries: List[Dict[str, str]], output_file: Optional[str] = None) -> Dict[str, Any]:
+    def evaluate(
+        self, 
+        test_queries: List[Dict[str, str]], 
+        output_file: Optional[str] = None,
+        model: str = "gpt-4o-mini"  # Add model parameter with default value
+    ) -> Dict[str, Any]:
         """
         Evaluate the pipeline using test queries.
 
@@ -122,6 +127,7 @@ class Pipeline:
                 - "question": the natural language query.
                 - "expected_answer": the ground truth answer.
             output_file (Optional[str]): Path to a JSON file to save evaluation results.
+            model (str): The model to use for evaluation. Defaults to "gpt-4o-mini".
 
         Returns:
             Dict[str, Any]: The evaluation results.
@@ -130,7 +136,7 @@ class Pipeline:
         metrics = [
             GEval(
                 name="Answer Correctness",
-                model="gpt-4o-mini",
+                model=model,  # Use the provided model parameter
                 evaluation_params=["input", "expected_output", "actual_output"],
                 evaluation_steps=[
                     "Compare the actual answer with the expected answer and determine if the factual content is correct."
@@ -138,14 +144,14 @@ class Pipeline:
             ),
             FaithfulnessMetric(
                 threshold=0.7,
-                model="gpt-4o-mini",
+                model=model,  # Use the provided model parameter
                 evaluation_steps=[
                     "Evaluate whether the answer faithfully reflects the content of the retrieved context and source data."
                 ]
             ),
             ContextualRelevancyMetric(
                 threshold=0.7,
-                model="gpt-4o-mini",
+                model=model,  # Use the provided model parameter
                 evaluation_steps=[
                     "Assess whether the answer is contextually relevant to the question and the information contained in the knowledge graph."
                 ]

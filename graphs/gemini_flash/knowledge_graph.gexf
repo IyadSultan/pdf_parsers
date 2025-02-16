@@ -19,179 +19,39 @@
           <attvalue for="0" value="document" />
         </attvalues>
       </node>
-      <node id="Marry M. van den Heuvel-Eibrink_Person" label="Marry M. van den Heuvel-Eibrink_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Marry M. van den Heuvel-Eibrink" />
-        </attvalues>
-      </node>
-      <node id="Janna A. Hol_Person" label="Janna A. Hol_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Janna A. Hol" />
-        </attvalues>
-      </node>
-      <node id="Kathy Pritchard-Jones_Person" label="Kathy Pritchard-Jones_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Kathy Pritchard-Jones" />
-        </attvalues>
-      </node>
-      <node id="Harm van Tinteren_Person" label="Harm van Tinteren_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Harm van Tinteren" />
-        </attvalues>
-      </node>
-      <node id="Rhoikos Furtwängler_Person" label="Rhoikos Furtwängler_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Rhoikos Furtwängler" />
-        </attvalues>
-      </node>
-      <node id="Arnauld C. Verschuur_Person" label="Arnauld C. Verschuur_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Arnauld C. Verschuur" />
-        </attvalues>
-      </node>
-      <node id="Gordan M. Vujanic_Person" label="Gordan M. Vujanic_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Gordan M. Vujanic" />
-        </attvalues>
-      </node>
-      <node id="Ivo Leuschner_Person" label="Ivo Leuschner_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Ivo Leuschner" />
-        </attvalues>
-      </node>
-      <node id="Jesper Brok_Person" label="Jesper Brok_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Jesper Brok" />
-        </attvalues>
-      </node>
-      <node id="Christian Rübe_Person" label="Christian Rübe_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Christian Rübe" />
-        </attvalues>
-      </node>
-      <node id="Anne M. Smets_Person" label="Anne M. Smets_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Anne M. Smets" />
-        </attvalues>
-      </node>
-      <node id="Geert O. Janssens_Person" label="Geert O. Janssens_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Geert O. Janssens" />
-        </attvalues>
-      </node>
-      <node id="Jan Godzinski_Person" label="Jan Godzinski_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Jan Godzinski" />
-        </attvalues>
-      </node>
-      <node id="Gema L. Ramírez-Villar_Person" label="Gema L. Ramírez-Villar_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Gema L. Ramírez-Villar" />
-        </attvalues>
-      </node>
-      <node id="Beatriz de Camargo_Person" label="Beatriz de Camargo_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Beatriz de Camargo" />
-        </attvalues>
-      </node>
-      <node id="Heidi Segers_Person" label="Heidi Segers_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Heidi Segers" />
-        </attvalues>
-      </node>
-      <node id="Paola Collin_Person" label="Paola Collin_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Paola Collin" />
-        </attvalues>
-      </node>
-      <node id="Manfred Gessler_Person" label="Manfred Gessler_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Manfred Gessler" />
-        </attvalues>
-      </node>
-      <node id="Christophe Bergeron_Person" label="Christophe Bergeron_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Christophe Bergeron" />
-        </attvalues>
-      </node>
-      <node id="Filippo Spreafico_Person" label="Filippo Spreafico_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Filippo Spreafico" />
-        </attvalues>
-      </node>
-      <node id="Norbert Graf_Person" label="Norbert Graf_Person">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Person" />
-          <attvalue for="2" value="Norbert Graf" />
-        </attvalues>
-      </node>
-      <node id="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)_Organization" label="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)_Organization">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Organization" />
-          <attvalue for="2" value="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)" />
-        </attvalues>
-      </node>
-      <node id="UMBRELLA SIOP-RTSG 2016_Protocol" label="UMBRELLA SIOP-RTSG 2016_Protocol">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Protocol" />
-          <attvalue for="2" value="UMBRELLA SIOP-RTSG 2016" />
-        </attvalues>
-      </node>
-      <node id="SIOP-2001_Protocol" label="SIOP-2001_Protocol">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Protocol" />
-          <attvalue for="2" value="SIOP-2001" />
-        </attvalues>
-      </node>
-      <node id="Wilms Tumour_Disease" label="Wilms Tumour_Disease">
+      <node id="Wilms tumour_Disease" label="Wilms tumour_Disease">
         <attvalues>
           <attvalue for="0" value="entity" />
           <attvalue for="1" value="Disease" />
-          <attvalue for="2" value="Wilms Tumour" />
+          <attvalue for="2" value="Wilms tumour" />
+        </attvalues>
+      </node>
+      <node id="UMBRELLA SIOP-RTSG 2016 protocol_Protocol" label="UMBRELLA SIOP-RTSG 2016 protocol_Protocol">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Protocol" />
+          <attvalue for="2" value="UMBRELLA SIOP-RTSG 2016 protocol" />
+        </attvalues>
+      </node>
+      <node id="childhood renal tumours_Disease" label="childhood renal tumours_Disease">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Disease" />
+          <attvalue for="2" value="childhood renal tumours" />
+        </attvalues>
+      </node>
+      <node id="SIOP-RTSG_Organization" label="SIOP-RTSG_Organization">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Organization" />
+          <attvalue for="2" value="SIOP-RTSG" />
+        </attvalues>
+      </node>
+      <node id="SIOP-2001 protocol_Protocol" label="SIOP-2001 protocol_Protocol">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Protocol" />
+          <attvalue for="2" value="SIOP-2001 protocol" />
         </attvalues>
       </node>
       <node id="Children's Oncology Group (COG)_Organization" label="Children's Oncology Group (COG)_Organization">
@@ -201,242 +61,337 @@
           <attvalue for="2" value="Children's Oncology Group (COG)" />
         </attvalues>
       </node>
-      <node id="ACT-2 trial_Clinical Trial" label="ACT-2 trial_Clinical Trial">
+      <node id="blastemal-type Wilms tumours_Disease subtype" label="blastemal-type Wilms tumours_Disease subtype">
         <attvalues>
           <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Clinical Trial" />
-          <attvalue for="2" value="ACT-2 trial" />
+          <attvalue for="1" value="Disease subtype" />
+          <attvalue for="2" value="blastemal-type Wilms tumours" />
         </attvalues>
       </node>
-      <node id="ABVD regimen_Treatment" label="ABVD regimen_Treatment">
-        <attvalues>
-          <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Treatment" />
-          <attvalue for="2" value="ABVD regimen" />
-        </attvalues>
-      </node>
-      <node id="DOVe regimen_Treatment" label="DOVe regimen_Treatment">
+      <node id="actinomycin D and vincristine_Treatment" label="actinomycin D and vincristine_Treatment">
         <attvalues>
           <attvalue for="0" value="entity" />
           <attvalue for="1" value="Treatment" />
-          <attvalue for="2" value="DOVe regimen" />
+          <attvalue for="2" value="actinomycin D and vincristine" />
         </attvalues>
       </node>
-      <node id="chemotherapy_Treatment" label="chemotherapy_Treatment">
+      <node id="doxorubicin_Treatment" label="doxorubicin_Treatment">
         <attvalues>
           <attvalue for="0" value="entity" />
           <attvalue for="1" value="Treatment" />
-          <attvalue for="2" value="chemotherapy" />
+          <attvalue for="2" value="doxorubicin" />
         </attvalues>
       </node>
-      <node id="Advanced Hodgkin Lymphoma_Disease" label="Advanced Hodgkin Lymphoma_Disease">
+      <node id="surgery_Treatment" label="surgery_Treatment">
         <attvalues>
           <attvalue for="0" value="entity" />
-          <attvalue for="1" value="Disease" />
-          <attvalue for="2" value="Advanced Hodgkin Lymphoma" />
+          <attvalue for="1" value="Treatment" />
+          <attvalue for="2" value="surgery" />
         </attvalues>
       </node>
-      <node id="Marry M. van den Heuvel-Eibrink_entity" label="Marry M. van den Heuvel-Eibrink_entity" />
-      <node id="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)_entity" label="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)_entity" />
-      <node id="UMBRELLA SIOP-RTSG 2016_entity" label="UMBRELLA SIOP-RTSG 2016_entity" />
-      <node id="SIOP-2001_entity" label="SIOP-2001_entity" />
-      <node id="Wilms Tumour_entity" label="Wilms Tumour_entity" />
+      <node id="radiotherapy_Treatment" label="radiotherapy_Treatment">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Treatment" />
+          <attvalue for="2" value="radiotherapy" />
+        </attvalues>
+      </node>
+      <node id="metastatic disease_Disease feature" label="metastatic disease_Disease feature">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Disease feature" />
+          <attvalue for="2" value="metastatic disease" />
+        </attvalues>
+      </node>
+      <node id="high-risk histological subtypes_Risk category" label="high-risk histological subtypes_Risk category">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Risk category" />
+          <attvalue for="2" value="high-risk histological subtypes" />
+        </attvalues>
+      </node>
+      <node id="SIOP_Organization" label="SIOP_Organization">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Organization" />
+          <attvalue for="2" value="SIOP" />
+        </attvalues>
+      </node>
+      <node id="COG_Organization" label="COG_Organization">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Organization" />
+          <attvalue for="2" value="COG" />
+        </attvalues>
+      </node>
+      <node id="NWTS-4 and NWTS-5_Study" label="NWTS-4 and NWTS-5_Study">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Study" />
+          <attvalue for="2" value="NWTS-4 and NWTS-5" />
+        </attvalues>
+      </node>
+      <node id="CT-only nodules_Medical condition" label="CT-only nodules_Medical condition">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Medical condition" />
+          <attvalue for="2" value="CT-only nodules" />
+        </attvalues>
+      </node>
+      <node id="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_Organization" label="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_Organization">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Organization" />
+          <attvalue for="2" value="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)" />
+        </attvalues>
+      </node>
+      <node id="stage IV Wilms tumour_Disease stage" label="stage IV Wilms tumour_Disease stage">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Disease stage" />
+          <attvalue for="2" value="stage IV Wilms tumour" />
+        </attvalues>
+      </node>
+      <node id="etoposide and carboplatin_Treatment" label="etoposide and carboplatin_Treatment">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Treatment" />
+          <attvalue for="2" value="etoposide and carboplatin" />
+        </attvalues>
+      </node>
+      <node id="high-dose chemotherapy_Treatment" label="high-dose chemotherapy_Treatment">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Treatment" />
+          <attvalue for="2" value="high-dose chemotherapy" />
+        </attvalues>
+      </node>
+      <node id="autologous stem cell transplantation_Treatment" label="autologous stem cell transplantation_Treatment">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Treatment" />
+          <attvalue for="2" value="autologous stem cell transplantation" />
+        </attvalues>
+      </node>
+      <node id="adult Wilms tumors_Disease context" label="adult Wilms tumors_Disease context">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Disease context" />
+          <attvalue for="2" value="adult Wilms tumors" />
+        </attvalues>
+      </node>
+      <node id="nephron-sparing surgery (NSS)_Treatment" label="nephron-sparing surgery (NSS)_Treatment">
+        <attvalues>
+          <attvalue for="0" value="entity" />
+          <attvalue for="1" value="Treatment" />
+          <attvalue for="2" value="nephron-sparing surgery (NSS)" />
+        </attvalues>
+      </node>
+      <node id="Wilms tumour_entity" label="Wilms tumour_entity" />
+      <node id="UMBRELLA SIOP-RTSG 2016 protocol_entity" label="UMBRELLA SIOP-RTSG 2016 protocol_entity" />
+      <node id="childhood renal tumours_entity" label="childhood renal tumours_entity" />
+      <node id="SIOP-2001 protocol_entity" label="SIOP-2001 protocol_entity" />
+      <node id="SIOP-RTSG_entity" label="SIOP-RTSG_entity" />
       <node id="Children's Oncology Group (COG)_entity" label="Children's Oncology Group (COG)_entity" />
-      <node id="ACT-2 trial_entity" label="ACT-2 trial_entity" />
-      <node id="ABVD regimen_entity" label="ABVD regimen_entity" />
-      <node id="DOVe regimen_entity" label="DOVe regimen_entity" />
-      <node id="chemotherapy_entity" label="chemotherapy_entity" />
-      <node id="Advanced Hodgkin Lymphoma_entity" label="Advanced Hodgkin Lymphoma_entity" />
+      <node id="blastemal-type Wilms tumours_entity" label="blastemal-type Wilms tumours_entity" />
+      <node id="actinomycin D and vincristine_entity" label="actinomycin D and vincristine_entity" />
+      <node id="metastatic disease_entity" label="metastatic disease_entity" />
+      <node id="doxorubicin_entity" label="doxorubicin_entity" />
+      <node id="NWTS-4 and NWTS-5_entity" label="NWTS-4 and NWTS-5_entity" />
+      <node id="CT-only nodules_entity" label="CT-only nodules_entity" />
+      <node id="stage IV Wilms tumour_entity" label="stage IV Wilms tumour_entity" />
+      <node id="etoposide and carboplatin_entity" label="etoposide and carboplatin_entity" />
+      <node id="high-risk histological subtypes_entity" label="high-risk histological subtypes_entity" />
+      <node id="high-dose chemotherapy_entity" label="high-dose chemotherapy_entity" />
+      <node id="autologous stem cell transplantation_entity" label="autologous stem cell transplantation_entity" />
+      <node id="adult Wilms tumors_entity" label="adult Wilms tumors_entity" />
+      <node id="nephron-sparing surgery (NSS)_entity" label="nephron-sparing surgery (NSS)_entity" />
+      <node id="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_entity" label="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_entity" />
     </nodes>
     <edges>
-      <edge source="sample.pdf" target="Marry M. van den Heuvel-Eibrink_Person" id="0" type="contains">
+      <edge source="sample.pdf" target="Wilms tumour_Disease" id="0" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Janna A. Hol_Person" id="1" type="contains">
+      <edge source="sample.pdf" target="UMBRELLA SIOP-RTSG 2016 protocol_Protocol" id="1" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Kathy Pritchard-Jones_Person" id="2" type="contains">
+      <edge source="sample.pdf" target="childhood renal tumours_Disease" id="2" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Harm van Tinteren_Person" id="3" type="contains">
+      <edge source="sample.pdf" target="SIOP-RTSG_Organization" id="3" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Rhoikos Furtwängler_Person" id="4" type="contains">
+      <edge source="sample.pdf" target="SIOP-2001 protocol_Protocol" id="4" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Arnauld C. Verschuur_Person" id="5" type="contains">
+      <edge source="sample.pdf" target="Children's Oncology Group (COG)_Organization" id="5" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Gordan M. Vujanic_Person" id="6" type="contains">
+      <edge source="sample.pdf" target="blastemal-type Wilms tumours_Disease subtype" id="6" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Ivo Leuschner_Person" id="7" type="contains">
+      <edge source="sample.pdf" target="actinomycin D and vincristine_Treatment" id="7" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Jesper Brok_Person" id="8" type="contains">
+      <edge source="sample.pdf" target="doxorubicin_Treatment" id="8" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Christian Rübe_Person" id="9" type="contains">
+      <edge source="sample.pdf" target="surgery_Treatment" id="9" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Anne M. Smets_Person" id="10" type="contains">
+      <edge source="sample.pdf" target="radiotherapy_Treatment" id="10" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Geert O. Janssens_Person" id="11" type="contains">
+      <edge source="sample.pdf" target="metastatic disease_Disease feature" id="11" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Jan Godzinski_Person" id="12" type="contains">
+      <edge source="sample.pdf" target="high-risk histological subtypes_Risk category" id="12" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Gema L. Ramírez-Villar_Person" id="13" type="contains">
+      <edge source="sample.pdf" target="SIOP_Organization" id="13" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Beatriz de Camargo_Person" id="14" type="contains">
+      <edge source="sample.pdf" target="COG_Organization" id="14" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Heidi Segers_Person" id="15" type="contains">
+      <edge source="sample.pdf" target="NWTS-4 and NWTS-5_Study" id="15" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Paola Collin_Person" id="16" type="contains">
+      <edge source="sample.pdf" target="CT-only nodules_Medical condition" id="16" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Manfred Gessler_Person" id="17" type="contains">
+      <edge source="sample.pdf" target="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_Organization" id="17" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Christophe Bergeron_Person" id="18" type="contains">
+      <edge source="sample.pdf" target="stage IV Wilms tumour_Disease stage" id="18" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Filippo Spreafico_Person" id="19" type="contains">
+      <edge source="sample.pdf" target="etoposide and carboplatin_Treatment" id="19" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Norbert Graf_Person" id="20" type="contains">
+      <edge source="sample.pdf" target="high-dose chemotherapy_Treatment" id="20" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)_Organization" id="21" type="contains">
+      <edge source="sample.pdf" target="autologous stem cell transplantation_Treatment" id="21" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="UMBRELLA SIOP-RTSG 2016_Protocol" id="22" type="contains">
+      <edge source="sample.pdf" target="adult Wilms tumors_Disease context" id="22" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="SIOP-2001_Protocol" id="23" type="contains">
+      <edge source="sample.pdf" target="nephron-sparing surgery (NSS)_Treatment" id="23" type="contains">
         <attvalues>
           <attvalue for="3" value="1" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Wilms Tumour_Disease" id="24" type="contains">
+      <edge source="Wilms tumour_entity" target="UMBRELLA SIOP-RTSG 2016 protocol_entity" id="24" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="is treated by" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Children's Oncology Group (COG)_Organization" id="25" type="contains">
+      <edge source="Wilms tumour_entity" target="adult Wilms tumors_entity" id="25" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="context variation" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="ACT-2 trial_Clinical Trial" id="26" type="contains">
+      <edge source="Wilms tumour_entity" target="nephron-sparing surgery (NSS)_entity" id="26" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="treated with" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="ABVD regimen_Treatment" id="27" type="contains">
+      <edge source="childhood renal tumours_entity" target="UMBRELLA SIOP-RTSG 2016 protocol_entity" id="27" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="includes" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="DOVe regimen_Treatment" id="28" type="contains">
+      <edge source="SIOP-2001 protocol_entity" target="UMBRELLA SIOP-RTSG 2016 protocol_entity" id="28" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="precedes" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="chemotherapy_Treatment" id="29" type="contains">
+      <edge source="SIOP-RTSG_entity" target="Children's Oncology Group (COG)_entity" id="29" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="collaborates with" />
         </attvalues>
       </edge>
-      <edge source="sample.pdf" target="Advanced Hodgkin Lymphoma_Disease" id="30" type="contains">
+      <edge source="blastemal-type Wilms tumours_entity" target="actinomycin D and vincristine_entity" id="30" type="relation">
         <attvalues>
-          <attvalue for="3" value="1" />
+          <attvalue for="4" value="treated with" />
         </attvalues>
       </edge>
-      <edge source="Marry M. van den Heuvel-Eibrink_entity" target="International Society of Paediatric Oncology – Renal Tumour Study Group (SIOP-RTSG)_entity" id="31" type="relation">
+      <edge source="metastatic disease_entity" target="doxorubicin_entity" id="31" type="relation">
         <attvalues>
-          <attvalue for="4" value="member_of" />
+          <attvalue for="4" value="treated with" />
         </attvalues>
       </edge>
-      <edge source="UMBRELLA SIOP-RTSG 2016_entity" target="SIOP-2001_entity" id="32" type="relation">
+      <edge source="NWTS-4 and NWTS-5_entity" target="CT-only nodules_entity" id="32" type="relation">
         <attvalues>
-          <attvalue for="4" value="succeeds" />
+          <attvalue for="4" value="studied" />
         </attvalues>
       </edge>
-      <edge source="UMBRELLA SIOP-RTSG 2016_entity" target="Wilms Tumour_entity" id="33" type="relation">
+      <edge source="stage IV Wilms tumour_entity" target="etoposide and carboplatin_entity" id="33" type="relation">
         <attvalues>
-          <attvalue for="4" value="addresses_disease" />
+          <attvalue for="4" value="treated with" />
         </attvalues>
       </edge>
-      <edge source="Children's Oncology Group (COG)_entity" target="ACT-2 trial_entity" id="34" type="relation">
+      <edge source="high-risk histological subtypes_entity" target="high-dose chemotherapy_entity" id="34" type="relation">
         <attvalues>
-          <attvalue for="4" value="conducted" />
+          <attvalue for="4" value="treated with" />
         </attvalues>
       </edge>
-      <edge source="ACT-2 trial_entity" target="ABVD regimen_entity" id="35" type="relation">
+      <edge source="high-risk histological subtypes_entity" target="autologous stem cell transplantation_entity" id="35" type="relation">
         <attvalues>
-          <attvalue for="4" value="compared_with" />
+          <attvalue for="4" value="potential treatment" />
         </attvalues>
       </edge>
-      <edge source="ACT-2 trial_entity" target="DOVe regimen_entity" id="36" type="relation">
+      <edge source="European Expert Paediatric Oncology Reference Network for Diagnostics and Treatment (ExPO-r-Net)_entity" target="Wilms tumour_entity" id="36" type="relation">
         <attvalues>
-          <attvalue for="4" value="compared_with" />
-        </attvalues>
-      </edge>
-      <edge source="chemotherapy_entity" target="Advanced Hodgkin Lymphoma_entity" id="37" type="relation">
-        <attvalues>
-          <attvalue for="4" value="treats" />
+          <attvalue for="4" value="supports treatment" />
         </attvalues>
       </edge>
     </edges>
