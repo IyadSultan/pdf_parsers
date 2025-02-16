@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 from .pdf_parsers import parse_pdf, debug
 from .knowledge_graph import KnowledgeGraphBuilder
 from deepeval import evaluate
+from deepeval.test_case import LLMTestCase, LLMTestCaseParams
 from deepeval.metrics import (
     GEval,
     FaithfulnessMetric,
@@ -117,81 +118,72 @@ class Pipeline:
         self, 
         test_queries: List[Dict[str, str]], 
         output_file: Optional[str] = None,
-        model: str = "gpt-4o-mini"  # Add model parameter with default value
+        model: str = "gpt-4o-mini"  # Use evaluation model
     ) -> Dict[str, Any]:
         """
         Evaluate the pipeline using test queries.
-
-        Args:
-            test_queries (List[Dict[str, str]]): List of test queries. Each query should include:
-                - "question": the natural language query.
-                - "expected_answer": the ground truth answer.
-            output_file (Optional[str]): Path to a JSON file to save evaluation results.
-            model (str): The model to use for evaluation. Defaults to "gpt-4o-mini".
-
-        Returns:
-            Dict[str, Any]: The evaluation results.
+        ...
         """
-        # Define evaluation metrics with explicit evaluation_steps.
+        # Define evaluation metrics
         metrics = [
             GEval(
                 name="Answer Correctness",
-                model=model,  # Use the provided model parameter
-                evaluation_params=["input", "expected_output", "actual_output"],
+                model=model,
+                evaluation_params=[
+                    LLMTestCaseParams.EXPECTED_OUTPUT, 
+                    LLMTestCaseParams.ACTUAL_OUTPUT
+                ],
                 evaluation_steps=[
-                    "Compare the actual answer with the expected answer and determine if the factual content is correct."
-                ]
+                    "Determine whether the actual output is factually correct based on the expected output."
+                ],
             ),
             FaithfulnessMetric(
                 threshold=0.7,
-                model=model,  # Use the provided model parameter
-                evaluation_steps=[
-                    "Evaluate whether the answer faithfully reflects the content of the retrieved context and source data."
-                ]
+                model=model,
+                include_reason=False
             ),
             ContextualRelevancyMetric(
-                threshold=0.7,
-                model=model,  # Use the provided model parameter
-                evaluation_steps=[
-                    "Assess whether the answer is contextually relevant to the question and the information contained in the knowledge graph."
-                ]
+                threshold=1,
+                model=model,
+                include_reason=True
             )
         ]
         
-        # Create test cases based on the provided queries.
         test_cases = []
         for query in test_queries:
-            # Retrieve results from the knowledge graph using the query.
+            # Retrieve the results from the knowledge graph for the given query.
             results = self.query_knowledge_graph(query['question'])
-            # Format the retrieved results into a single answer string.
+            # Format the results into an answer string.
             actual_answer = self._format_answer(results)
-            
-            # Create a test case with input, expected output, and the actual output.
+            # Create a test case and include the retrieval context as a list of strings.
             test_case = LLMTestCase(
                 input=query['question'],
                 expected_output=query['expected_answer'],
-                actual_output=actual_answer
+                actual_output=actual_answer,
+                retrieval_context=[str(results)]  # Changed from str(results) to a list containing a string.
             )
             test_cases.append(test_case)
         
-        # Run the evaluation using the defined metrics.
+        # Run evaluation with the defined metrics.
         evaluation_results = evaluate(
             test_cases=test_cases,
             metrics=metrics
         )
         
-        # Save the evaluation results to a JSON file if an output file path is provided.
+        # Save evaluation results if an output file is provided.
         if output_file:
             with open(output_file, 'w', encoding='utf-8') as f:
-                json.dump(evaluation_results, f, indent=2)
+                json.dump(evaluation_results, f, indent=2, default=str)
+
         
         return evaluation_results
 
 
     def _format_answer(self, query_results: List[Dict[str, Any]]) -> str:
         """Format query results into a readable answer."""
-        # Implementation of answer formatting logic
-        return str(query_results)  # Placeholder
+        # For demonstration, we simply convert the results list to a string.
+        # You might want to implement a more sophisticated formatter.
+        return str(query_results)
 
 def create_pipeline(
     parser_type: str = 'pymupdf4llm',

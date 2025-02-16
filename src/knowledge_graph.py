@@ -16,6 +16,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolExecutor
+import json 
 
 # Load environment variables
 load_dotenv()
@@ -161,15 +162,15 @@ class KnowledgeGraphBuilder:
         Returns:
             List[Dict[str, Any]]: Query results
         """
-        system_prompt = f"""
-        Convert the following natural language query into a graph pattern:
-        Query: {query}
-        
-        Return the result as a dictionary with:
-        1. Node patterns to match
-        2. Edge patterns to match
-        3. Conditions to filter
-        """
+        system_prompt = (
+            "Convert the following natural language query into a JSON object representing a graph pattern.\n"
+            f"Query: {query}\n"
+            "The JSON object should have the following keys:\n"
+            "- node_patterns: a list of node patterns to match,\n"
+            "- edge_patterns: a list of edge patterns to match,\n"
+            "- conditions: any conditions to filter.\n"
+            "Return only the JSON (do not include any extra text)."
+        )
         
         messages = [
             SystemMessage(content=system_prompt),
@@ -177,9 +178,14 @@ class KnowledgeGraphBuilder:
         ]
         
         response = self.llm.invoke(messages)
-        query_pattern = eval(response.content)
+        cleaned_response = clean_llm_output(response.content)
+        try:
+            query_pattern = json.loads(cleaned_response)
+        except Exception as e:
+            print("Error parsing LLM response into JSON. Response was:")
+            print(cleaned_response)
+            raise e
         
-        # Use NetworkX to find matching patterns
         matching_subgraphs = []
         for subgraph in nx.connected_components(self.graph.to_undirected()):
             subgraph_view = self.graph.subgraph(subgraph)
@@ -187,6 +193,7 @@ class KnowledgeGraphBuilder:
                 matching_subgraphs.append(subgraph_view)
                 
         return self._format_results(matching_subgraphs)
+
     
     def _matches_pattern(self, subgraph: nx.DiGraph, pattern: Dict[str, Any]) -> bool:
         """Check if a subgraph matches the query pattern."""
