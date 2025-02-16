@@ -2,4 +2,15 @@
 .env.local
 venv/
 __pycache__/
+*.json
+*.jsonl
+*.jsonl.gz
+*.jsonl.gz.part
+*.jsonl.gz.part.1
+*.jsonl.gz.part.2
+*.jsonl.gz.part.3
+*.jsonl.gz.part.4
+*.jsonl.gz.part.5
 
+
+!data/evaluations/sample.json

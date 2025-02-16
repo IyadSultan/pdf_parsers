@@ -1,132 +1,111 @@
-# PDF Knowledge Graph Builder
+# PDF Knowledge Graph Builder 🚀
 
-A powerful Python toolkit that transforms PDF documents into queryable knowledge graphs using multiple parsing strategies and LLM-powered graph construction.
+Transform your PDF documents into dynamic, queryable knowledge graphs with our powerful, multi-strategy toolkit! This project leverages advanced PDF parsing and LLM-powered graph construction to deliver rich semantic analysis, natural language querying, and comprehensive evaluation. 🔍✨
 
 ## Overview
 
-This project provides a flexible pipeline for:
-1. Parsing PDFs using different strategies (PyMuPDF4LLM, Gemini Flash, Llama Parse)
-2. Constructing knowledge graphs from the parsed content
-3. Querying the graphs using natural language
-4. Evaluating and comparing different parsing approaches
+The PDF Knowledge Graph Builder enables you to:
+- **Parse PDFs** using multiple strategies (PyMuPDF4LLM, Gemini Flash, Llama Parse) 📄
+- **Construct Knowledge Graphs** with entities, relationships, and automatic URI generation 🌐
+- **Query Graphs** using natural language for deep insights 🗣️
+- **Evaluate & Compare** parsing methods with multi-metric assessments 📊
 
-## Features
+## Key Features
 
-### Multiple PDF Parsing Strategies
+- **Diverse PDF Parsing:**  
+  - **PyMuPDF4LLM:** Fast & lightweight; ideal for simple text PDFs.  
+  - **Gemini Flash:** Excels with complex layouts and visual content (requires Google API key).  
+  - **Llama Parse:** Preserves structure and excels at table extraction (requires Llama Cloud API key).
 
-- **PyMuPDF4LLM**
-  - Fast and lightweight
-  - Best for simple text-based PDFs
-  - No API key required
-  - Limited layout understanding
+- **Robust Knowledge Graphs:**  
+  - Uses GPT-4 for entity & relationship extraction.  
+  - Generates valid URIs and supports both NetworkX and RDF formats.
 
-- **Gemini Flash**
-  - Excellent for complex layouts
-  - Strong image and diagram handling
-  - Requires Google API key
-  - Higher accuracy for visual content
+- **Natural Language Querying & Evaluation:**  
+  - Interact with your graphs using everyday language.  
+  - Comprehensive evaluations on parsing accuracy, entity extraction, relationship mapping, and query response quality.
 
-- **Llama Parse**
-  - Strong structure preservation
-  - Excellent table extraction
-  - Requires Llama Cloud API key
-  - Best for technical documents
+## Installation 🛠️
 
-### Knowledge Graph Construction
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/pdf-knowledge-graph.git
+   cd pdf-knowledge-graph
+   ```
 
-- Entity extraction using GPT-4
-- Relationship identification
-- Automatic URI generation
-- RDF format support
-- NetworkX graph structure
+2. **Set Up a Virtual Environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-### Query & Analysis
+3. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- Natural language querying
-- Multi-metric evaluation
-- Parser comparison tools
-- Performance analytics
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/pdf-knowledge-graph.git
-cd pdf-knowledge-graph
-```
-
-2. Create and activate a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up environment variables:
-Create a `.env` file in the project root with the following variables:
-```env
-GOOGLE_API_KEY=your_gemini_api_key
-LLAMA_CLOUD_API_KEY=your_llama_parse_api_key
-ANTHROPIC_API_KEY=your_anthropic_api_key
-OPENAI_API_KEY=your_openai_api_key
-```
+4. **Configure Environment Variables:**
+   Create a .env file in the project root and add:
+   ```env
+   GOOGLE_API_KEY=your_gemini_api_key
+   LLAMA_CLOUD_API_KEY=your_llama_parse_api_key
+   OPENAI_API_KEY=your_openai_api_key
+   ```
 
 ## Usage
 
 ### Command Line Interface
 
-Run the main script to process PDFs with all available parsers:
-
+**Process a Single PDF:**
 ```bash
-# Process a single PDF
-python main.py path/to/your/document.pdf
-
-# Process all PDFs in a directory
-python main.py path/to/pdf/directory
+python main.py --input path/to/your/document.pdf
 ```
 
-The script will:
-1. Create necessary output directories
-2. Process the PDF(s) with each parser
-3. Generate knowledge graphs
-4. Run evaluations
-5. Save comparison results
+**Process a Directory of PDFs:**
+```bash
+python main.py --input path/to/pdf/directory
+```
+
+**Evaluation-Only Mode:**
+```bash
+python main.py --eval-only
+```
+
+The script automatically creates necessary directories, processes PDFs with all parsers, builds knowledge graphs, runs evaluations, and saves the results. ✅
 
 ### Python API
+
+Integrate the pipeline directly into your Python code:
 
 ```python
 from src.pipeline import create_pipeline
 
-# Initialize pipeline with specific parser
+# Initialize the pipeline with a specific parser
 pipeline = create_pipeline(parser_type='pymupdf4llm')
 
-# Process a PDF
+# Process a PDF document
 results = pipeline.process_pdf('path/to/document.pdf')
 
-# Save the knowledge graph
+# Save the generated knowledge graph
 pipeline.save_knowledge_graph('output/graphs')
 
-# Query the graph
-answer = pipeline.query("What are the main topics discussed?")
+# Query the graph using natural language
+answer = pipeline.query_knowledge_graph("What are the main topics discussed?")
 ```
 
-## Output Structure
+## Directory Structure
 
 ```
 pdf-knowledge-graph/
 ├── data/
-│   ├── pdfs/              # Input PDFs
-│   └── evaluations/       # Evaluation queries
+│   ├── pdfs/              # Input PDF files 📄
+│   └── evaluations/       # Evaluation queries (JSON)
 ├── graphs/
-│   ├── pymupdf4llm/      # Knowledge graphs by parser
-│   ├── gemini_flash/
-│   └── llama_parse/
+│   ├── pymupdf4llm/       # Graphs from PyMuPDF4LLM parser
+│   ├── gemini_flash/      # Graphs from Gemini Flash parser
+│   └── llama_parse/       # Graphs from Llama Parse parser
 ├── output/
-│   ├── markdown/         # Parsed content in markdown
+│   ├── markdown/          # Parsed content in Markdown format
 │   └── comparison_results_{timestamp}.json
 └── evaluation/
     ├── pymupdf4llm_eval_{timestamp}.json
@@ -135,49 +114,44 @@ pdf-knowledge-graph/
     └── evaluation_comparison_{timestamp}.json
 ```
 
-## Evaluation Metrics
+## Evaluation Metrics 📊
 
-The evaluation framework assesses:
-- Parsing accuracy
-- Entity extraction quality
-- Relationship identification
-- Query response accuracy
-- Processing speed
+Our evaluation framework measures:
 
-## Contributing
+- Parsing Accuracy: How well the PDF content is extracted.
+- Entity Extraction: Precision in identifying key entities.
+- Relationship Mapping: Accuracy in connecting entities.
+- Query Response Quality: Effectiveness of natural language answers.
+- Processing Efficiency: Speed and resource usage across parsers.
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+## Contributing 🤝
 
-### Development Setup
+We welcome contributions! To get started:
 
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push to your branch.
+5. Submit a pull request.
+
+For development:
 ```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-pytest tests/
-
-# Run linting
-flake8 src/ tests/
+pip install -r requirements-dev.txt  # Install dev dependencies
+pytest tests/                        # Run tests
+flake8 src/ tests/                  # Lint the code
 ```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Licensed under the MIT License. See the LICENSE file for details.
 
-## Acknowledgments
+## Acknowledgments 🙏
 
-- LangGraph team for the graph-based LLM framework
-- Anthropic for Claude API
-- Google for Gemini API
-- Llama Parse team for PDF parsing capabilities
+- LangGraph: For the graph-based LLM framework.
+- Anthropic: For the Claude API integration.
+- Google: For powering the Gemini API.
+- Llama Parse: For advanced PDF parsing capabilities.
 
 ## Support
 
-For issues and feature requests, please use the GitHub issue tracker.
-
-For usage questions, join our [Discord community](https://discord.gg/yourinvitelink). 
+For issues, feature requests, or usage questions, please open an issue on GitHub or join our Discord community.
